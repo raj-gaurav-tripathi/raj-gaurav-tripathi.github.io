@@ -93,7 +93,7 @@ button { font: inherit; }
 .hero {
   position: relative;
   display: flex;
-  min-height: min(520px;);
+  min-height: min(350px;);
   overflow: hidden;
   color: var(--white);
   isolation: isolate;
