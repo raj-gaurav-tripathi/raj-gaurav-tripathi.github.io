@@ -221,7 +221,7 @@
       return {
         x: Math.random() * width,
         y: Math.random() * height,
-        radius: Math.random() * 1.3 + .18,
+        radius: Math.random() * 2 + .5,
         speed: Math.random() * .11 + .025,
         alpha: Math.random() * .55 + .2,
         drift: (Math.random() - .5) * .09,
