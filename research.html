@@ -15,6 +15,17 @@
   <!-- Links to your favicon and CSS stylesheet -->
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
+
+  <!-- MathJax Script to render LaTeX math formulas -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 <body>
@@ -31,7 +42,7 @@
   <!-- Main container that holds the page content over the gray background -->
   <div class="site-shell">
     
-    <!-- The hero image block (Fixed the background-position syntax here!) -->
+    <!-- The hero image block -->
     <div class="hero" style="background-image: url('assets/Chatgpt,Gemini_Generated_Research.....png'); background-position: center center;" role="img" aria-label="Quantum to Cosmos"></div>
     
     <!-- The site navigation bar -->
@@ -69,14 +80,14 @@
           <!-- Quantum Foundations Project -->
           <h3 style="color: #1757ad;">Quantum Foundations & Causal Inference</h3>
           <p style="color: #666; font-size: 14px; margin-top: -5px;"><strong>MS Thesis Project</strong> · Supervised by Dr. Beata Zjawin (ICTQT, Poland)</p>
-          <p>For my master's thesis, I am transitioning into the field of quantum foundations. Working remotely with the International Centre for Theory of Quantum Technologies (ICTQT), we are exploring the theoretical underpinnings of quantum mechanics. My current focus centers on the themes of quantum contextuality and causal inference. While the specific boundaries of the research problem are currently taking shape, the overarching goal is to investigate the non-classical structures that dictate quantum correlations and understand how they fundamentally differ from classical causal models.</p>
+          <p>For my master's thesis, I am working in the field of quantum foundations, specifically investigating the operational framework of generalized noncontextuality and causal inference. Rather than interpreting standard Hilbert space formalism, we analyze the statistics of prepare-and-measure scenarios to identify genuine non-classicality. By demanding that operationally equivalent preparation procedures ($\rho_P = \rho_{P'}$) correspond to identical probability distributions over hidden variables in an underlying ontological model, we can derive robust noncontextuality inequalities. My current focus centers on exploring the typicality of contextuality using mixed states and unsharp measurements (POVMs), moving beyond the idealized projective constraints of the Kochen-Specker theorem. Ultimately, we aim to understand how the non-classical structures dictating quantum correlations fundamentally deviate from classical causal models and Directed Acyclic Graphs (DAGs).</p>
           
           <br>
 
           <!-- Cosmology Project -->
           <h3 style="color: #1757ad;">Cosmic Magnetic Fields & Dark Matter</h3>
           <p style="color: #666; font-size: 14px; margin-top: -5px;"><strong>Undergraduate Research</strong> · Supervised by Prof. Koushik Dutta (IISER Kolkata)</p>
-          <p>Prior to my thesis work, I focused on early universe cosmology. Specifically, our work investigated the generation of primordial cosmic magnetic fields. We explored a recently proposed magnetogenesis mechanism driven by the dynamics of ultralight dark matter. This project involved extensive literature review and theoretical study, focusing on how scalar fields and dark matter couplings in the early universe could seed the vast magnetic fields we observe in the cosmos today.</p>
+          <p>Prior to my thesis, I focused on early universe cosmology and late-time magnetogenesis driven by ultralight dark matter (ULDM). We investigated how a coherently oscillating pseudo-scalar dark matter condensate $\phi(t)$ couples to the electromagnetic field via a parity-violating Chern-Simons term $\frac{1}{4} g_{\phi\gamma} \phi F_{\mu\nu} \tilde{F}^{\mu\nu}$. This time-dependent background modifies the photon dispersion relation, driving a tachyonic instability for modes $k < g_{\phi\gamma} m_\phi \Phi a(\eta)$ and inducing exponential amplification of the gauge field. Our theoretical analysis evaluated backreaction constraints and resonance conditions using Floquet exponents derived from the Mathieu equation. Specifically, we mathematically examined whether the finite electrical conductivity ($\sigma$) of the primordial plasma overdamps the resonance, and explored mechanisms like inverse magnetohydrodynamic cascades and supercooled trapped misalignment to preserve astrophysically relevant magnetic fields on megaparsec scales.</p>
 
         </section>
         
