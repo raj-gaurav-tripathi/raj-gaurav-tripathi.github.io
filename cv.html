@@ -30,15 +30,15 @@
   <!-- Main container that holds the page content over the gray background -->
   <div class="site-shell">
     
-    <!-- Hero banner image (Add the style attribute here if you want a custom image for your CV page) -->
-    <div class="hero" style="background-image: url('assets/IISERK_RC....png'); role="img" aria-label="IISER K, Research Complex"></div>
+    <!-- Hero banner image (Fixed the quotation mark syntax) -->
+    <div class="hero" style="background-image: url('assets/IISERK_RC..png');" role="img" aria-label="IISER K, Research Complex"></div>
     
     <!-- Site navigation menu -->
     <nav class="site-nav" aria-label="Main navigation">
       <a href="index.html">Home</a>
       <a href="research.html">Research</a>
       <a href="notes.html">Notes</a>
-      <!-- The 'active' class highlights the CV link because we are on the CV page -->
+      <!-- The 'active' class highlights the CV link -->
       <a class="active" href="cv.html">CV</a>
       <a href="blog.html">Blog</a>
     </nav>
@@ -48,43 +48,120 @@
       
       <!-- Page title -->
       <h1 class="panel-title">Curriculum Vitae</h1>
+      <p style="font-size: 1.1rem; color: #555;"><strong>Research Interests:</strong> Theoretical cosmology and fundamental physics: early universe, dark matter, gravity, and unification of forces.</p>
       
-      <!-- Horizontal separator line -->
       <hr>
       
       <!-- Section 1: Education -->
       <h2 class="cv-heading">Education</h2>
       <div class="cv-section">
         <p class="cv-date">2022 – Present</p>
-        <p><strong>BS-MS Dual Degree Undergraduate Student</strong> at the <a href="https://www.iiserkol.ac.in/web/">Indian Institute of Science Education and Research (IISER) Kolkata</a>.</p>
+        <div>
+          <p><strong>BS-MS Dual Degree (Physics Major, Math Minor)</strong><br>
+          <a href="https://www.iiserkol.ac.in/web/">Indian Institute of Science Education and Research (IISER) Kolkata</a>.</p>
+          <p style="margin-top: 15px; margin-bottom: 5px;"><strong>Key Courses:</strong></p>
+          <ul>
+            <li><strong>Physics:</strong> Advanced Quantum Mechanics, Quantum Field Theory, General Relativity & Cosmology, Statistical & Thermal Physics, Many-body / Second Quantization, Scattering & Particle Physics, Quantum Foundations, Mathematical Methods & Classical Dynamics, Computational Physics.</li>
+            <li><strong>Mathematics:</strong> Real & Functional Analysis, Topology & Geometry of Manifolds, Geometry of Curves & Surfaces, Algebra & Structures, Ordinary Differential Equations, Probability.</li>
+          </ul>
+        </div>
       </div>
       
-      <!-- Horizontal separator line -->
       <hr>
       
       <!-- Section 2: Research Experience -->
       <h2 class="cv-heading">Research Experience</h2>
       <div class="cv-section">
         <p class="cv-date">Current</p>
-        <p><strong>Master's Thesis Preparation</strong> in Quantum Foundations, supervised remotely by Dr. Beata Zjawin from ICTQT, Poland. Primary focus on quantum contextuality and causal inference.</p>
+        <div>
+          <p><strong>Master's Thesis Project</strong><br>
+          <em>Supervised remotely by Dr. Beata Zjawin, ICTQT, Poland</em></p>
+          <p style="margin-top: 5px; font-size: 0.95rem;">Focusing on quantum foundations, specifically quantum contextuality and causal inference.</p>
+        </div>
       </div>
       <div class="cv-section">
-        <p class="cv-date">Current</p>
-        <p><strong>Undergraduate Researcher</strong> working with Prof. Koushik Dutta in cosmology, focusing on the generation of cosmic magnetic fields from ultralight dark matter.</p>
+        <p class="cv-date">Jul – Dec 2025</p>
+        <div>
+          <p><strong>Inflationary Cosmology Research Project</strong><br>
+          <em>Supervised by Prof. Koushik Dutta, IISER Kolkata</em></p>
+          <p style="margin-top: 5px; font-size: 0.95rem;">Carried out an in-depth theoretical study of cosmic inflation focusing on the horizon and flatness problems. Analyzed scalar-field-driven models, derived conditions for accelerated expansion, and understood slow-roll dynamics and CMB homogeneity.</p>
+        </div>
+      </div>
+      <div class="cv-section">
+        <p class="cv-date">Summer 2025</p>
+        <div>
+          <p><strong>Summer Research Fellow</strong><br>
+          <em>Nanophotonics Lab</em></p>
+          <p style="margin-top: 5px; font-size: 0.95rem;">Simulated SAM/OAM effects and photon scattering in plasmonic crystals.</p>
+        </div>
+      </div>
+      <div class="cv-section">
+        <p class="cv-date">2024</p>
+        <div>
+          <p><strong>Research Intern</strong><br>
+          <em>Spintronics Lab</em></p>
+          <p style="margin-top: 5px; font-size: 0.95rem;">Fabricated and measured AMR in Permalloy thin films using E-beam evaporation and sputtering.</p>
+        </div>
       </div>
 
-      <!-- Horizontal separator line -->
       <hr>
-      
-      <!-- Section 3: Achievements & Extracurriculars -->
-      <h2 class="cv-heading">Achievements and Service</h2>
+
+      <!-- Section 3: Academic Projects -->
+      <h2 class="cv-heading">Academic Projects</h2>
       <div class="cv-section">
         <p class="cv-date">Highlights</p>
         <ul>
-          <li>Qualified for the national level of the international physics tournament.</li>
-          <li>Participant, Viksit Bharat Young Leaders Dialogue (State-level presentation).</li>
-          <li>Registered participant in the Yuva Sangam Phase-V program.</li>
-          <li>Avid marathon runner and jogging enthusiast.</li>
+          <li><strong>Delayed Choice Quantum Eraser:</strong> Reproduced theory of Kim et al. (1999); analyzed entanglement, which-path information, and causality in interference recovery.</li>
+          <li><strong>Characterization via PPMS:</strong> Studied Physical Property Measurement System architecture and measurement techniques, including heat capacity, transport, and AC/DC magnetometry.</li>
+          <li><strong>Fast and Slow Light in Dispersive Media:</strong> Analyzed group velocity control using EIT and dispersion; studied Kramers-Kronig relations and causality.</li>
+          <li><strong>Lie Groups & Algebras:</strong> Independent theoretical study of Lie group and Lie algebra structures.</li>
+        </ul>
+      </div>
+
+      <hr>
+
+      <!-- Section 4: Technical Skills -->
+      <h2 class="cv-heading">Technical Skills</h2>
+      <div class="cv-section">
+        <p class="cv-date">Proficiencies</p>
+        <ul>
+          <li><strong>Computation:</strong> Python, MATLAB, Mathematica, Origin, LaTeX.</li>
+          <li><strong>Mathematica:</strong> Linear Algebra, Fourier & Laplace transforms, Vector/Complex Analysis, ODEs/PDEs Sturm-Liouville systems, Greens function, Group theory, Probability and statistics.</li>
+          <li><strong>Instrumentation:</strong> PPMS protocols, E-beam Evaporation, Magnetron Sputtering.</li>
+        </ul>
+      </div>
+
+      <hr>
+      
+      <!-- Section 5: Achievements -->
+      <h2 class="cv-heading">Achievements</h2>
+      <div class="cv-section">
+        <p class="cv-date">Awards</p>
+        <ul>
+          <li><strong>National Finalist, IPT 2026:</strong> Representing IISER Kolkata at the national level for the International Physics Tournament.</li>
+          <li><strong>Winner, Qiskit Fall Fest (2024):</strong> Secured top position in IBM's Quantum Computing challenge.</li>
+          <li><strong>Reliance Scholar (2023):</strong> Awarded INR 200,000 for academic excellence.</li>
+          <li><strong>JEE Advanced (2022):</strong> All India Rank 3339 (Top 2% of over 150,000 pre-qualified candidates).</li>
+        </ul>
+      </div>
+
+      <hr>
+
+      <!-- Section 6: Extracurriculars -->
+      <h2 class="cv-heading">Extracurricular Activities</h2>
+      <div class="cv-section">
+        <p class="cv-date">Leadership & Service</p>
+        <ul>
+          <li><strong>Volunteer & Science Communicator, Ek Pahal (2023-Present):</strong> Conducted live science experiments and supported education initiatives for underprivileged rural students.</li>
+          <li><strong>Head of Logistics & Food Distribution, JUB (2023-2024):</strong> Managed food distribution, budgeting, and logistics for large community events.</li>
+          <li><strong>Community Volunteer, Bhaktivedanta Institute (2023-Present):</strong> Contributed to food security programs and community welfare activities.</li>
+        </ul>
+      </div>
+      <div class="cv-section">
+        <p class="cv-date">Athletics</p>
+        <ul>
+          <li><strong>Campus Athletics:</strong> Successfully completed the Independence Day Marathon (August 2025) organized by the IISER Kolkata Athletics Club.</li>
+          <li><strong>District Representative:</strong> Participated in the District-level Marathon in Mirzapur (2020), representing my school at the regional level.</li>
         </ul>
       </div>
 
