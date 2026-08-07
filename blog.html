@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <!-- Meta tags for character set and responsive design -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Personal blog of Raj Gaurav Tripathi." />
   
   <!-- Page title -->
   <title>Blog — Raj Gaurav Tripathi</title>
@@ -11,116 +12,9 @@
   <!-- Smooth transition effect for navigation -->
   <meta name="view-transition" content="same-origin" />
   
-  <!-- Favicon and main stylesheet links -->
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
-
-  <!-- ==========================================
-       CUSTOM BLOG STYLES (Inspired by your image)
-       This CSS only applies to the blog page to give 
-       it a vibrant, bold, and informal grid layout.
-       ========================================== -->
-  <style>
-    /* Creates a dark, immersive container for the blog */
-    .blog-container {
-      background-color: #111412;
-      color: #ffffff;
-      padding: 40px;
-      border-radius: 16px;
-      margin-top: 20px;
-    }
-    
-    /* Bold, heavy, neon-accented header */
-    .blog-header-title {
-      font-size: 3rem;
-      font-weight: 900;
-      text-transform: uppercase;
-      line-height: 1.1;
-      margin: 0 0 10px 0;
-      color: #ffffff;
-    }
-    .blog-header-title span {
-      color: #39FF14; /* Neon green accent from the screenshot */
-    }
-    .blog-subtitle {
-      font-size: 1.1rem;
-      color: #a0a0a0;
-      margin-bottom: 40px;
-      max-width: 600px;
-    }
-
-    /* CSS Grid for the blog cards */
-    .vibrant-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-    }
-
-    /* Standard Dark Card */
-    .vibrant-card {
-      background-color: #1e2420;
-      border-radius: 12px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.3s ease;
-      text-decoration: none;
-      color: #fff;
-    }
-    .vibrant-card:hover {
-      transform: translateY(-5px);
-      text-decoration: none;
-    }
-
-    /* Highlighted Neon Card */
-    .vibrant-card.highlight {
-      background-color: #39FF14;
-      color: #111412;
-    }
-
-    /* Card Image */
-    .card-img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-bottom: 3px solid #111412;
-    }
-
-    /* Card Text Content */
-    .card-content {
-      padding: 24px;
-      flex-grow: 1;
-    }
-    .card-tag {
-      font-size: 0.75rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 12px;
-      display: block;
-    }
-    .vibrant-card.highlight .card-tag {
-      color: #111412;
-      opacity: 0.7;
-    }
-    .vibrant-card:not(.highlight) .card-tag {
-      color: #39FF14;
-    }
-    
-    /* Card Headings and Paragraphs */
-    .card-content h3 {
-      font-size: 1.5rem;
-      font-weight: 800;
-      margin: 0 0 12px 0;
-      line-height: 1.2;
-    }
-    .card-content p {
-      font-size: 0.95rem;
-      margin: 0;
-      line-height: 1.5;
-      opacity: 0.9;
-    }
-  </style>
+  <!-- Favicon and stylesheet links -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
@@ -140,60 +34,77 @@
     <!-- Hero banner image -->
     <div class="hero" role="img" aria-label="A dawn cityscape viewed from a hillside"></div>
     
-    <!-- Site navigation menu -->
+    <!-- Site navigation menu (Perfectly matching your layout) -->
     <nav class="site-nav" aria-label="Main navigation">
       <a href="index.html">Home</a>
       <a href="research.html">Research</a>
       <a href="notes.html">Notes</a>
       <a href="cv.html">CV</a>
+      <!-- The 'active' class highlights the Blog link -->
       <a class="active" href="blog.html">Blog</a>
     </nav>
     
     <!-- Main content area -->
     <main class="page-content" id="content">
       
-      <!-- Vibrant Dark Mode Blog Container -->
-      <div class="blog-container">
+      <!-- Page title -->
+      <h1 class="panel-title">Blog</h1>
+      
+      <!-- Introduction paragraph -->
+      <p>Stepping away from theoretical physics for a moment. This is a space for travel diaries, marathon milestones, food, and the people who make the journey worthwhile.</p>
+      
+      <!-- Horizontal separator line -->
+      <hr />
+      
+      <!-- ==========================================
+           BLOG POST 1 (With an Image)
+           ========================================== -->
+      <article style="margin-bottom: 50px;">
+        <h2 style="margin-bottom: 5px;">Rail Diaries: The Howrah to Varanasi Route</h2>
+        <p style="color: #666; font-size: 14px; margin-top: 0;"><strong>August 2026</strong> · Travel & Transit</p>
         
-        <!-- Bold Header -->
-        <h1 class="blog-header-title">Real Life. <br><span>Real Stories.</span></h1>
-        <p class="blog-subtitle">Stepping away from theoretical physics for a moment. This is a space for travel diaries, marathon milestones, food, and the people who make the journey worthwhile.</p>
+        <!-- Blog Image: 
+             'width: 100%' makes it fill the column. 
+             'max-height: 400px' and 'object-fit: cover' ensure it doesn't get too tall. -->
+        <img src="assets/hero-overlook.png" alt="View from a train window" style="width: 100%; max-height: 400px; object-fit: cover; border: 1px solid #ccc; margin-bottom: 15px;" />
         
-        <!-- Grid for Blog Posts -->
-        <div class="vibrant-grid">
-          
-          <!-- Highlighted Card (Bright Green) -->
-          <a href="#" class="vibrant-card highlight">
-            <img src="assets/hero-overlook.png" alt="Train tracks" class="card-img">
-            <div class="card-content">
-              <span class="card-tag">Travel & Transit</span>
-              <h3>Rail Diaries: The Howrah to Varanasi Route</h3>
-              <p>Reflections from my recent train travels across India. There is something uniquely peaceful about watching the landscape shift from the window while heading towards Varanasi Junction.</p>
-            </div>
-          </a>
+        <p>Reflections from my recent train travels across India. There is something uniquely peaceful about watching the landscape shift from the window while heading towards Varanasi Junction. Taking the Indian Railways always offers a great opportunity to disconnect, read, and recharge before the next semester begins.</p>
+      </article>
 
-          <!-- Standard Dark Card 1 -->
-          <a href="#" class="vibrant-card">
-            <img src="assets/hero-overlook.png" alt="Running path" class="card-img">
-            <div class="card-content">
-              <span class="card-tag">Fitness & Friendship</span>
-              <h3>Marathon Milestones & Park Days</h3>
-              <p>Looking back at the August marathon and my regular weekend jogs. Balancing intense academics with long-distance running and spending time outdoors with Deepanshu and Raj keeps me grounded.</p>
-            </div>
-          </a>
+      <hr />
 
-          <!-- Standard Dark Card 2 -->
-          <a href="#" class="vibrant-card">
-            <img src="assets/hero-overlook.png" alt="Cooking" class="card-img">
-            <div class="card-content">
-              <span class="card-tag">Lifestyle & Food</span>
-              <h3>Mastering the Perfect Chole Bhature</h3>
-              <p>Taking a well-deserved break from cosmology to perfect my homemade chole bhature. A great weekend involves chopping fresh vegetables, getting the spices just right, and sharing a great meal.</p>
-            </div>
-          </a>
+      <!-- ==========================================
+           BLOG POST 2 (With a Video)
+           ========================================== -->
+      <article style="margin-bottom: 50px;">
+        <h2 style="margin-bottom: 5px;">Marathon Milestones & Park Days</h2>
+        <p style="color: #666; font-size: 14px; margin-top: 0;"><strong>July 2026</strong> · Fitness & Friendship</p>
+        
+        <!-- Blog Video:
+             Uses the HTML5 <video> tag. The 'controls' attribute adds play/pause buttons. -->
+        <video controls style="width: 100%; max-height: 400px; object-fit: cover; border: 1px solid #ccc; margin-bottom: 15px;">
+          <!-- Replace 'assets/sample-video.mp4' with your actual video file name once uploaded -->
+          <source src="assets/sample-video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        
+        <p>Looking back at the August marathon and my regular weekend jogs. Balancing intense academics with long-distance running keeps me grounded. Whether it's training for a race or just spending time outdoors at the park with Deepanshu and Raj, these moments are essential for maintaining a clear head.</p>
+      </article>
 
-        </div>
-      </div>
+      <hr />
+
+      <!-- ==========================================
+           BLOG POST 3 (With an Image)
+           ========================================== -->
+      <article style="margin-bottom: 50px;">
+        <h2 style="margin-bottom: 5px;">Mastering the Perfect Chole Bhature</h2>
+        <p style="color: #666; font-size: 14px; margin-top: 0;"><strong>May 2026</strong> · Lifestyle & Food</p>
+        
+        <img src="assets/hero-overlook.png" alt="A plate of Chole Bhature" style="width: 100%; max-height: 400px; object-fit: cover; border: 1px solid #ccc; margin-bottom: 15px;" />
+        
+        <p>Taking a well-deserved break from cosmology to perfect my homemade chole bhature. A great weekend involves stepping away from the desk, chopping fresh vegetables, getting the spices just right, and sharing a great meal. There is a very different kind of satisfaction in preparing traditional North Indian dishes from scratch.</p>
+      </article>
+
     </main>
     
     <!-- Footer section -->
