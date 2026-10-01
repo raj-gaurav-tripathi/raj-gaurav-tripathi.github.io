@@ -1,19 +1,113 @@
-<!-- Quantum Foundations Project -->
-<h3 style="color: #1757ad;">Quantum Foundations & Generalized Noncontextuality</h3>
-<p style="color: #666; font-size: 14px; margin-top: -5px;"><strong>MS Thesis Project</strong> · Supervised by Dr. Beata Zjawin (ICTQT, Poland)</p>
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Meta tags for character set and responsive design -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Research projects and interests of Raj Gaurav Tripathi.">
+  
+  <!-- Page title -->
+  <title>Research — Raj Gaurav Tripathi</title>
+  
+  <!-- Smooth transition effect for navigation -->
+  <meta name="view-transition" content="same-origin" />
+  
+  <!-- Links to your favicon and CSS stylesheet -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
 
-<p>For my master's thesis, I investigate the boundaries of genuine quantum nonclassicality through the framework of generalized noncontextuality. Rather than interpreting standard Hilbert space formalism, this approach relies on Leibniz's principle of the identity of indiscernibles. By demanding that operationally equivalent preparation and measurement procedures correspond to identical representations in any underlying ontological model, we can rigorously isolate the "thin film" of genuine quantum novelty from phenomena that are fully classically explainable.</p>
+  <!-- MathJax Script to render LaTeX math formulas -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
 
-<p>My core research focuses on the <em>typicality of contextuality</em>: determining how often randomly chosen quantum preparations and measurements produce statistics that resist classical explanation. By employing numerical linear programming to test whether the generalized probabilistic theory (GPT) fragments associated with these experiments admit of a simplex embedding, we can systematically certify nonclassicality. Our findings demonstrate that contextuality is surprisingly ubiquitous; even in scenarios with a modest number of random preparations and measurements, nonclassical statistics arise with over 99% probability.</p>
+<body>
+  <!-- Accessibility link to skip navigation for screen readers -->
+  <a class="skip-link" href="#content">Skip to content</a>
+  
+  <!-- Top gray header with your name/site title -->
+  <header class="site-header">
+    <div class="title-wrap">
+      <a href="index.html">Raj Gaurav Tripathi</a>
+    </div>
+  </header>
+  
+  <!-- Main container that holds the page content over the gray background -->
+  <div class="site-shell">
+    
+    <!-- The hero image block -->
+    <div class="hero" style="background-image: url('assets/Chatgpt,Gemini_Generated_Research.....png'); background-position: center center;" role="img" aria-label="Quantum to Cosmos"></div>
+    
+    <!-- The site navigation bar -->
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <!-- The 'active' class highlights the Research link -->
+      <a class="active" href="research.html">Research</a>
+      <a href="notes.html">Notes</a>
+      <a href="cv.html">CV</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+    
+    <!-- The main white content area -->
+    <main class="page-content" id="content">
+      
+      <!-- Page Title and Introductory Paragraphs -->
+      <h1 class="panel-title">Research Interests</h1>
+      <p>My research journey explores the fundamental physical frameworks of our universe—spanning from the macroscopic evolution of the early cosmos to the deep, structural rules of quantum mechanics. I am deeply interested in theoretical models that bridge abstract mathematical concepts with the physical realities they describe.</p>
+      
+      <!-- Highlight quote -->
+      <div class="callout">
+        <em>"I am driven by a desire to understand the foundational rules of nature, whether they dictate the origins of cosmic structures or the non-classical behavior of quantum information."</em>
+      </div>
 
-<p>Crucially, I explore how this typicality persists under realistic experimental limitations, such as decreasing the purity of preparations or relying on unsharp measurements (POVMs). Beyond fundamental theory, we also analyze the practical utility of these nonclassical resources in information processing tasks like parity-oblivious multiplexing (POM). This work reveals that while stumbling upon contextuality is highly typical, achieving a quantitatively large quantum advantage requires more stringent experimental alignment and control.</p>
+      <!-- Horizontal line separator -->
+      <hr>
+      
+      <!-- Two-column layout for Current Projects and the Sidebar -->
+      <div class="two-column">
+        
+        <!-- Left Column: Current Projects -->
+        <section>
+          <h2>Current & Past Projects</h2>
+          
+          <!-- Quantum Foundations Project -->
+          <h3 style="color: #1757ad;">Quantum Foundations & Causal Inference</h3>
+          <p style="color: #666; font-size: 14px; margin-top: -5px;"><strong>MS Thesis Project</strong> · Supervised by Dr. Beata Zjawin (ICTQT, Poland)</p>
+          <p>For my master's thesis, I am working in the field of quantum foundations, specifically investigating the operational framework of generalized noncontextuality and causal inference. Rather than interpreting standard Hilbert space formalism, we analyze the statistics of prepare-and-measure scenarios to identify genuine non-classicality. By demanding that operationally equivalent preparation procedures ($\rho_P = \rho_{P'}$) correspond to identical probability distributions over hidden variables in an underlying ontological model, we can derive robust noncontextuality inequalities. My current focus centers on exploring the typicality of contextuality using mixed states and unsharp measurements (POVMs), moving beyond the idealized projective constraints of the Kochen-Specker theorem. Ultimately, we aim to understand how the non-classical structures dictating quantum correlations fundamentally deviate from classical causal models and Directed Acyclic Graphs (DAGs).</p>
+          
+          <br>
 
-<h4>Reading List</h4>
-<ul>
-  <li>R. W. Spekkens, <em>Contextuality for preparations, transformations, and unsharp measurements</em>, Phys. Rev. A 71, 052108 (2005).</li>
-  <li>D. Schmid, J. H. Selby, E. Wolfe, R. Kunjwal, R. W. Spekkens, <em>Characterization of noncontextuality in the framework of generalized probabilistic theories</em>, PRX Quantum 2, 010331 (2021).</li>
-  <li>J. H. Selby, E. Wolfe, D. Schmid, A. B. Sainz, V. P. Rossi, <em>Linear program for testing nonclassicality and an open-source implementation</em>, Phys. Rev. Lett. 132, 050202 (2024).</li>
-  <li>Y. Zhang, D. Schmid, Y. Yīng, R. W. Spekkens, Phys. Rev. X 16, 021050 (2026).</li>
-  <li>D. Schmid, lecture on generalized noncontextuality, PHYS 639 (L. Hardy), Perimeter Institute, Feb 2025.</li>
-</ul>
-<br>
+          <!-- Cosmology Project -->
+          <h3 style="color: #1757ad;">Cosmic Magnetic Fields & Dark Matter</h3>
+          <p style="color: #666; font-size: 14px; margin-top: -5px;"><strong>Undergraduate Research</strong> · Supervised by Prof. Koushik Dutta (IISER Kolkata)</p>
+          <p>Prior to my thesis, I focused on early universe cosmology and late-time magnetogenesis driven by ultralight dark matter (ULDM). We investigated how a coherently oscillating pseudo-scalar dark matter condensate $\phi(t)$ couples to the electromagnetic field via a parity-violating Chern-Simons term $\frac{1}{4} g_{\phi\gamma} \phi F_{\mu\nu} \tilde{F}^{\mu\nu}$. This time-dependent background modifies the photon dispersion relation, driving a tachyonic instability for modes $k < g_{\phi\gamma} m_\phi \Phi a(\eta)$ and inducing exponential amplification of the gauge field. Our theoretical analysis evaluated backreaction constraints and resonance conditions using Floquet exponents derived from the Mathieu equation. Specifically, we mathematically examined whether the finite electrical conductivity ($\sigma$) of the primordial plasma overdamps the resonance, and explored mechanisms like inverse magnetohydrodynamic cascades and supercooled trapped misalignment to preserve astrophysically relevant magnetic fields on megaparsec scales.</p>
+
+        </section>
+        
+        <!-- Right Column: Sidebar with image and contact info -->
+        <aside>
+          <!-- Displaying your profile picture in the sidebar -->
+          <img class="side-image" src="assets/QG_Wikki.png" alt="Quantum Gravity from Wikkipedia">
+          
+          <h2>Collaborations</h2>
+          <p>I am always open to discussions regarding theoretical physics, quantum foundations, or cosmology. Feel free to reach out to me directly at <a href="mailto:rajgauravmirp@gmail.com">rajgauravmirp@gmail.com</a>.</p>
+        </aside>
+        
+      </div>
+    </main>
+    
+    <!-- Footer section -->
+    <footer class="site-footer">
+      © 2026 Raj Gaurav Tripathi · Built with plain HTML for GitHub Pages
+    </footer>
+    
+  </div>
+</body>
+</html>
