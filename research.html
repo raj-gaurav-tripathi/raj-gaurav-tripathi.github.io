@@ -77,13 +77,45 @@
         <section>
           <h2>Current & Past Projects</h2>
           
-          <!-- Quantum Foundations Project -->
-          <h3 style="color: #1757ad;">Quantum Foundations & Causal Inference</h3>
-          <p style="color: #666; font-size: 14px; margin-top: -5px;"><strong>MS Thesis Project</strong> · Supervised by Dr. Beata Zjawin (ICTQT, Poland)</p>
-          <p>For my master's thesis, I am working in the field of quantum foundations, specifically investigating the operational framework of generalized noncontextuality and causal inference. Rather than interpreting standard Hilbert space formalism, we analyze the statistics of prepare-and-measure scenarios to identify genuine non-classicality. By demanding that operationally equivalent preparation procedures ($\rho_P = \rho_{P'}$) correspond to identical probability distributions over hidden variables in an underlying ontological model, we can derive robust noncontextuality inequalities. My current focus centers on exploring the typicality of contextuality using mixed states and unsharp measurements (POVMs), moving beyond the idealized projective constraints of the Kochen-Specker theorem. Ultimately, we aim to understand how the non-classical structures dictating quantum correlations fundamentally deviate from classical causal models and Directed Acyclic Graphs (DAGs).</p>
-          
-          <br>
+<!-- Quantum Foundations Project -->
+<h3 style="color: #1757ad;">Quantum Foundations & Causal Inference</h3>
+<p style="color: #666; font-size: 14px; margin-top: -5px;"><strong>MS Thesis Project</strong> · Supervised by Dr. Beata Zjawin (ICTQT, Poland)</p>
 
+<p>I'm an MS student in physics at IISER Kolkata. My thesis is on contextuality in quantum foundations, supervised by Beata Zjawin at the International Centre for Theory of Quantum Technologies (ICTQT), Gdańsk. My earlier work was in cosmology and large-scale structure, with coursework in QFT and high-energy physics. I'm now moving toward quantum foundations for my PhD.</p>
+
+<h4>The question</h4>
+
+<p>Which features of quantum theory are genuinely nonclassical? Many of the usual candidates (interference, no-cloning, teleportation, remote steering, even entanglement) have explicit classical models, such as Spekkens' toy theory.</p>
+
+<p>One notion remains that is rigorously defined, directly testable on a single system, and tied to practical advantages: <em>generalized noncontextuality</em> (Spekkens, 2005). An ontological model is noncontextual if operationally equivalent procedures are represented identically in the model, a version of Leibniz's principle of the identity of indiscernibles. This is equivalent to simplex-embeddability of the associated generalized probabilistic theory (GPT) fragment. Deciding it for a prepare-and-measure scenario therefore reduces to a linear program whose output, the <em>robustness of contextuality</em> <em>r</em>, is zero exactly when a classical explanation exists.</p>
+
+<h4>Current focus: how typical is contextuality?</h4>
+
+<p>I'm studying <a href="https://arxiv.org/abs/2510.20722"><em>Typicality of Contextuality</em></a> (Rossi, Zjawin, Baldijão, Schmid, Selby, Sainz), which asks how often randomly chosen states and measurements produce nonclassical statistics. The main findings, as I understand them:</p>
+
+<ul>
+  <li><strong>A sharp threshold.</strong> With n ≤ d² random states (four for a qubit), the scenario is noncontextual with probability one, since linearly independent states cannot witness contextuality. Above this, typicality rises quickly.</li>
+
+  <li><strong>Pure states and projective measurements.</strong> Typicality exceeds 99% at around n = 7 states and m = 8 measurements. It tends to 1 as the number of measurements or states grows, but stays strictly below 1 for any finite scenario.</li>
+
+  <li><strong>Noise.</strong> Mixedness slows the rise but does not remove it. With 20 projective measurements, n = 9 states suffice at purity ≥ 0.7, and n = 7 at purity ≥ 0.9. With unsharp measurements the requirement can reach n = 25.</li>
+
+  <li><strong>Versus Bell nonlocality.</strong> In the prepare-and-measure picture, contextuality reaches near-certain typicality faster than nonlocality. The comparison is not quantitative, because the steered states in a Bell scenario obey no-signalling constraints that random sampling ignores.</li>
+
+  <li><strong>Typical contextuality is not typical advantage.</strong> In 3-to-1 parity-oblivious multiplexing, random projective measurements are contextual 98.6% of the time but give about an 8% advantage over the best noncontextual strategy, against 18.3% for the optimal one. Random POVMs are contextual 15.2% of the time, for a 0.3% advantage.</li>
+</ul>
+
+<h4>Questions I'm interested in</h4>
+
+<ul>
+  <li>Typicality of nonclassicality for individual components (states, channels, sets of states) rather than whole experiments, following Zhang, Schmid, Yīng and Spekkens.</li>
+  <li>How these results change in higher dimensions, and whether restricting an experiment to a subspace (for example a qubit inside a qutrit) systematically raises the odds of contextuality.</li>
+  <li>Whether the robustness <em>r</em> predicts task advantage beyond parity-oblivious multiplexing.</li>
+</ul>
+
+<br>
+        
+          
           <!-- Cosmology Project -->
           <h3 style="color: #1757ad;">Cosmic Magnetic Fields & Dark Matter</h3>
           <p style="color: #666; font-size: 14px; margin-top: -5px;"><strong>Undergraduate Research</strong> · Supervised by Prof. Koushik Dutta (IISER Kolkata)</p>
