@@ -7,24 +7,53 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Research — Raj Gaurav Tripathi">
   <meta property="og:description" content="Quantum contextuality (MS thesis), entanglement through gravity in the CMB, and magnetogenesis from ultralight dark matter.">
+  <meta property="og:url" content="https://raj-gaurav-tripathi.github.io/research.html">
+  <link rel="canonical" href="https://raj-gaurav-tripathi.github.io/research.html">
   <title>Research — Raj Gaurav Tripathi</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
   <style>
     @view-transition{navigation:auto}
-    .rp-lede{font-size:1.08em;max-width:70ch}
-    .rp-updated{color:#666;font-size:.9em;margin-top:-.5em}
-    .rp-glance{width:100%;border-collapse:collapse;margin:1.2em 0 0;font-size:.95em}
-    .rp-glance th,.rp-glance td{text-align:left;vertical-align:top;padding:.6em .7em;border-bottom:1px solid #d9dde3}
-    .rp-glance th{border-bottom:2px solid #1757ad}
+    .page-content{--ac:#1757ad;--ln:#d9dde3;--mut:#5b6470;--wash:#f4f7fb}
+    .rp-vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+    .rp-lede{font-size:1.08em;max-width:70ch;text-wrap:pretty}
+    .rp-updated{color:var(--mut);font-size:.9em;margin-top:-.5em}
+    .rp-keys{display:flex;flex-wrap:wrap;gap:.4em;margin:1em 0 0;padding:0;list-style:none}
+    .rp-keys li{padding:.15em .7em;font-size:.85em;color:var(--ac);background:var(--wash);border:1px solid var(--ln);border-radius:999px}
+
+    /* Overview table */
+    .rp-glance{width:100%;border-collapse:collapse;margin:1.4em 0 0;font-size:.95em}
+    .rp-glance th,.rp-glance td{text-align:left;vertical-align:top;padding:.7em .8em;border-bottom:1px solid var(--ln)}
+    .rp-glance th{background:var(--wash);border-bottom:2px solid var(--ac)}
     .rp-glance td:first-child{font-weight:600}
-    .rp-proj{margin-top:2.4em}
-    .rp-proj h3{color:#1757ad;margin-bottom:.3em}
-    .rp-proj details{margin:1.2em 0;border-top:1px solid #d9dde3;padding-top:.6em}
-    .rp-proj summary{cursor:pointer;font-weight:600;color:#1757ad}
-    .rp-proj summary:focus-visible{outline:2px solid #1757ad;outline-offset:3px}
-    .rp-proj details[open]>summary{margin-bottom:.6em}
-    @media(max-width:640px){.rp-glance thead{display:none}.rp-glance tr{display:block;padding:.5em 0;border-bottom:1px solid #d9dde3}.rp-glance td{display:block;border:0;padding:.1em 0}}
+    .rp-badge{display:inline-block;margin:0 .4em .2em 0;padding:.05em .65em;font-size:.85em;font-weight:600;white-space:nowrap;border-radius:999px}
+    .rp-badge.is-active{color:#0f4a97;background:#e3edfb}
+    .rp-badge.is-early{color:#7a4f00;background:#fdf1d6}
+    .rp-badge.is-done{color:#17623a;background:#e2f3e9}
+    @media(max-width:640px){.rp-glance thead{display:none}.rp-glance tr{display:block;padding:.6em 0;border-bottom:1px solid var(--ln)}.rp-glance td{display:block;padding:.15em 0;border:0}.rp-glance td[data-label]::before{content:attr(data-label) ": ";color:var(--mut)}}
+
+    /* Projects */
+    .rp-toggle{padding:.35em .9em;font:inherit;font-size:.9em;color:var(--ac);background:#fff;border:1px solid var(--ac);border-radius:6px;cursor:pointer}
+    .rp-toggle:hover{color:#fff;background:var(--ac)}
+    .rp-toggle:focus-visible,.rp-proj summary:focus-visible{outline:2px solid var(--ac);outline-offset:3px}
+    .rp-proj{margin-top:2.6em;scroll-margin-top:1rem}
+    .rp-proj h3{margin-bottom:.4em;color:var(--ac)}
+    .rp-proj h4{margin:1.5em 0 .4em;font-size:1em}
+    .rp-proj p,.rp-proj li{max-width:72ch;text-wrap:pretty}
+    .rp-proj li{margin:.35em 0}
+    .rp-links{font-size:.95em}
+    .rp-did{padding:.6em .9em;background:var(--wash);border-left:3px solid var(--ac)}
+    .rp-proj details{margin:1.5em 0;padding:.2em 0 .2em 1em;border-left:3px solid var(--ln)}
+    .rp-proj details[open]{border-left-color:var(--ac)}
+    .rp-proj summary{cursor:pointer;font-weight:600;color:var(--ac)}
+    .rp-proj details[open]>summary{margin-bottom:.8em}
+    .rp-proj .refs{padding:0;list-style:none;font-size:.92em}
+    .rp-proj .refs li{padding-left:1.6em;text-indent:-1.6em}
+
+    .rp-contact{margin-top:1.5em;padding:1em 1.2em;background:var(--wash);border-left:3px solid var(--ac)}
+    .rp-contact h2{margin-top:0}
+    .rp-contact p{max-width:70ch;margin-bottom:0}
+    @media print{.skip-link,.site-header,.hero,.site-nav,.rp-toggle{display:none!important}.rp-proj details{break-inside:avoid}}
   </style>
   <script>
     MathJax = {tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']]}};
@@ -54,24 +83,31 @@
 
       <h1 class="panel-title">Research</h1>
       <p class="rp-lede">I came to quantum foundations from cosmology and large-scale structure. My MS thesis asks which features of quantum theory are genuinely nonclassical; a side project asks whether a trace of quantum gravity could be witnessed in the CMB; my earlier project, in cosmology, studied the origin of cosmic magnetic fields.</p>
-      <p class="rp-updated">Last updated October 2026.</p>
+      <p class="rp-updated">Last updated <time datetime="2026-10">October 2026</time>.</p>
+      <ul class="rp-keys" aria-label="Research areas">
+        <li>Quantum foundations</li><li>Generalized noncontextuality</li><li>Early-universe cosmology</li><li>Quantum nature of gravity</li><li>Cosmic magnetic fields</li><li>Ultralight dark matter</li>
+      </ul>
 
       <table class="rp-glance">
-        <thead><tr><th>Project</th><th>Status</th><th>With</th><th>Period</th></tr></thead>
+        <caption class="rp-vh">Research projects at a glance</caption>
+        <thead><tr><th scope="col">Project</th><th scope="col">Status</th><th scope="col">With</th><th scope="col">Period</th></tr></thead>
         <tbody>
-          <tr><td><a href="#contextuality">Quantum contextuality</a></td><td>MS thesis, in progress</td><td>Dr. Beata Zjawin, ICTQT Gdańsk</td><td>Aug 2026 – present</td></tr>
-          <tr><td><a href="#cmb">Entanglement through gravity in the CMB</a></td><td>Independent side project; literature stage, working toward a poster</td><td>Discussions with Marios Christodoulou, IQOQI Vienna</td><td>Aug 2026 – present</td></tr>
-          <tr><td><a href="#magnetogenesis">Magnetic fields from ultralight dark matter</a></td><td>Undergraduate research, completed</td><td>Prof. Koushik Dutta, IISER Kolkata</td><td>Aug 2025 – Jul 2026</td></tr>
+          <tr><td><a href="#contextuality">Quantum contextuality</a></td><td data-label="Status"><span class="rp-badge is-active">In progress</span> MS thesis</td><td data-label="With">Dr. Beata Zjawin, ICTQT Gdańsk</td><td data-label="Period">Aug 2026 – present</td></tr>
+          <tr><td><a href="#cmb">Entanglement through gravity in the CMB</a></td><td data-label="Status"><span class="rp-badge is-early">Literature stage</span> Independent side project, working toward a poster</td><td data-label="With">Discussions with Marios Christodoulou, IQOQI Vienna</td><td data-label="Period">Aug 2026 – present</td></tr>
+          <tr><td><a href="#magnetogenesis">Magnetic fields from ultralight dark matter</a></td><td data-label="Status"><span class="rp-badge is-done">Completed</span> Undergraduate research</td><td data-label="With">Prof. Koushik Dutta, IISER Kolkata</td><td data-label="Period">Aug 2025 – Jul 2026</td></tr>
         </tbody>
       </table>
 
       <hr>
       <h2>Projects</h2>
+      <button type="button" class="rp-toggle" id="rp-toggle" hidden>Expand all details</button>
 
       <section class="rp-proj" id="contextuality">
         <h3>Quantum contextuality</h3>
         <p>Which features of quantum theory are genuinely nonclassical? Interference, no-cloning, teleportation, remote steering and even entanglement all have explicit classical models, such as Spekkens' toy theory. Generalized noncontextuality (Spekkens, 2005) is a notion of nonclassicality that is rigorously defined, testable on a single system, and tied to practical advantages. My thesis, supervised by Dr. Beata Zjawin at ICTQT Gdańsk, is on contextuality; my current focus is how typical it is, meaning how often randomly chosen states and measurements produce nonclassical statistics.</p>
-        <p class="rp-did" hidden><strong>What I did.</strong> [Replace with 1–2 sentences on what you personally derived, computed, coded or wrote, then delete the <code>hidden</code> attribute.]</p>
+        <!-- TODO: add 1-2 sentences on what you personally did, then uncomment:
+        <p class="rp-did"><strong>What I did.</strong> Your contribution here.</p>
+        -->
 
         <h4>Questions I plan to work on</h4>
         <ul>
@@ -98,10 +134,13 @@
         <h3>Can entanglement through gravity be witnessed in the CMB?</h3>
         <p>During inflation, the expanding background drives each Fourier mode of the curvature perturbation $\zeta$ into a two-mode squeezed state, in which modes <b>k</b> and <b>−k</b> are entangled in the Einstein–Podolsky–Rosen sense. Could that entanglement be witnessed in CMB data, and would a positive result say anything about gravity rather than about the inflaton field?</p>
         <p>This is an independent side project alongside my thesis. The question was suggested to me by Marios Christodoulou (IQOQI Vienna), whose work concerns testing the quantum nature of gravity with table-top experiments. I am at the literature stage, have no results of my own yet, and am working toward a conference poster.</p>
+        <p class="rp-links">Background: my <a href="notes.html#cosmology">inflationary cosmology notes and slides</a>.</p>
 
         <h4>The obstruction</h4>
         <p>As Christodoulou pointed out, CMB maps are effectively position-type, equal-time measurements, while a witness needs a non-commuting, momentum-like variable as well. Outside the horizon $\zeta$ is conserved and its conjugate momentum is suppressed by the same squeezing that makes $\zeta$ so robust an observable (Maldacena; Martin and Vennin). His suggestion that differences of measurements at different redshifts might supply the missing variable connects naturally to Leggett–Garg-type tests, which use one system measured at several times.</p>
-        <p class="rp-did" hidden><strong>What I did.</strong> [Replace with 1–2 sentences on what you personally derived, computed or wrote, then delete the <code>hidden</code> attribute.]</p>
+        <!-- TODO: add 1-2 sentences on what you personally did, then uncomment:
+        <p class="rp-did"><strong>What I did.</strong> Your contribution here.</p>
+        -->
 
         <h4>Questions I plan to work on</h4>
         <ul>
@@ -118,6 +157,7 @@
             <li><strong>Framing.</strong> The (<b>k</b>, <b>−k</b>) split is not a privileged bipartition, since a rotation to standing-wave modes makes the same state a product state. The squeezing is driven by a classical background, as in parametric down-conversion with a classical pump. Real-space entanglement is generic to any quantum field. Equal-time statistics of $\zeta$ alone always have a classical stand-in, because the observables commute.</li>
             <li><strong>The inference to gravity.</strong> Anastopoulos and Hu argue that, in the weak-field regime, such experiments probe only gravity's constraint sector, in analogy with the Coulomb term in QED. Whether entanglement implies a quantum mediator is also under active debate following Aziz and Howl (Nature, 2025).</li>
           </ul>
+          <h4>References</h4>
           <ul class="refs">
             <li>J. Maldacena, <em>A model with cosmological Bell inequalities</em>, Fortsch. Phys. 64, 10 (2016), <a href="https://arxiv.org/abs/1508.01082">arXiv:1508.01082</a>.</li>
             <li>J. Martin, V. Vennin, <em>Obstructions to Bell CMB Experiments</em>, Phys. Rev. D 96, 063501 (2017), <a href="https://arxiv.org/abs/1706.05001">arXiv:1706.05001</a>.</li>
@@ -136,7 +176,10 @@
       <section class="rp-proj" id="magnetogenesis">
         <h3>Magnetic fields from ultralight dark matter</h3>
         <p>The origin of cosmic magnetic fields is unknown. Blazar observations point to a lower bound of roughly 10<sup>−17</sup> G on scales of about 0.1 Mpc and above, inferred from the absence of expected GeV–TeV cascade emission; CMB observations give an upper bound of roughly 10<sup>−9</sup> G; and inflationary and phase-transition mechanisms both struggle to deliver a large enough coherence length. This undergraduate project, supervised by Prof. Koushik Dutta at IISER Kolkata, asked whether an oscillating ultralight dark matter field can generate such fields after recombination. Brandenberger, Fröhlich and Jiao find of order 10<sup>−15</sup> G at 1 Mpc; Sharma, Majumdar and Sachdeva then showed that the residual ionization left after recombination makes the gauge field heavily overdamped and suppresses the resonance. Two workarounds have since been proposed (see below).</p>
-        <p class="rp-did" hidden><strong>What I did.</strong> [Replace with 1–2 sentences on what you personally derived, reproduced, simulated or wrote, then delete the <code>hidden</code> attribute.]</p>
+        <!-- TODO: add 1-2 sentences on what you personally did, then uncomment:
+        <p class="rp-did"><strong>What I did.</strong> Your contribution here.</p>
+        -->
+        <p class="rp-links">Derivation notes: <a href="https://github.com/raj-gaurav-tripathi/cosmological-magnetogenesis/blob/main/Magnetogenisis_UL-Scalar%20DM.pdf">UL-Scalar DM (PDF)</a> and <a href="https://github.com/raj-gaurav-tripathi/cosmological-magnetogenesis/blob/main/Magnetogenisis_form_ALP-DM.pdf">ALP-DM (PDF)</a>, also listed on the <a href="notes.html#cosmology">Notes</a> page.</p>
 
         <h4>Directions I would pursue next</h4>
         <ul>
@@ -150,6 +193,7 @@
           <summary>Mechanism, obstruction and reading list</summary>
           <p><strong>Mechanism.</strong> Dark matter is an axion-like field ϕ coupled to photons through ϕ F F̃. Once the Hubble rate falls below the field's mass, ϕ oscillates, making one circular polarization of the gauge field tachyonically unstable during part of each period. The resonance produces a helical magnetic field with a spectrum peaked near k<sub>c</sub> ≃ g m ϕ<sub>0</sub> a, after recombination, when Thomson scattering no longer screens the photon. The field at 1 Mpc depends steeply on the coupling and on a backreaction parameter F, the fraction of the dark matter energy that can drain into photons before the resonance shuts off; the original paper leaves F free. Follow-up papers extend the idea to a scalar (dilaton-like) coupling, which gives no helicity but a time-varying fine-structure constant, to a second narrow-resonance channel with a first backreaction estimate, to seeding supermassive black holes, and to a non-Abelian dark matter condensate acting through an indirect cascade.</p>
           <p><strong>Obstruction.</strong> Recombination is never complete. A residual free-electron fraction of about 10<sup>−4</sup> gives the post-recombination universe a conductivity σ that exceeds the Hubble rate by roughly 26 orders of magnitude. The gauge-field equation is then heavily overdamped, and the growth rate is suppressed by a factor of order H/σ instead of growing exponentially; a growth rate above the Hubble rate would require a coupling several orders of magnitude above what observations allow. The authors confirm this numerically with the Pencil Code. Two proposed ways around it are to move the resonance to a dark photon and transfer the field by kinetic mixing (Alexander et al.), and to produce the field earlier, during radiation domination, using a delayed oscillation (Gerlach, Schmitt and Schwaller).</p>
+          <h4>References</h4>
           <ul class="refs">
             <li>R. Brandenberger, J. Fröhlich, H. Jiao, <em>Cosmological Magnetic Fields from Ultralight Dark Matter</em>, Phys. Rev. Lett. 136, 031001 (2026), <a href="https://arxiv.org/abs/2502.19310">arXiv:2502.19310</a>.</li>
             <li>V. Kamali, R. Brandenberger, <em>Late Time Magnetogenesis from Ultralight Scalar Dark Matter</em>, <a href="https://arxiv.org/abs/2601.00443">arXiv:2601.00443</a>.</li>
@@ -164,9 +208,9 @@
       </section>
 
       <hr>
-      <section>
+      <section class="rp-contact">
         <h2>Collaborations</h2>
-        <p>I am preparing PhD applications in quantum foundations, and I am always open to discussions about theoretical physics, quantum foundations, or cosmology. You can reach me at <a href="mailto:rajgauravmirp@gmail.com">rajgauravmirp@gmail.com</a>.</p>
+        <p>I am preparing PhD applications in quantum foundations, and I am always open to discussions about theoretical physics, quantum foundations, or cosmology. My <a href="cv.html">CV</a> has the full record. You can reach me at <a href="mailto:rajgauravmirp@gmail.com">rajgauravmirp@gmail.com</a>.</p>
       </section>
 
     </main>
@@ -175,5 +219,18 @@
       © 2026 Raj Gaurav Tripathi · Built with plain HTML for GitHub Pages
     </footer>
   </div>
+
+  <script>
+    (() => {
+      const all = [...document.querySelectorAll('.rp-proj details')], btn = document.getElementById('rp-toggle');
+      if (!btn || !all.length) return;
+      btn.hidden = false;
+      const label = () => { btn.textContent = all.every(d => d.open) ? 'Collapse all details' : 'Expand all details'; };
+      btn.addEventListener('click', () => { const open = !all.every(d => d.open); all.forEach(d => { d.open = open; }); label(); });
+      all.forEach(d => d.addEventListener('toggle', label));
+      addEventListener('beforeprint', () => all.forEach(d => { d.dataset.was = d.open ? '1' : ''; d.open = true; }));
+      addEventListener('afterprint', () => { all.forEach(d => { d.open = !!d.dataset.was; }); label(); });
+    })();
+  </script>
 </body>
 </html>
