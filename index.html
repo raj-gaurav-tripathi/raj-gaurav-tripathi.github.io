@@ -1,40 +1,48 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Meta tags for character set and responsive design -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Academic homepage for Raj Gaurav Tripathi." />
-  
-  <!-- Page title -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Academic homepage of Raj Gaurav Tripathi, BS-MS physics student at IISER Kolkata working on quantum foundations.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Raj Gaurav Tripathi">
+  <meta property="og:description" content="BS-MS physics student at IISER Kolkata working on quantum foundations.">
+  <meta property="og:url" content="https://raj-gaurav-tripathi.github.io/index.html">
+  <link rel="canonical" href="https://raj-gaurav-tripathi.github.io/index.html">
   <title>Raj Gaurav Tripathi — Home</title>
-  
-  <!-- Smooth transition effect for navigation -->
-  <meta name="view-transition" content="same-origin" />
-  
-  <!-- Favicon and stylesheet links -->
-  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    @view-transition{navigation:auto}
+    .page-content{--ac:#1757ad;--ln:#d9dde3;--mut:#5b6470;--wash:#f4f7fb}
+    /* Recent: each item is a figure drawn in code, then text */
+    .news-item{display:block}
+    .fig{display:block;width:100%;height:auto;margin:0 0 .7em;background:var(--wash);border:1px solid var(--ln)}
+    .fig text{fill:var(--mut);font-size:9px;font-family:inherit}
+    .fig .big{fill:var(--ac);font-size:16px}
+    .fig .ax{fill:none;stroke:var(--mut);stroke-width:1}
+    .fig .ds{fill:none;stroke:var(--mut);stroke-width:1;stroke-dasharray:3 3}
+    .fig .dsa{fill:none;stroke:var(--ac);stroke-width:1.4;stroke-dasharray:3 3}
+    .fig .ln{fill:none;stroke:var(--ac);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .fig .gr{fill:none;stroke:var(--mut);stroke-width:1.8;stroke-linecap:round}
+    .fig .dt{fill:var(--ac)}
+    .fig .bd{fill:var(--ac);fill-opacity:.08}
+  </style>
 </head>
 
 <body>
-  <!-- Accessibility link to skip to main content -->
   <a class="skip-link" href="#content">Skip to content</a>
-  
-  <!-- Top gray header with site title -->
+
   <header class="site-header">
     <div class="title-wrap">
       <a href="index.html">Raj Gaurav Tripathi</a>
     </div>
   </header>
-  
-  <!-- Main container that holds the page content over the gray background -->
+
   <div class="site-shell">
-    
-    <!-- Hero banner image -->
+
     <div class="hero" role="img" aria-label="A dawn cityscape viewed from a hillside"></div>
-    
-    <!-- Site navigation menu -->
+
     <nav class="site-nav" aria-label="Main navigation">
       <a class="active" href="index.html">Home</a>
       <a href="research.html">Research</a>
@@ -42,79 +50,123 @@
       <a href="cv.html">CV</a>
       <a href="blog.html">Blog</a>
     </nav>
-    
-    <!-- Main content area -->
+
     <main class="page-content home-layout" id="content">
-      
-      <!-- Left Column: About Me and Contact -->
+
       <section class="about-column">
-        
+
         <h1>About me</h1>
-        <p>I am a <strong>Final Year BS-MS student</strong> in the Department of Physical Sciences at <a href="https://www.iiserkol.ac.in/web/">Indian Institute of Science Education and Research (IISER) Kolkata</a>. My master's thesis is in quantum foundations — specifically quantum contextuality and causal inference — supervised remotely by Dr. <a href="https://scholar.google.com/citations?user=gvut8VUAAAAJ&hl=pl">Beata Zjawin</a> at the <a href="https://ictqt.ug.edu.pl/">International Centre For Theory Of Quantum Technologies</a> (ICTQT), University of Gdańsk, Poland.</p>
-        
-        <p>I am also working with <a href="https://physics.iiserkol.ac.in/fac_hompage.php?did=cDJqcTRnbVUrbmhaOXdwZDRkKzY1NVVNWmxVdi9ESTFBdWh5WWFVNkFRVT0=">Prof. Koushik Dutta</a> on cosmology, exploring a recently proposed mechanism for generating cosmic magnetic fields from ultralight dark matter.</p>
-        
-        <!-- Horizontal separator line -->
-        <hr />
-        
+        <p>I am a final-year BS-MS student in the Department of Physical Sciences at <a href="https://www.iiserkol.ac.in/web/">Indian Institute of Science Education and Research (IISER) Kolkata</a>. My research is in quantum foundations. My master's thesis, supervised remotely by Dr. <a href="https://scholar.google.com/citations?user=gvut8VUAAAAJ&amp;hl=pl">Beata Zjawin</a> at the <a href="https://ictqt.ug.edu.pl/">International Centre For Theory Of Quantum Technologies</a> (ICTQT), University of Gdańsk, asks which features of quantum theory are genuinely nonclassical, using generalized noncontextuality as the criterion.</p>
+
+        <p>I came to this from theoretical cosmology, where I worked with <a href="https://physics.iiserkol.ac.in/fac_hompage.php?did=cDJqcTRnbVUrbmhaOXdwZDRkKzY1NVVNWmxVdi9ESTFBdWh5WWFVNkFRVT0=">Prof. Koushik Dutta</a> on the origin of cosmic magnetic fields from ultralight dark matter. A side project asks whether entanglement through gravity could be witnessed in the CMB. I am preparing PhD applications in quantum foundations, and the details are on my <a href="research.html">Research</a> page.</p>
+
+        <hr>
+
         <h2>Contact</h2>
-        
-        <!-- Contact Information Card -->
-        <div class="contact-card"> 
-          <img src="assets/Raj Gaurav Tripathi_Profile..jpeg" alt="Raj Gaurav Tripathi Portrait" /> 
+
+        <div class="contact-card">
+          <img src="assets/Raj Gaurav Tripathi_Profile..jpeg" alt="Raj Gaurav Tripathi Portrait">
           <address>
-            <strong>Raj Gaurav Tripathi</strong><br />
-            BS-MS Undergraduate Student<br />
-            Indian Institute of Science Education and Research (IISER) Kolkata<br />
-            Mohanpur, Nadia, West Bengal 741246, India<br /><br />
-            E-mail: <a href="mailto:rajgauravmirp@gmail.com">rajgauravmirp@gmail.com</a>
-          </address> 
+            <strong>Raj Gaurav Tripathi</strong><br>
+            BS-MS Student, Physics<br>
+            Indian Institute of Science Education and Research (IISER) Kolkata<br>
+            Mohanpur, Nadia, West Bengal 741246, India<br><br>
+            E-mail: <a href="mailto:rajgauravmirp@gmail.com">rajgauravmirp@gmail.com</a><br>
+            GitHub: <a href="https://github.com/raj-gaurav-tripathi">raj-gaurav-tripathi</a>
+          </address>
         </div>
-        
-        <!-- Affiliated Logos Row -->
+
         <div class="partner-row">
-          <img src="assets/lions-logo.jpg.webp" alt="Lions School, Mirzapur" height="110" />
-          <img src="assets/IISER-K_Logo.svg" alt="IISER Kolkata" height="110" />
-          <img src="assets/ictqt_logo.jpeg" alt="ICTQT Poland" height="110" />
-        </div>        
+          <img src="assets/lions-logo.jpg.webp" alt="Lions School, Mirzapur" height="110">
+          <img src="assets/IISER-K_Logo.svg" alt="IISER Kolkata" height="110">
+          <img src="assets/ictqt_logo.jpeg" alt="ICTQT Poland" height="110">
+        </div>
       </section>
-      
-      <!-- Right Column: Recent News / Updates Sidebar -->
+
       <aside class="news-column">
         <h1>Recent</h1>
-        
-        <!-- News Item 1 -->
+
+        <!-- 1. Thesis: typicality rises sharply above a threshold (schematic) -->
         <article class="news-item">
-          <img src="assets/ICTQT_black.png" alt="ICTQT Logo" />
-          <p><strong>August 2026.</strong> Transitioning into Quantum Foundations! I have officially started my MS Thesis project supervised remotely by Dr. Beata Zjawin at ICTQT, Poland. We will be analyzing operational frameworks of generalized noncontextuality and causal inference.</p>
+          <svg class="fig" viewBox="0 0 240 120" aria-hidden="true" focusable="false">
+            <path class="ax" d="M12 8V106H232"/>
+            <path class="ds" d="M70 8V106"/>
+            <path class="ds" d="M12 20H232"/>
+            <path class="ln" d="M12 100H70C82 100 90 24 130 21C170 19 200 20 228 20"/>
+            <text x="228" y="15" text-anchor="end">typicality (schematic)</text>
+            <text x="70" y="117" text-anchor="middle">n = d²</text>
+            <text x="232" y="117" text-anchor="end">states n</text>
+          </svg>
+          <p><strong>August 2026.</strong> Started my MS thesis on quantum contextuality with Dr. Beata Zjawin at ICTQT. My focus is typicality: how often randomly chosen states and measurements produce nonclassical statistics. <a href="research.html#contextuality">Details</a></p>
         </article>
-        
-        <!-- News Item 2 -->
+
+        <!-- 2. CMB: entangled modes k and -k -->
         <article class="news-item">
-          <img src="assets/DM.png" alt="Quantum Gravity Illustration" />
-          <p><strong>June 2026.</strong> Wrapped up an intensive theoretical review of cosmic magnetogenesis from ultralight dark matter. Investigated how the finite electrical conductivity of the primordial plasma mathematically suppresses tachyonic resonances.</p>
+          <svg class="fig" viewBox="0 0 240 120" aria-hidden="true" focusable="false">
+            <path class="ln" d="M120 66H168M120 66H72"/>
+            <circle class="dt" cx="168" cy="66" r="4"/>
+            <circle class="dt" cx="72" cy="66" r="4"/>
+            <circle class="dt" cx="120" cy="66" r="2.5"/>
+            <path class="dsa" d="M72 62Q120 6 168 62"/>
+            <text x="120" y="30" text-anchor="middle">entangled</text>
+            <text x="168" y="86" text-anchor="middle">k</text>
+            <text x="72" y="86" text-anchor="middle">−k</text>
+          </svg>
+          <p><strong>August 2026.</strong> Began a side project on whether entanglement through gravity could be witnessed in the CMB, a question suggested by Marios Christodoulou. It is at the literature stage, and I am working toward a poster. <a href="research.html#cmb">Details</a></p>
         </article>
-        
-        <!-- News Item 3 -->
+
+        <!-- 3. Magnetogenesis: resonant growth vs conductivity damping -->
         <article class="news-item">
-          <img src="assets/Einstine-lec.png" alt="Physics Equations" />
-          <p><strong>April 2026.</strong> Explored theoretical workarounds for magnetogenesis plasma damping. Studied "Audible Axion" supercooling mechanisms and symbiotic dark-sector couplings that successfully transfer energy to the visible universe via kinetic mixing.</p>
+          <svg class="fig" viewBox="0 0 240 120" aria-hidden="true" focusable="false">
+            <path class="ax" d="M12 8V106H232"/>
+            <path class="ln" d="M12 98C90 96 150 84 190 50C205 37 216 24 228 12"/>
+            <path class="gr" d="M12 98C90 97 160 95 228 90"/>
+            <text x="17" y="15">field amplitude</text>
+            <text x="180" y="30" text-anchor="end">resonance</text>
+            <text x="228" y="82" text-anchor="end">with conductivity</text>
+            <text x="232" y="117" text-anchor="end">time</text>
+          </svg>
+          <p><strong>June 2026.</strong> Wrapped up a theoretical study of magnetic fields from ultralight dark matter, including how the finite conductivity of the post-recombination plasma suppresses the tachyonic resonance. <a href="research.html#magnetogenesis">Details</a></p>
         </article>
-        
-        <!-- News Item 4 -->
+
+        <!-- 4. Workarounds: dark photon with kinetic mixing -->
         <article class="news-item">
-          <img src="assets/inflation.png" alt="IISER Kolkata Logo" />
-          <p><strong>December 2025.</strong> Concluded my undergraduate research project on Inflationary Cosmology under Prof. Koushik Dutta at IISER Kolkata. Focus was on scalar-field-driven models, slow-roll dynamics, and the generation of large-scale homogeneity.</p>
+          <svg class="fig" viewBox="0 0 240 120" aria-hidden="true" focusable="false">
+            <circle class="ds" cx="62" cy="58" r="28"/>
+            <circle class="ln" cx="178" cy="58" r="28"/>
+            <path class="ln" d="M94 58H146M94 58l7-4M94 58l7 4M146 58l-7-4M146 58l-7 4"/>
+            <text class="big" x="62" y="64" text-anchor="middle">A′</text>
+            <text class="big" x="178" y="64" text-anchor="middle">A</text>
+            <text x="120" y="50" text-anchor="middle">mixing</text>
+            <text x="62" y="102" text-anchor="middle">dark photon</text>
+            <text x="178" y="102" text-anchor="middle">photon</text>
+          </svg>
+          <p><strong>April 2026.</strong> Studied proposed workarounds to that damping: moving the resonance to a dark photon and transferring the field by kinetic mixing, and producing the field earlier with a delayed oscillation.</p>
         </article>
-        
+
+        <!-- 5. Inflation: comoving Hubble radius -->
+        <article class="news-item">
+          <svg class="fig" viewBox="0 0 240 120" aria-hidden="true" focusable="false">
+            <rect class="bd" x="12" y="8" width="102" height="98"/>
+            <path class="ax" d="M12 8V106H232"/>
+            <path class="ds" d="M12 50H232"/>
+            <path class="ln" d="M12 16C46 22 78 92 114 94C150 94 190 52 228 26"/>
+            <circle class="dt" cx="57" cy="50" r="3.5"/>
+            <circle class="dt" cx="196" cy="50" r="3.5"/>
+            <text x="20" y="100">inflation</text>
+            <text x="51" y="60" text-anchor="end">exits</text>
+            <text x="194" y="64">re-enters</text>
+          </svg>
+          <p><strong>December 2025.</strong> Concluded my research project on inflationary cosmology under Prof. Koushik Dutta: scalar-field-driven models, slow-roll dynamics, and the large-scale homogeneity of the CMB. <a href="notes.html#cosmology">Notes</a></p>
+        </article>
+
       </aside>
     </main>
-    
-    <!-- Footer section -->
+
     <footer class="site-footer">
       © 2026 Raj Gaurav Tripathi · Built with plain HTML for GitHub Pages
     </footer>
-    
+
   </div>
 </body>
 </html>
