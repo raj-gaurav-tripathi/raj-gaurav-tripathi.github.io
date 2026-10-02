@@ -1,49 +1,237 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Physics lecture notes, derivations and project reports by Raj Gaurav Tripathi." />
+  <!-- Basic page metadata -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Physics lecture notes, derivations and project reports by Raj Gaurav Tripathi.">
+
+  <!-- Page title -->
   <title>Notes — Raj Gaurav Tripathi</title>
-  <meta name="view-transition" content="same-origin" />
-  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="styles.css" />
 
-  <!-- Styles for this page only. Everything is scoped under .notes so styles.css is untouched. -->
+  <!-- Enable smooth page transitions where supported -->
+  <meta name="view-transition" content="same-origin">
+
+  <!-- Favicon and global stylesheet -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+
+  <!--
+    Page-specific styles.
+    These are scoped to the Notes page and do not modify styles.css.
+  -->
   <style>
-    .notes{--n-accent:var(--accent,#1f5fbf);--n-line:color-mix(in srgb,currentColor 20%,transparent)}
-    .notes [hidden]{display:none!important}
-    .notes-vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+    /* Main Notes page variables */
+    .notes {
+      --n-accent: var(--accent, #1f5fbf);
+      --n-line: color-mix(in srgb, currentColor 20%, transparent);
+    }
 
-    /* Search and topic filters */
-    .notes-tools{display:grid;gap:.75rem;margin:1.5rem 0 0}
-    .notes-tools input{box-sizing:border-box;width:100%;padding:.6rem .85rem;font:inherit;color:inherit;background:transparent;border:1px solid var(--n-line);border-radius:6px}
-    .notes-chips{display:flex;flex-wrap:wrap;gap:.5rem}
-    .notes .notes-chip{padding:.3rem .85rem;font:inherit;font-size:.9rem;color:inherit;background:transparent;border:1px solid var(--n-line);border-radius:999px;cursor:pointer}
-    .notes .notes-chip[aria-pressed="true"]{color:#fff;background:var(--n-accent);border-color:var(--n-accent)}
-    .notes-count{margin:0;font-size:.85rem;opacity:.75}
+    /* Hidden elements used by the search/filter system */
+    .notes [hidden] {
+      display: none !important;
+    }
 
-    /* Topics and entries */
-    .notes-topic{margin-top:2rem;scroll-margin-top:1rem}
-    .notes-head{display:flex;flex-wrap:wrap;gap:1rem 1.5rem;align-items:flex-start;justify-content:space-between;padding-top:1.25rem;border-top:1px solid var(--n-line)}
-    .notes-head>div{flex:1 1 18rem;min-width:0}
-    .notes-head h2{margin-top:0}
-    .notes-head img{max-width:100%;height:auto;padding:4px;border:1px solid var(--n-line)}
-    .notes-item{padding:1rem 0}
-    .notes-item+.notes-item{border-top:1px dashed var(--n-line)}
-    .notes-item h3{margin:0 0 .4rem;font-size:1.1rem}
-    .notes-item p{max-width:70ch;margin:0 0 .75rem;line-height:1.65}
-    .notes-links{display:flex;flex-wrap:wrap;gap:.5rem}
-    .notes a.notes-btn{padding:.3rem .8rem;font-size:.9rem;font-weight:600;color:var(--n-accent);text-decoration:none;border:1px solid var(--n-accent);border-radius:6px}
-    .notes a.notes-btn:hover,.notes a.notes-btn.is-main{color:#fff;background:var(--n-accent)}
-    .notes a.notes-btn.is-main:hover{filter:brightness(1.12)}
-    .notes :is(input,button,a.notes-btn):focus-visible{outline:2px solid var(--n-accent);outline-offset:2px}
-    .notes-empty{margin-top:2rem}
+    /* Visually hidden accessibility text */
+    .notes-vh {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+    }
+
+    /* =========================================================
+       Search and topic filters
+       ========================================================= */
+
+    .notes-tools {
+      display: grid;
+      gap: 0.75rem;
+      margin: 1.5rem 0 0;
+    }
+
+    .notes-tools input {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 0.6rem 0.85rem;
+      font: inherit;
+      color: inherit;
+      background: transparent;
+      border: 1px solid var(--n-line);
+      border-radius: 6px;
+    }
+
+    .notes-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .notes .notes-chip {
+      padding: 0.3rem 0.85rem;
+      font: inherit;
+      font-size: 0.9rem;
+      color: inherit;
+      background: transparent;
+      border: 1px solid var(--n-line);
+      border-radius: 999px;
+      cursor: pointer;
+    }
+
+    .notes .notes-chip[aria-pressed="true"] {
+      color: #fff;
+      background: var(--n-accent);
+      border-color: var(--n-accent);
+    }
+
+    .notes-count {
+      margin: 0;
+      font-size: 0.85rem;
+      opacity: 0.75;
+    }
+
+    /* =========================================================
+       Topics and note entries
+       ========================================================= */
+
+    .notes-topic {
+      margin-top: 2rem;
+      scroll-margin-top: 1rem;
+    }
+
+    /*
+      Section header is deliberately single-column.
+      This prevents the image from creating a narrow text column
+      and eliminates the large unused space on the right.
+    */
+    .notes-head {
+      display: block;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--n-line);
+    }
+
+    .notes-head h2 {
+      margin-top: 0;
+    }
+
+    /*
+      Section images remain available, but no longer occupy a
+      separate right-hand column.
+    */
+    .notes-head img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin-top: 1rem;
+      padding: 4px;
+      border: 1px solid var(--n-line);
+    }
+
+    .notes-item {
+      padding: 1rem 0;
+    }
+
+    .notes-item + .notes-item {
+      border-top: 1px dashed var(--n-line);
+    }
+
+    .notes-item h3 {
+      margin: 0 0 0.4rem;
+      font-size: 1.1rem;
+    }
+
+    .notes-item p {
+      max-width: 70ch;
+      margin: 0 0 0.75rem;
+      line-height: 1.65;
+    }
+
+    /* PDF / resource buttons */
+    .notes-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .notes a.notes-btn {
+      padding: 0.3rem 0.8rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--n-accent);
+      text-decoration: none;
+      border: 1px solid var(--n-accent);
+      border-radius: 6px;
+    }
+
+    .notes a.notes-btn:hover,
+    .notes a.notes-btn.is-main {
+      color: #fff;
+      background: var(--n-accent);
+    }
+
+    .notes a.notes-btn.is-main:hover {
+      filter: brightness(1.12);
+    }
+
+    /* Keyboard focus visibility */
+    .notes :is(input, button, a.notes-btn):focus-visible {
+      outline: 2px solid var(--n-accent);
+      outline-offset: 2px;
+    }
+
+    /* Empty search result message */
+    .notes-empty {
+      margin-top: 2rem;
+    }
+
+    /* =========================================================
+       Mobile adjustments
+       ========================================================= */
+
+    @media (max-width: 640px) {
+      .notes-head img {
+        max-width: 100%;
+      }
+    }
   </style>
+
+  <!-- MathJax configuration -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ['$', '$'],
+          ['\\(', '\\)']
+        ],
+        displayMath: [
+          ['$$', '$$'],
+          ['\\[', '\\]']
+        ]
+      }
+    };
+  </script>
+
+  <!-- MathJax library -->
+  <script
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
 </head>
 
+
 <body>
+
+  <!-- Accessibility: allows keyboard users to skip navigation -->
   <a class="skip-link" href="#content">Skip to content</a>
+
+
+  <!-- =======================================================
+       Site header
+       ======================================================= -->
 
   <header class="site-header">
     <div class="title-wrap">
@@ -51,9 +239,26 @@
     </div>
   </header>
 
+
+  <!-- Main site container -->
   <div class="site-shell">
 
-    <div class="hero" style="background-image: url('assets/Einstine-lec.png'); background-position: center center;" role="img" aria-label="Worked out Class board"></div>
+
+    <!-- =====================================================
+         Hero image
+         ===================================================== -->
+
+    <div
+      class="hero"
+      style="background-image: url('assets/Einstine-lec.png'); background-position: center center;"
+      role="img"
+      aria-label="Worked out Class board">
+    </div>
+
+
+    <!-- =====================================================
+         Main navigation
+         ===================================================== -->
 
     <nav class="site-nav" aria-label="Main navigation">
       <a href="index.html">Home</a>
@@ -63,134 +268,470 @@
       <a href="blog.html">Blog</a>
     </nav>
 
+
+    <!-- =====================================================
+         Main Notes content
+         ===================================================== -->
+
     <main class="page-content notes" id="content">
 
+      <!-- Page title -->
       <h1 class="panel-title">Lecture Notes &amp; Reports</h1>
 
-      <p>This is a collection of my study notes, derivations, and project reports on various topics in theoretical and experimental physics. They are heavily inspired by the clarity and rigor of standard lecture notes in the field. Please feel free to use them, and let me know if you find any typos!</p>
+      <!-- Introduction -->
+      <p>
+        This is a collection of my study notes, derivations, and project reports
+        on various topics in theoretical and experimental physics. They are heavily
+        inspired by the clarity and rigor of standard lecture notes in the field.
+        Please feel free to use them, and let me know if you find any typos!
+      </p>
 
-      <!-- Search and filters (revealed by the script below; without JavaScript everything is simply listed) -->
+
+      <!-- ===================================================
+           Search and topic filters
+
+           These are enabled by JavaScript below.
+           Without JavaScript, all notes remain visible.
+           =================================================== -->
+
       <div class="notes-tools" hidden>
-        <label class="notes-vh" for="notes-search">Search notes</label>
-        <input id="notes-search" type="search" placeholder="Search notes (e.g. inflation, Lie, tungsten)" autocomplete="off" />
-        <div class="notes-chips" role="group" aria-label="Filter by topic">
-          <button type="button" class="notes-chip" data-filter="all" aria-pressed="true">All topics</button>
-          <button type="button" class="notes-chip" data-filter="quantum" aria-pressed="false">Quantum</button>
-          <button type="button" class="notes-chip" data-filter="cosmology" aria-pressed="false">Cosmology</button>
-          <button type="button" class="notes-chip" data-filter="math" aria-pressed="false">Mathematics</button>
-          <button type="button" class="notes-chip" data-filter="experimental" aria-pressed="false">Experimental</button>
+
+        <label class="notes-vh" for="notes-search">
+          Search notes
+        </label>
+
+        <input
+          id="notes-search"
+          type="search"
+          placeholder="Search notes (e.g. inflation, Lie, tungsten)"
+          autocomplete="off">
+
+        <div
+          class="notes-chips"
+          role="group"
+          aria-label="Filter by topic">
+
+          <button
+            type="button"
+            class="notes-chip"
+            data-filter="all"
+            aria-pressed="true">
+            All topics
+          </button>
+
+          <button
+            type="button"
+            class="notes-chip"
+            data-filter="quantum"
+            aria-pressed="false">
+            Quantum
+          </button>
+
+          <button
+            type="button"
+            class="notes-chip"
+            data-filter="cosmology"
+            aria-pressed="false">
+            Cosmology
+          </button>
+
+          <button
+            type="button"
+            class="notes-chip"
+            data-filter="math"
+            aria-pressed="false">
+            Mathematics
+          </button>
+
+          <button
+            type="button"
+            class="notes-chip"
+            data-filter="experimental"
+            aria-pressed="false">
+            Experimental
+          </button>
+
         </div>
-        <p class="notes-count" id="notes-count" aria-live="polite"></p>
+
+        <p
+          class="notes-count"
+          id="notes-count"
+          aria-live="polite">
+        </p>
+
       </div>
 
-      <!-- Quantum Foundations -->
-      <section class="notes-topic" id="quantum" data-topic="quantum" aria-labelledby="h-quantum">
+
+      <!-- ===================================================
+           QUANTUM FOUNDATIONS
+           =================================================== -->
+
+      <section
+        class="notes-topic"
+        id="quantum"
+        data-topic="quantum"
+        aria-labelledby="h-quantum">
+
         <div class="notes-head">
-          <div>
-            <h2 id="h-quantum">Quantum Foundations</h2>
-            <p>Explorations into the structural rules of quantum mechanics, wave-particle duality, and the fundamental limits on quantum evolution.</p>
-          </div>
-          <img src="assets/Board.jpeg" alt="Quantum Board" width="120" loading="lazy" decoding="async" />
+
+          <h2 id="h-quantum">Quantum Foundations</h2>
+
+          <p>
+            Explorations into the structural rules of quantum mechanics,
+            wave-particle duality, and the fundamental limits on quantum evolution.
+          </p>
+
+          <!-- Section image -->
+          <img
+            src="assets/Board.jpeg"
+            alt="Quantum Board"
+            width="120"
+            loading="lazy"
+            decoding="async">
+
         </div>
 
+
+        <!-- Delayed Choice Quantum Eraser -->
         <article class="notes-item">
+
           <h3>Delayed Choice Quantum Eraser</h3>
-          <p>This theoretical study reproduces the landmark 1999 experiment by Kim et al. It delves into the heart of foundational quantum mechanics, specifically exploring wave-particle duality, the loss and recovery of interference patterns, and the profound implications of entanglement and which-path information on causality.</p>
+
+          <p>
+            This theoretical study reproduces the landmark 1999 experiment by
+            Kim et al. It delves into the heart of foundational quantum mechanics,
+            specifically exploring wave-particle duality, the loss and recovery
+            of interference patterns, and the profound implications of entanglement
+            and which-path information on causality.
+          </p>
+
           <div class="notes-links">
-            <a class="notes-btn is-main" href="https://github.com/raj-gaurav-tripathi/Delayed-Choice-Quantum-Eraser/blob/main/Delayed_Choice.pdf" target="_blank" rel="noopener">Report PDF</a>
+
+            <a
+              class="notes-btn is-main"
+              href="https://github.com/raj-gaurav-tripathi/Delayed-Choice-Quantum-Eraser/blob/main/Delayed_Choice.pdf"
+              target="_blank"
+              rel="noopener">
+              Report PDF
+            </a>
+
           </div>
+
         </article>
+
       </section>
 
-      <!-- Early Universe & Inflationary Cosmology -->
-      <section class="notes-topic" id="cosmology" data-topic="cosmology" aria-labelledby="h-cosmology">
+
+      <!-- ===================================================
+           EARLY UNIVERSE & INFLATIONARY COSMOLOGY
+           =================================================== -->
+
+      <section
+        class="notes-topic"
+        id="cosmology"
+        data-topic="cosmology"
+        aria-labelledby="h-cosmology">
+
         <div class="notes-head">
-          <div>
-            <h2 id="h-cosmology">Early Universe &amp; Inflationary Cosmology</h2>
-            <p>An in-depth theoretical study of the physics of the early universe. These notes cover standard Big Bang cosmology, the physical motivation behind inflation, and the generation of cosmic magnetic fields from ultralight dark matter.</p>
-          </div>
-          <img src="assets/QG_Wikki.png" alt="Cosmic Background" width="200" loading="lazy" decoding="async" />
+
+          <h2 id="h-cosmology">
+            Early Universe &amp; Inflationary Cosmology
+          </h2>
+
+          <p>
+            An in-depth theoretical study of the physics of the early universe.
+            These notes cover standard Big Bang cosmology, the physical motivation
+            behind inflation, and the generation of cosmic magnetic fields from
+            ultralight dark matter.
+          </p>
+
+          <!-- Section image -->
+          <img
+            src="assets/QG_Wikki.png"
+            alt="Cosmic Background"
+            width="200"
+            loading="lazy"
+            decoding="async">
+
         </div>
 
+
+        <!-- Inflationary Cosmology -->
         <article class="notes-item">
+
           <h3>Inflationary Cosmology</h3>
-          <p>Drawing heavily from Daniel Baumann's <em>Cosmology</em> and Leonard Susskind's lectures, these notes provide a rigorous theoretical overview of cosmic inflation. They detail the resolutions to the horizon and flatness problems, the mathematics of a shrinking comoving Hubble radius, and the dynamics of scalar-field-driven slow-roll inflation, connecting these concepts to the observed homogeneity of the Cosmic Microwave Background (CMB).</p>
+
+          <p>
+            Drawing heavily from Daniel Baumann's <em>Cosmology</em> and Leonard
+            Susskind's lectures, these notes provide a rigorous theoretical overview
+            of cosmic inflation. They detail the resolutions to the horizon and
+            flatness problems, the mathematics of a shrinking comoving Hubble radius,
+            and the dynamics of scalar-field-driven slow-roll inflation, connecting
+            these concepts to the observed homogeneity of the Cosmic Microwave
+            Background (CMB).
+          </p>
+
           <div class="notes-links">
-            <a class="notes-btn is-main" href="https://github.com/raj-gaurav-tripathi/Inflationary-Cosmology/blob/main/Cosmology_Susskind.pdf" target="_blank" rel="noopener">Notes PDF</a>
-            <a class="notes-btn" href="https://github.com/raj-gaurav-tripathi/Inflationary-Cosmology/blob/main/Inflation%20Presentation.pdf" target="_blank" rel="noopener">Slides PDF</a>
+
+            <a
+              class="notes-btn is-main"
+              href="https://github.com/raj-gaurav-tripathi/Inflationary-Cosmology/blob/main/Cosmology_Susskind.pdf"
+              target="_blank"
+              rel="noopener">
+              Notes PDF
+            </a>
+
+            <a
+              class="notes-btn"
+              href="https://github.com/raj-gaurav-tripathi/Inflationary-Cosmology/blob/main/Inflation%20Presentation.pdf"
+              target="_blank"
+              rel="noopener">
+              Slides PDF
+            </a>
+
           </div>
+
         </article>
 
+
+        <!-- Cosmological Magnetogenesis -->
         <article class="notes-item">
+
           <h3>Cosmological Magnetogenesis</h3>
-          <p>These derivations explore the theoretical mechanisms behind the generation of primordial cosmic magnetic fields. Specifically, the notes investigate how couplings with ultralight dark matter, covering both scalar and axion-like particle (ALP) models, during the early universe could seed the vast magnetic structures observed today.</p>
+
+          <p>
+            These derivations explore the theoretical mechanisms behind the
+            generation of primordial cosmic magnetic fields. Specifically, the
+            notes investigate how couplings with ultralight dark matter, covering
+            both scalar and axion-like particle (ALP) models, during the early
+            universe could seed the vast magnetic structures observed today.
+          </p>
+
           <div class="notes-links">
-            <a class="notes-btn is-main" href="https://github.com/raj-gaurav-tripathi/cosmological-magnetogenesis/blob/main/Magnetogenisis_UL-Scalar%20DM.pdf" target="_blank" rel="noopener">UL-Scalar DM PDF</a>
-            <a class="notes-btn" href="https://github.com/raj-gaurav-tripathi/cosmological-magnetogenesis/blob/main/Magnetogenisis_form_ALP-DM.pdf" target="_blank" rel="noopener">ALP-DM PDF</a>
+
+            <a
+              class="notes-btn is-main"
+              href="https://github.com/raj-gaurav-tripathi/cosmological-magnetogenesis/blob/main/Magnetogenisis_UL-Scalar%20DM.pdf"
+              target="_blank"
+              rel="noopener">
+              UL-Scalar DM PDF
+            </a>
+
+            <a
+              class="notes-btn"
+              href="https://github.com/raj-gaurav-tripathi/cosmological-magnetogenesis/blob/main/Magnetogenisis_form_ALP-DM.pdf"
+              target="_blank"
+              rel="noopener">
+              ALP-DM PDF
+            </a>
+
           </div>
+
         </article>
+
       </section>
 
-      <!-- Mathematical Methods in Physics -->
-      <section class="notes-topic" id="math" data-topic="math" aria-labelledby="h-math">
+
+      <!-- ===================================================
+           MATHEMATICAL METHODS
+           =================================================== -->
+
+      <section
+        class="notes-topic"
+        id="math"
+        data-topic="math"
+        aria-labelledby="h-math">
+
         <div class="notes-head">
-          <div>
-            <h2 id="h-math">Mathematical Methods in Physics</h2>
-            <p>Independent studies on the rigorous mathematical frameworks required for advanced theoretical physics.</p>
-          </div>
+
+          <h2 id="h-math">
+            Mathematical Methods in Physics
+          </h2>
+
+          <p>
+            Independent studies on the rigorous mathematical frameworks
+            required for advanced theoretical physics.
+          </p>
+
         </div>
 
+
+        <!-- Lie Groups and Algebras -->
         <article class="notes-item">
+
           <h3>Lie Groups &amp; Algebras</h3>
-          <p>A self-contained, comprehensive study tailored specifically from a physicist's perspective. These notes focus heavily on continuous symmetries, continuous transformations, generators, and representations, building the rigorous mathematical framework necessary for understanding gauge theories, fundamental quantum mechanics, and relativistic physics.</p>
+
+          <p>
+            A self-contained, comprehensive study tailored specifically from a
+            physicist's perspective. These notes focus heavily on continuous
+            symmetries, continuous transformations, generators, and representations,
+            building the rigorous mathematical framework necessary for understanding
+            gauge theories, fundamental quantum mechanics, and relativistic physics.
+          </p>
+
           <div class="notes-links">
-            <a class="notes-btn is-main" href="https://github.com/raj-gaurav-tripathi/Lie-Group-and-Lie-Algebra/blob/main/Lie_Group_and_Lie_Algebra_1.pdf" target="_blank" rel="noopener">Notes PDF</a>
+
+            <a
+              class="notes-btn is-main"
+              href="https://github.com/raj-gaurav-tripathi/Lie-Group-and-Lie-Algebra/blob/main/Lie_Group_and_Lie_Algebra_1.pdf"
+              target="_blank"
+              rel="noopener">
+              Notes PDF
+            </a>
+
           </div>
+
         </article>
+
       </section>
 
-      <!-- Experimental & Applied Physics -->
-      <section class="notes-topic" id="experimental" data-topic="experimental" aria-labelledby="h-experimental">
+
+      <!-- ===================================================
+           EXPERIMENTAL & APPLIED PHYSICS
+           =================================================== -->
+
+      <section
+        class="notes-topic"
+        id="experimental"
+        data-topic="experimental"
+        aria-labelledby="h-experimental">
+
         <div class="notes-head">
-          <div>
-            <h2 id="h-experimental">Experimental &amp; Applied Physics</h2>
-            <p>Reports and presentations covering instrumentation, optics, and atmospheric phenomena.</p>
-          </div>
+
+          <h2 id="h-experimental">
+            Experimental &amp; Applied Physics
+          </h2>
+
+          <p>
+            Reports and presentations covering instrumentation, optics,
+            and atmospheric phenomena.
+          </p>
+
         </div>
 
+
+        <!-- PPMS -->
         <article class="notes-item">
+
           <h3>Physical Property Measurement System (PPMS)</h3>
-          <p>This report outlines the architecture and diverse measurement techniques of the PPMS, including heat capacity, transport, and AC/DC magnetometry. It specifically details the experimental characterization and temperature-dependent resistivity in thin, disordered Tungsten films.</p>
+
+          <p>
+            This report outlines the architecture and diverse measurement
+            techniques of the PPMS, including heat capacity, transport, and
+            AC/DC magnetometry. It specifically details the experimental
+            characterization and temperature-dependent resistivity in thin,
+            disordered Tungsten films.
+          </p>
+
           <div class="notes-links">
-            <a class="notes-btn is-main" href="https://github.com/raj-gaurav-tripathi/PPMS-Resistivity-in-Thin-Disordered-Tungsten/blob/main/PPMS-Resistivity%20in%20Thin%20Tungsten(Report).pdf" target="_blank" rel="noopener">Report PDF</a>
-            <a class="notes-btn" href="https://github.com/raj-gaurav-tripathi/PPMS-Resistivity-in-Thin-Disordered-Tungsten/blob/main/PPMS-Resistivity%20in%20Thin%20Tungsten(Slides).pdf" target="_blank" rel="noopener">Slides PDF</a>
+
+            <a
+              class="notes-btn is-main"
+              href="https://github.com/raj-gaurav-tripathi/PPMS-Resistivity-in-Thin-Disordered-Tungsten/blob/main/PPMS-Resistivity%20in%20Thin%20Tungsten(Report).pdf"
+              target="_blank"
+              rel="noopener">
+              Report PDF
+            </a>
+
+            <a
+              class="notes-btn"
+              href="https://github.com/raj-gaurav-tripathi/PPMS-Resistivity-in-Thin-Disordered-Tungsten/blob/main/PPMS-Resistivity%20in%20Thin%20Tungsten(Slides).pdf"
+              target="_blank"
+              rel="noopener">
+              Slides PDF
+            </a>
+
           </div>
+
         </article>
 
+
+        <!-- Spin-Orbit Interaction of Light -->
         <article class="notes-item">
+
           <h3>Spin-Orbit Interaction of Light</h3>
-          <p>An exploration of advanced wave optics, focusing on the intrinsic and extrinsic angular momentum of light (Spin and Orbital Angular Momentum). The notes cover geometric phases, photonic spin Hall effects, and the broader implications of spin-orbit coupling in nanophotonics.</p>
+
+          <p>
+            An exploration of advanced wave optics, focusing on the intrinsic
+            and extrinsic angular momentum of light (Spin and Orbital Angular
+            Momentum). The notes cover geometric phases, photonic spin Hall
+            effects, and the broader implications of spin-orbit coupling
+            in nanophotonics.
+          </p>
+
           <div class="notes-links">
-            <a class="notes-btn is-main" href="https://github.com/raj-gaurav-tripathi/Spin-Orbit-Interaction-of-Light/blob/main/Wave_Optics_and_Beyond.pdf" target="_blank" rel="noopener">Notes PDF</a>
+
+            <a
+              class="notes-btn is-main"
+              href="https://github.com/raj-gaurav-tripathi/Spin-Orbit-Interaction-of-Light/blob/main/Wave_Optics_and_Beyond.pdf"
+              target="_blank"
+              rel="noopener">
+              Notes PDF
+            </a>
+
           </div>
+
         </article>
 
+
+        <!-- Geomagnetic Storms -->
         <article class="notes-item">
+
           <h3>Geomagnetic Storms</h3>
-          <p>A concise overview of solar-terrestrial physics, detailing the mechanisms of geomagnetic storms, the interaction between the solar wind and Earth's magnetosphere, and the resulting atmospheric and electromagnetic phenomena.</p>
+
+          <p>
+            A concise overview of solar-terrestrial physics, detailing the
+            mechanisms of geomagnetic storms, the interaction between the solar
+            wind and Earth's magnetosphere, and the resulting atmospheric and
+            electromagnetic phenomena.
+          </p>
+
           <div class="notes-links">
-            <a class="notes-btn is-main" href="https://github.com/raj-gaurav-tripathi/Geomagnetic-Storms/blob/main/Geomgnetic%20Storm.pdf" target="_blank" rel="noopener">Overview PDF</a>
+
+            <a
+              class="notes-btn is-main"
+              href="https://github.com/raj-gaurav-tripathi/Geomagnetic-Storms/blob/main/Geomgnetic%20Storm.pdf"
+              target="_blank"
+              rel="noopener">
+              Overview PDF
+            </a>
+
           </div>
+
         </article>
+
       </section>
 
-      <!-- Shown when search and filters match nothing -->
-      <div class="notes-empty" id="notes-empty" hidden>
-        <p>No notes match your search. Try a different keyword, or show everything.</p>
-        <button type="button" class="notes-chip" id="notes-reset">Show all notes</button>
+
+      <!-- ===================================================
+           SEARCH: EMPTY RESULTS MESSAGE
+           =================================================== -->
+
+      <div
+        class="notes-empty"
+        id="notes-empty"
+        hidden>
+
+        <p>
+          No notes match your search. Try a different keyword,
+          or show everything.
+        </p>
+
+        <button
+          type="button"
+          class="notes-chip"
+          id="notes-reset">
+          Show all notes
+        </button>
+
       </div>
 
     </main>
+
+
+    <!-- =====================================================
+         Footer
+         ===================================================== -->
 
     <footer class="site-footer">
       © 2026 Raj Gaurav Tripathi · Built with plain HTML for GitHub Pages
@@ -198,49 +739,149 @@
 
   </div>
 
+
+  <!-- =======================================================
+       Search and filter functionality
+       ======================================================= -->
+
   <script>
     (() => {
-      const $ = (sel, root = document) => [...root.querySelectorAll(sel)];
+
+      /* Helper for selecting multiple elements */
+      const $ = (selector, root = document) =>
+        [...root.querySelectorAll(selector)];
+
+      /* Search/filter elements */
       const tools = document.querySelector('.notes-tools');
       const input = document.getElementById('notes-search');
       const count = document.getElementById('notes-count');
       const empty = document.getElementById('notes-empty');
       const reset = document.getElementById('notes-reset');
+
+      /* Topic filter buttons */
       const chips = $('.notes-chips button');
+
+      /* All note sections */
       const topics = $('.notes-topic');
+
+      /* Current topic filter */
       let topic = 'all';
 
+
+      /* -------------------------------------------------------
+         Apply search and topic filters
+         ------------------------------------------------------- */
+
       const apply = () => {
+
         const q = input.value.trim().toLowerCase();
-        let shown = 0, total = 0;
+
+        let shown = 0;
+        let total = 0;
+
         topics.forEach(section => {
-          const inTopic = topic === 'all' || section.dataset.topic === topic;
+
+          /* Check whether this section matches the selected topic */
+          const inTopic =
+            topic === 'all' ||
+            section.dataset.topic === topic;
+
           let any = false;
+
+
+          /* Check every individual note */
           $('.notes-item', section).forEach(item => {
+
             total++;
-            const match = inTopic && (!q || item.textContent.toLowerCase().includes(q));
+
+            const match =
+              inTopic &&
+              (!q || item.textContent.toLowerCase().includes(q));
+
             item.hidden = !match;
-            if (match) { any = true; shown++; }
+
+            if (match) {
+              any = true;
+              shown++;
+            }
+
           });
+
+
+          /* Hide empty topic sections */
           section.hidden = !any;
+
         });
-        count.textContent = `Showing ${shown} of ${total} notes`;
+
+
+        /* Update result counter */
+        count.textContent =
+          `Showing ${shown} of ${total} notes`;
+
+        /* Show empty-state message when necessary */
         empty.hidden = shown > 0;
+
       };
+
+
+      /* -------------------------------------------------------
+         Change active topic
+         ------------------------------------------------------- */
 
       const setTopic = value => {
+
         topic = value;
-        chips.forEach(chip => chip.setAttribute('aria-pressed', String(chip.dataset.filter === value)));
+
+        chips.forEach(chip => {
+
+          chip.setAttribute(
+            'aria-pressed',
+            String(chip.dataset.filter === value)
+          );
+
+        });
+
         apply();
+
       };
 
-      chips.forEach(chip => chip.addEventListener('click', () => setTopic(chip.dataset.filter)));
-      input.addEventListener('input', apply);
-      reset.addEventListener('click', () => { input.value = ''; setTopic('all'); input.focus(); });
 
+      /* -------------------------------------------------------
+         Event listeners
+         ------------------------------------------------------- */
+
+      chips.forEach(chip => {
+
+        chip.addEventListener(
+          'click',
+          () => setTopic(chip.dataset.filter)
+        );
+
+      });
+
+
+      /* Update search results while typing */
+      input.addEventListener('input', apply);
+
+
+      /* Reset search and topic filter */
+      reset.addEventListener('click', () => {
+
+        input.value = '';
+        setTopic('all');
+        input.focus();
+
+      });
+
+
+      /* Enable the search interface */
       tools.hidden = false;
+
+      /* Run once when the page loads */
       apply();
+
     })();
   </script>
+
 </body>
 </html>
