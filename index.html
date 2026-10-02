@@ -17,7 +17,7 @@
     .page-content{--ac:#1757ad;--ln:#d9dde3;--mut:#5b6470;--wash:#f4f7fb}
     /* Recent: each item is a figure drawn in code, then text */
     .news-item{display:block}
-    .fig{display:block;width:100%;height:auto;margin:0 0 .7em;background:var(--wash);border:1px solid var(--ln)}
+    /* Compact scientific figures for the Recent column */ .fig{   display:block;   width:100%;   height:90px;   margin:0 0 .45em;   background:var(--wash);   border:1px solid var(--ln);   box-sizing:border-box;   preserveAspectRatio:none; }
     .fig text{fill:var(--mut);font-size:9px;font-family:inherit}
     .fig .big{fill:var(--ac);font-size:16px}
     .fig .ax{fill:none;stroke:var(--mut);stroke-width:1}
@@ -88,7 +88,7 @@
 
         <!-- 1. Thesis: typicality rises sharply above a threshold (schematic) -->
         <article class="news-item">
-          <svg class="fig" viewBox="0 0 240 120" aria-hidden="true" focusable="false">
+          <svg class="fig" viewBox="0 0 240 120"      preserveAspectRatio="none"      aria-hidden="true" focusable="false">
             <path class="ax" d="M12 8V106H232"/>
             <path class="ds" d="M70 8V106"/>
             <path class="ds" d="M12 20H232"/>
@@ -102,7 +102,7 @@
 
         <!-- 2. CMB: entangled modes k and -k -->
         <article class="news-item">
-          <svg class="fig" viewBox="0 0 240 120" aria-hidden="true" focusable="false">
+          <svg class="fig" viewBox="0 0 240 120"      preserveAspectRatio="none"      aria-hidden="true" focusable="false">
             <path class="ln" d="M120 66H168M120 66H72"/>
             <circle class="dt" cx="168" cy="66" r="4"/>
             <circle class="dt" cx="72" cy="66" r="4"/>
@@ -117,7 +117,7 @@
 
         <!-- 3. Magnetogenesis: resonant growth vs conductivity damping -->
         <article class="news-item">
-          <svg class="fig" viewBox="0 0 240 120" aria-hidden="true" focusable="false">
+          <svg class="fig" viewBox="0 0 240 120"      preserveAspectRatio="none"      aria-hidden="true" focusable="false">
             <path class="ax" d="M12 8V106H232"/>
             <path class="ln" d="M12 98C90 96 150 84 190 50C205 37 216 24 228 12"/>
             <path class="gr" d="M12 98C90 97 160 95 228 90"/>
@@ -131,7 +131,7 @@
 
         <!-- 4. Workarounds: dark photon with kinetic mixing -->
         <article class="news-item">
-          <svg class="fig" viewBox="0 0 240 120" aria-hidden="true" focusable="false">
+          <svg class="fig" viewBox="0 0 240 120"      preserveAspectRatio="none"      aria-hidden="true" focusable="false">
             <circle class="ds" cx="62" cy="58" r="28"/>
             <circle class="ln" cx="178" cy="58" r="28"/>
             <path class="ln" d="M94 58H146M94 58l7-4M94 58l7 4M146 58l-7-4M146 58l-7 4"/>
@@ -146,7 +146,7 @@
 
         <!-- 5. Inflation: comoving Hubble radius -->
         <article class="news-item">
-          <svg class="fig" viewBox="0 0 240 120" aria-hidden="true" focusable="false">
+          <svg class="fig" viewBox="0 0 240 120"      preserveAspectRatio="none"      aria-hidden="true" focusable="false">
             <rect class="bd" x="12" y="8" width="102" height="98"/>
             <path class="ax" d="M12 8V106H232"/>
             <path class="ds" d="M12 50H232"/>
