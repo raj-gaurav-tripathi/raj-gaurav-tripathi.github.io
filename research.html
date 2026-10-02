@@ -1,281 +1,179 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Meta tags for character set and responsive design -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Research projects and interests of Raj Gaurav Tripathi.">
-  
-  <!-- Page title -->
+  <meta name="description" content="Research of Raj Gaurav Tripathi: quantum contextuality (MS thesis), entanglement through gravity in the CMB, and magnetogenesis from ultralight dark matter.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Research — Raj Gaurav Tripathi">
+  <meta property="og:description" content="Quantum contextuality (MS thesis), entanglement through gravity in the CMB, and magnetogenesis from ultralight dark matter.">
   <title>Research — Raj Gaurav Tripathi</title>
-  
-  <!-- Smooth transition effect for navigation -->
-  <meta name="view-transition" content="same-origin" />
-  
-  <!-- Links to your favicon and CSS stylesheet -->
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
-
-  <!-- MathJax Script to render LaTeX math formulas -->
+  <style>
+    @view-transition{navigation:auto}
+    .rp-lede{font-size:1.08em;max-width:70ch}
+    .rp-updated{color:#666;font-size:.9em;margin-top:-.5em}
+    .rp-glance{width:100%;border-collapse:collapse;margin:1.2em 0 0;font-size:.95em}
+    .rp-glance th,.rp-glance td{text-align:left;vertical-align:top;padding:.6em .7em;border-bottom:1px solid #d9dde3}
+    .rp-glance th{border-bottom:2px solid #1757ad}
+    .rp-glance td:first-child{font-weight:600}
+    .rp-proj{margin-top:2.4em}
+    .rp-proj h3{color:#1757ad;margin-bottom:.3em}
+    .rp-proj details{margin:1.2em 0;border-top:1px solid #d9dde3;padding-top:.6em}
+    .rp-proj summary{cursor:pointer;font-weight:600;color:#1757ad}
+    .rp-proj summary:focus-visible{outline:2px solid #1757ad;outline-offset:3px}
+    .rp-proj details[open]>summary{margin-bottom:.6em}
+    @media(max-width:640px){.rp-glance thead{display:none}.rp-glance tr{display:block;padding:.5em 0;border-bottom:1px solid #d9dde3}.rp-glance td{display:block;border:0;padding:.1em 0}}
+  </style>
   <script>
-    MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$', '$$'], ['\\[', '\\]']]
-      }
-    };
+    MathJax = {tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']]}};
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 <body>
-  <!-- Accessibility link to skip navigation for screen readers -->
   <a class="skip-link" href="#content">Skip to content</a>
-  
-  <!-- Top gray header with your name/site title -->
+
   <header class="site-header">
-    <div class="title-wrap">
-      <a href="index.html">Raj Gaurav Tripathi</a>
-    </div>
+    <div class="title-wrap"><a href="index.html">Raj Gaurav Tripathi</a></div>
   </header>
-  
-  <!-- Main container that holds the page content over the gray background -->
+
   <div class="site-shell">
-    
-    <!-- The hero image block -->
     <div class="hero" style="background-image: url('assets/Chatgpt,Gemini_Generated_Research.....png'); background-position: center center;" role="img" aria-label="Quantum to Cosmos"></div>
-    
-    <!-- The site navigation bar -->
+
     <nav class="site-nav" aria-label="Main navigation">
       <a href="index.html">Home</a>
-      <!-- The 'active' class highlights the Research link -->
       <a class="active" href="research.html">Research</a>
       <a href="notes.html">Notes</a>
       <a href="cv.html">CV</a>
       <a href="blog.html">Blog</a>
     </nav>
-    
-    <!-- The main white content area -->
+
     <main class="page-content" id="content">
-      
-      <!-- Page Title and Introductory Paragraphs -->
-      <h1 class="panel-title">Research Interests</h1>
-      <p>My research journey explores the fundamental physical frameworks of our universe—spanning from the macroscopic evolution of the early cosmos to the deep, structural rules of quantum mechanics. </p>
-      <div class="callout">
-        <em>"I often wonder what is purpose of my life, What am I supposesed to do with this. When I couldn't find an answer, I get involved in few things which inherently motivates me. Physics is one of the things."</em>
-      </div>
 
-      <!-- Horizontal line separator -->
+      <h1 class="panel-title">Research</h1>
+      <p class="rp-lede">I came to quantum foundations from cosmology and large-scale structure. My MS thesis asks which features of quantum theory are genuinely nonclassical; a side project asks whether a trace of quantum gravity could be witnessed in the CMB; my earlier project, in cosmology, studied the origin of cosmic magnetic fields.</p>
+      <p class="rp-updated">Last updated October 2026.</p>
+
+      <table class="rp-glance">
+        <thead><tr><th>Project</th><th>Status</th><th>With</th><th>Period</th></tr></thead>
+        <tbody>
+          <tr><td><a href="#contextuality">Quantum contextuality</a></td><td>MS thesis, in progress</td><td>Dr. Beata Zjawin, ICTQT Gdańsk</td><td>Aug 2026 – present</td></tr>
+          <tr><td><a href="#cmb">Entanglement through gravity in the CMB</a></td><td>Independent side project; literature stage, working toward a poster</td><td>Discussions with Marios Christodoulou, IQOQI Vienna</td><td>Aug 2026 – present</td></tr>
+          <tr><td><a href="#magnetogenesis">Magnetic fields from ultralight dark matter</a></td><td>Undergraduate research, completed</td><td>Prof. Koushik Dutta, IISER Kolkata</td><td>Aug 2025 – Jul 2026</td></tr>
+        </tbody>
+      </table>
+
       <hr>
-      
-      <!-- One-column layout for Current Projects -->
-      <div>
-        
-        <!-- Left Column: Current Projects -->
-        <section>
-          <h2>Current & Past Works</h2>
-          
-<!-- Quantum Foundations Project -->
-<h3 style="color: #1757ad;">Quantum Contextuality</h3>
-<p style="color: #666; font-size: 14px; margin-top: -5px;"><strong>MS Thesis Project</strong> · Supervised by Dr. Beata Zjawin (ICTQT, Poland) · [August 2026 - Present]</p>
+      <h2>Projects</h2>
+
+      <section class="rp-proj" id="contextuality">
+        <h3>Quantum contextuality</h3>
+        <p>Which features of quantum theory are genuinely nonclassical? Interference, no-cloning, teleportation, remote steering and even entanglement all have explicit classical models, such as Spekkens' toy theory. Generalized noncontextuality (Spekkens, 2005) is a notion of nonclassicality that is rigorously defined, testable on a single system, and tied to practical advantages. My thesis, supervised by Dr. Beata Zjawin at ICTQT Gdańsk, is on contextuality; my current focus is how typical it is, meaning how often randomly chosen states and measurements produce nonclassical statistics.</p>
+        <p class="rp-did" hidden><strong>What I did.</strong> [Replace with 1–2 sentences on what you personally derived, computed, coded or wrote, then delete the <code>hidden</code> attribute.]</p>
+
+        <h4>Questions I plan to work on</h4>
+        <ul>
+          <li>Typicality of nonclassicality for individual components (states, channels, sets of states) rather than whole experiments, following Zhang, Schmid, Yīng and Spekkens.</li>
+          <li>How the results change in higher dimensions, and whether restricting an experiment to a subspace (for example a qubit inside a qutrit) systematically raises the odds of contextuality.</li>
+          <li>Whether the robustness <em>r</em> predicts task advantage beyond parity-oblivious multiplexing.</li>
+        </ul>
+
+        <details>
+          <summary>Framework and typicality results</summary>
+          <p>An ontological model is noncontextual if operationally equivalent procedures are represented identically in the model, a version of Leibniz's principle of the identity of indiscernibles. This is equivalent to simplex-embeddability of the associated generalized probabilistic theory (GPT) fragment, so for a prepare-and-measure scenario the question reduces to a linear program. Its output, the <em>robustness of contextuality</em> <em>r</em>, is zero exactly when a classical explanation exists.</p>
+          <p>I'm studying <a href="https://arxiv.org/abs/2510.20722"><em>Typicality of Contextuality</em></a> (Rossi, Zjawin, Baldijão, Schmid, Selby, Sainz). Its main findings, as I understand them:</p>
+          <ul>
+            <li><strong>A sharp threshold.</strong> With n ≤ d² random states (four for a qubit), the scenario is noncontextual with probability one, since linearly independent states cannot witness contextuality. Above this, typicality rises quickly.</li>
+            <li><strong>Pure states and projective measurements.</strong> Typicality exceeds 99% at around n = 7 states and m = 8 measurements. It tends to 1 as either number grows, but stays strictly below 1 for any finite scenario.</li>
+            <li><strong>Noise.</strong> Mixedness slows the rise but does not remove it. With 20 projective measurements, n = 9 states suffice at purity ≥ 0.7, and n = 7 at purity ≥ 0.9. With unsharp measurements the requirement can reach n = 25.</li>
+            <li><strong>Versus Bell nonlocality.</strong> In the prepare-and-measure picture, contextuality reaches near-certain typicality faster. The comparison is not quantitative, because the steered states in a Bell scenario obey no-signalling constraints that random sampling ignores.</li>
+            <li><strong>Typical contextuality is not typical advantage.</strong> In 3-to-1 parity-oblivious multiplexing, random projective measurements are contextual 98.6% of the time but give about an 8% advantage over the best noncontextual strategy, against 18.3% for the optimal one. Random POVMs are contextual 15.2% of the time, for a 0.3% advantage.</li>
+          </ul>
+        </details>
+      </section>
+
+      <section class="rp-proj" id="cmb">
+        <h3>Can entanglement through gravity be witnessed in the CMB?</h3>
+        <p>During inflation, the expanding background drives each Fourier mode of the curvature perturbation $\zeta$ into a two-mode squeezed state, in which modes <b>k</b> and <b>−k</b> are entangled in the Einstein–Podolsky–Rosen sense. Could that entanglement be witnessed in CMB data, and would a positive result say anything about gravity rather than about the inflaton field?</p>
+        <p>This is an independent side project alongside my thesis. The question was suggested to me by Marios Christodoulou (IQOQI Vienna), whose work concerns testing the quantum nature of gravity with table-top experiments. I am at the literature stage, have no results of my own yet, and am working toward a conference poster.</p>
+
+        <h4>The obstruction</h4>
+        <p>As Christodoulou pointed out, CMB maps are effectively position-type, equal-time measurements, while a witness needs a non-commuting, momentum-like variable as well. Outside the horizon $\zeta$ is conserved and its conjugate momentum is suppressed by the same squeezing that makes $\zeta$ so robust an observable (Maldacena; Martin and Vennin). His suggestion that differences of measurements at different redshifts might supply the missing variable connects naturally to Leggett–Garg-type tests, which use one system measured at several times.</p>
+        <p class="rp-did" hidden><strong>What I did.</strong> [Replace with 1–2 sentences on what you personally derived, computed or wrote, then delete the <code>hidden</code> attribute.]</p>
+
+        <h4>Questions I plan to work on</h4>
+        <ul>
+          <li>Whether unequal-time observables, such as redshift tomography or Leggett–Garg-type constructions, can supply a usable non-commuting variable for $\zeta$.</li>
+          <li>Whether Ireland and Vennin's Wigner-negativity result for the EFT Goldstone mode transfers to the curvature perturbation at finite wavenumber.</li>
+          <li>Whether the delocalised-source construction of Chen and Giacomini, which goes beyond the Newtonian potential in the laboratory, has a cosmological analogue. As far as I have found, this has not been attempted.</li>
+        </ul>
+
+        <details>
+          <summary>What I've been working through, and the reading list</summary>
+          <ul>
+            <li><strong>Decoherence.</strong> The Polarski–Starobinsky picture of squeezing-induced classicality, Hsiang and Hu's argument that squeezing alone cannot produce true decoherence in a closed system, and the open-system calculations (e.g. Burgess et al., 2023) of decoherence from short-wavelength modes.</li>
+            <li><strong>Non-Gaussianity.</strong> Gaussian squeezed states have non-negative Wigner functions, so any genuine non-classicality must come from non-Gaussian structure. I'm reading <em>Inflation is Not Magic</em> (Haque et al.) and Ireland and Vennin's work on negativity beyond slow roll.</li>
+            <li><strong>Framing.</strong> The (<b>k</b>, <b>−k</b>) split is not a privileged bipartition, since a rotation to standing-wave modes makes the same state a product state. The squeezing is driven by a classical background, as in parametric down-conversion with a classical pump. Real-space entanglement is generic to any quantum field. Equal-time statistics of $\zeta$ alone always have a classical stand-in, because the observables commute.</li>
+            <li><strong>The inference to gravity.</strong> Anastopoulos and Hu argue that, in the weak-field regime, such experiments probe only gravity's constraint sector, in analogy with the Coulomb term in QED. Whether entanglement implies a quantum mediator is also under active debate following Aziz and Howl (Nature, 2025).</li>
+          </ul>
+          <ul class="refs">
+            <li>J. Maldacena, <em>A model with cosmological Bell inequalities</em>, Fortsch. Phys. 64, 10 (2016), <a href="https://arxiv.org/abs/1508.01082">arXiv:1508.01082</a>.</li>
+            <li>J. Martin, V. Vennin, <em>Obstructions to Bell CMB Experiments</em>, Phys. Rev. D 96, 063501 (2017), <a href="https://arxiv.org/abs/1706.05001">arXiv:1706.05001</a>.</li>
+            <li>D. Polarski, A. A. Starobinsky, <em>Semiclassicality and decoherence of cosmological perturbations</em>, Class. Quantum Grav. 13, 377 (1996), <a href="https://arxiv.org/abs/gr-qc/9504030">arXiv:gr-qc/9504030</a>.</li>
+            <li>J.-T. Hsiang, B.-L. Hu, <em>No Intrinsic Decoherence of Inflationary Cosmological Perturbations</em>, Universe 8, 27 (2022), <a href="https://arxiv.org/abs/2112.04092">arXiv:2112.04092</a>.</li>
+            <li>C. P. Burgess, R. Holman, G. Kaplanek, J. Martin, V. Vennin, <em>Minimal decoherence from inflation</em>, JCAP 07 (2023) 022, <a href="https://arxiv.org/abs/2211.11046">arXiv:2211.11046</a>.</li>
+            <li>S. S. Haque et al., <em>Inflation is Not Magic</em>, <a href="https://arxiv.org/abs/2512.10126">arXiv:2512.10126</a>.</li>
+            <li>A. Ireland, V. Vennin, <em>When inflationary perturbations refuse to classicalise: the role of non-Gaussianity in Wigner negativity</em>, JCAP 07 (2026) 042, <a href="https://arxiv.org/abs/2601.22219">arXiv:2601.22219</a>.</li>
+            <li>C. Anastopoulos, B.-L. Hu, <em>Comment on "A Spin Entanglement Witness for Quantum Gravity" and on "Gravitationally Induced Entanglement between Two Massive Particles is Sufficient Evidence of Quantum Effects in Gravity"</em>, <a href="https://arxiv.org/abs/1804.11315">arXiv:1804.11315</a>.</li>
+            <li>L.-Q. Chen, F. Giacomini, <em>Quantum effects in gravity beyond the Newton potential from a delocalised quantum source</em>, Phys. Rev. X 15, 031063 (2025), <a href="https://arxiv.org/abs/2402.10288">arXiv:2402.10288</a>.</li>
+            <li>S. Aziz, R. Howl, <em>Classical theories of gravity produce entanglement</em>, Nature 646, 813 (2025).</li>
+          </ul>
+        </details>
+      </section>
+
+      <section class="rp-proj" id="magnetogenesis">
+        <h3>Magnetic fields from ultralight dark matter</h3>
+        <p>The origin of cosmic magnetic fields is unknown. Blazar observations point to a lower bound of roughly 10<sup>−17</sup> G on scales of about 0.1 Mpc and above, inferred from the absence of expected GeV–TeV cascade emission; CMB observations give an upper bound of roughly 10<sup>−9</sup> G; and inflationary and phase-transition mechanisms both struggle to deliver a large enough coherence length. This undergraduate project, supervised by Prof. Koushik Dutta at IISER Kolkata, asked whether an oscillating ultralight dark matter field can generate such fields after recombination. Brandenberger, Fröhlich and Jiao find of order 10<sup>−15</sup> G at 1 Mpc; Sharma, Majumdar and Sachdeva then showed that the residual ionization left after recombination makes the gauge field heavily overdamped and suppresses the resonance. Two workarounds have since been proposed (see below).</p>
+        <p class="rp-did" hidden><strong>What I did.</strong> [Replace with 1–2 sentences on what you personally derived, reproduced, simulated or wrote, then delete the <code>hidden</code> attribute.]</p>
+
+        <h4>Directions I would pursue next</h4>
+        <ul>
+          <li>Repeating the conductivity analysis for the channels it has not yet been applied to: the scalar/dilaton coupling, the narrow-band resonance, and the non-Abelian cascade.</li>
+          <li>Following the ionization fraction through recombination, to see whether a brief window exists where σ/H is low enough for efficient resonance, instead of using the frozen-out relic value.</li>
+          <li>Forecasting CMB Faraday rotation from post-recombination fields for instruments such as LiteBIRD and CMB-S4.</li>
+          <li>Treating dark matter density fluctuations as noise on the driving term, which should enlarge the Floquet exponent and may soften the conductivity bound.</li>
+        </ul>
+
+        <details>
+          <summary>Mechanism, obstruction and reading list</summary>
+          <p><strong>Mechanism.</strong> Dark matter is an axion-like field ϕ coupled to photons through ϕ F F̃. Once the Hubble rate falls below the field's mass, ϕ oscillates, making one circular polarization of the gauge field tachyonically unstable during part of each period. The resonance produces a helical magnetic field with a spectrum peaked near k<sub>c</sub> ≃ g m ϕ<sub>0</sub> a, after recombination, when Thomson scattering no longer screens the photon. The field at 1 Mpc depends steeply on the coupling and on a backreaction parameter F, the fraction of the dark matter energy that can drain into photons before the resonance shuts off; the original paper leaves F free. Follow-up papers extend the idea to a scalar (dilaton-like) coupling, which gives no helicity but a time-varying fine-structure constant, to a second narrow-resonance channel with a first backreaction estimate, to seeding supermassive black holes, and to a non-Abelian dark matter condensate acting through an indirect cascade.</p>
+          <p><strong>Obstruction.</strong> Recombination is never complete. A residual free-electron fraction of about 10<sup>−4</sup> gives the post-recombination universe a conductivity σ that exceeds the Hubble rate by roughly 26 orders of magnitude. The gauge-field equation is then heavily overdamped, and the growth rate is suppressed by a factor of order H/σ instead of growing exponentially; a growth rate above the Hubble rate would require a coupling several orders of magnitude above what observations allow. The authors confirm this numerically with the Pencil Code. Two proposed ways around it are to move the resonance to a dark photon and transfer the field by kinetic mixing (Alexander et al.), and to produce the field earlier, during radiation domination, using a delayed oscillation (Gerlach, Schmitt and Schwaller).</p>
+          <ul class="refs">
+            <li>R. Brandenberger, J. Fröhlich, H. Jiao, <em>Cosmological Magnetic Fields from Ultralight Dark Matter</em>, Phys. Rev. Lett. 136, 031001 (2026), <a href="https://arxiv.org/abs/2502.19310">arXiv:2502.19310</a>.</li>
+            <li>V. Kamali, R. Brandenberger, <em>Late Time Magnetogenesis from Ultralight Scalar Dark Matter</em>, <a href="https://arxiv.org/abs/2601.00443">arXiv:2601.00443</a>.</li>
+            <li>S. Brahma, R. Brandenberger, <em>Parametric Resonance and Backreaction Effects in Magnetogenesis from Ultralight Dark Matter</em>, <a href="https://arxiv.org/abs/2602.04285">arXiv:2602.04285</a>.</li>
+            <li>Kushwaha, Brandenberger, <em>ALP Dark Matter, Cosmological Magnetic Fields and the Direct Collapse Black Hole Formation Scenario</em>, <a href="https://arxiv.org/abs/2602.22170">arXiv:2602.22170</a>.</li>
+            <li>Daniel, Kamali, Brandenberger, <em>Indirect Parametric Resonance of the Electromagnetic Field Driven by an Oscillating SU(2) Dark Matter Condensate</em>, <a href="https://arxiv.org/abs/2605.20333">arXiv:2605.20333</a>.</li>
+            <li>Sharma, Majumdar, Sachdeva, <em>Suppressed Magnetogenesis from Ultralight Dark Matter due to Finite Conductivity</em>, <a href="https://arxiv.org/abs/2604.17230">arXiv:2604.17230</a>.</li>
+            <li>Alexander, Baksh, Edmond, Sun, <em>Symbiotic Magnetogenesis during Radiation Domination</em>, <a href="https://arxiv.org/abs/2606.25171">arXiv:2606.25171</a>.</li>
+            <li>Gerlach, Schmitt, Schwaller, <em>Audible Axion Magnetogenesis: Linking Intergalactic Magnetic Fields and Gravitational Waves</em>, <a href="https://arxiv.org/abs/2605.21092">arXiv:2605.21092</a>.</li>
+          </ul>
+        </details>
+      </section>
+
+      <hr>
+      <section>
+        <h2>Collaborations</h2>
+        <p>I am preparing PhD applications in quantum foundations, and I am always open to discussions about theoretical physics, quantum foundations, or cosmology. You can reach me at <a href="mailto:rajgauravmirp@gmail.com">rajgauravmirp@gmail.com</a>.</p>
+      </section>
 
-<p>I'm an MS student in physics at IISER Kolkata. My thesis is on contextuality in quantum foundations, supervised by Dr. Beata Zjawin at the International Centre for Theory of Quantum Technologies (ICTQT) Gdańsk, Poland. </p>
-
-<h4>The question</h4>
-
-<p>Which features of quantum theory are genuinely nonclassical? Many of the usual candidates (interference, no-cloning, teleportation, remote steering, even entanglement) have explicit classical models, such as Spekkens' toy theory.</p>
-
-<p>One notion remains that is rigorously defined, directly testable on a single system, and tied to practical advantages: <em>generalized noncontextuality</em> (Spekkens, 2005). An ontological model is noncontextual if operationally equivalent procedures are represented identically in the model, a version of Leibniz's principle of the identity of indiscernibles. This is equivalent to simplex-embeddability of the associated generalized probabilistic theory (GPT) fragment. Deciding it for a prepare-and-measure scenario therefore reduces to a linear program whose output, the <em>robustness of contextuality</em> <em>r</em>, is zero exactly when a classical explanation exists.</p>
-
-<h4>Current focus: how typical is contextuality?</h4>
-
-<p>I'm studying <a href="https://arxiv.org/abs/2510.20722"><em>Typicality of Contextuality</em></a> (Rossi, Zjawin, Baldijão, Schmid, Selby, Sainz), which asks how often randomly chosen states and measurements produce nonclassical statistics. The main findings, as I understand them:</p>
-
-<ul>
-  <li><strong>A sharp threshold.</strong> With n ≤ d² random states (four for a qubit), the scenario is noncontextual with probability one, since linearly independent states cannot witness contextuality. Above this, typicality rises quickly.</li>
-
-  <li><strong>Pure states and projective measurements.</strong> Typicality exceeds 99% at around n = 7 states and m = 8 measurements. It tends to 1 as the number of measurements or states grows, but stays strictly below 1 for any finite scenario.</li>
-
-  <li><strong>Noise.</strong> Mixedness slows the rise but does not remove it. With 20 projective measurements, n = 9 states suffice at purity ≥ 0.7, and n = 7 at purity ≥ 0.9. With unsharp measurements the requirement can reach n = 25.</li>
-
-  <li><strong>Versus Bell nonlocality.</strong> In the prepare-and-measure picture, contextuality reaches near-certain typicality faster than nonlocality. The comparison is not quantitative, because the steered states in a Bell scenario obey no-signalling constraints that random sampling ignores.</li>
-
-  <li><strong>Typical contextuality is not typical advantage.</strong> In 3-to-1 parity-oblivious multiplexing, random projective measurements are contextual 98.6% of the time but give about an 8% advantage over the best noncontextual strategy, against 18.3% for the optimal one. Random POVMs are contextual 15.2% of the time, for a 0.3% advantage.</li>
-</ul>
-
-<h4>Questions I'm interested in</h4>
-
-<ul>
-  <li>Typicality of nonclassicality for individual components (states, channels, sets of states) rather than whole experiments, following Zhang, Schmid, Yīng and Spekkens.</li>
-  <li>How these results change in higher dimensions, and whether restricting an experiment to a subspace (for example a qubit inside a qutrit) systematically raises the odds of contextuality.</li>
-  <li>Whether the robustness <em>r</em> predicts task advantage beyond parity-oblivious multiplexing.</li>
-</ul>
-
-<br>
-        
-
-
-
-
-<!-- CMB Gravity & Entanglement Project -->
-<article id="cmb-gravity-entanglement">
-
-  <h3 style="color: #1757ad;">Can entanglement through gravity be witnessed in the CMB?</h3>
-
-  <p style="color: #666; font-size: 14px; margin-top: -5px;">
-    <strong>Independent Side Project</strong> · Inspired by discussions with Marios Christodoulou (IQOQI Vienna) · [August 2026 - Present]
-  </p>
-
-  <p>This is an independent side project alongside my thesis. The question was suggested to me by Marios Christodoulou (IQOQI Vienna), whose work concerns testing the quantum nature of gravity with table-top experiments. At this stage I'm studying the literature and have no results of my own to report.</p>
-
-  <h4>The question</h4>
-
-  <p>During inflation, each Fourier mode of the curvature perturbation $\zeta$ is driven by the expanding background into a two-mode squeezed state, in which modes <strong>k</strong> and <strong>−k</strong> are entangled in the sense of Einstein, Podolsky and Rosen. Could that entanglement be witnessed in CMB data? And would a positive result say anything about gravity specifically, rather than about the inflaton field?</p>
-
-  <h4>Where it starts</h4>
-
-  <p>As Christodoulou pointed out, CMB maps are effectively position-type, equal-time measurements. A witness needs a non-commuting, momentum-like variable as well. Outside the horizon, $\zeta$ is conserved and its conjugate momentum is suppressed by the same squeezing that makes $\zeta$ so robust a cosmological observable. This obstruction is developed in Maldacena's cosmological Bell inequalities and in Martin and Vennin's <em>Obstructions to Bell CMB Experiments</em>. His suggestion that differences of measurements at different redshifts might supply the missing variable connects naturally to Leggett–Garg-type tests, which use one system measured at several times.</p>
-
-  <h4>What I've been working through</h4>
-
-  <ul>
-    <li><strong>Decoherence.</strong> The Polarski–Starobinsky picture of squeezing-induced classicality, Hsiang and Hu's argument that squeezing alone cannot produce true decoherence in a closed system, and the open-system calculations (e.g. Burgess et al., 2023) that treat decoherence from short-wavelength modes.</li>
-
-    <li><strong>Non-Gaussianity.</strong> Gaussian squeezed states have non-negative Wigner functions, so any genuine non-classicality must come from non-Gaussian structure. I'm reading <em>Inflation is Not Magic</em> (Haque et al.) and Ireland and Vennin's work on negativity beyond slow roll.</li>
-
-    <li><strong>Framing.</strong> The (<strong>k</strong>, <strong>−k</strong>) split is not a privileged bipartition, since a rotation to standing-wave modes makes the same state a product state. The squeezing is driven by a classical background, as in parametric down-conversion with a classical pump. Real-space entanglement is generic to any quantum field. Equal-time statistics of $\zeta$ alone always have a classical stand-in, because the observables commute.</li>
-
-    <li><strong>The inference to gravity.</strong> Anastopoulos and Hu argue that, in the weak-field regime, such experiments probe only gravity's constraint sector, in analogy with the Coulomb term in QED. The claim that entanglement implies a quantum mediator is also under active debate following Aziz and Howl (Nature, 2025).</li>
-  </ul>
-
-  <h4>Open questions I'd like to work on</h4>
-
-  <ul>
-    <li>Whether unequal-time observables, such as redshift tomography or Leggett–Garg-type constructions, can supply a usable non-commuting variable for $\zeta$.</li>
-
-    <li>Whether Ireland and Vennin's Wigner-negativity result for the EFT Goldstone mode transfers to the curvature perturbation at finite wavenumber.</li>
-
-    <li>Whether the delocalised-source construction of Chen and Giacomini, which goes beyond the Newtonian potential in the laboratory, has a cosmological analogue. As far as I have found, this has not been attempted.</li>
-  </ul>
-
-  <h4>Reading list</h4>
-
-  <ul class="refs">
-    <li>J. Maldacena, <em>A model with cosmological Bell inequalities</em>, Fortsch. Phys. 64, 10 (2016), <a href="https://arxiv.org/abs/1508.01082">arXiv:1508.01082</a>.</li>
-
-    <li>J. Martin, V. Vennin, <em>Obstructions to Bell CMB Experiments</em>, Phys. Rev. D 96, 063501 (2017), <a href="https://arxiv.org/abs/1706.05001">arXiv:1706.05001</a>.</li>
-
-    <li>D. Polarski, A. A. Starobinsky, <em>Semiclassicality and decoherence of cosmological perturbations</em>, Class. Quantum Grav. 13, 377 (1996), <a href="https://arxiv.org/abs/gr-qc/9504030">arXiv:gr-qc/9504030</a>.</li>
-
-    <li>J.-T. Hsiang, B.-L. Hu, <em>No Intrinsic Decoherence of Inflationary Cosmological Perturbations</em>, Universe 8, 27 (2022), <a href="https://arxiv.org/abs/2112.04092">arXiv:2112.04092</a>.</li>
-
-    <li>C. P. Burgess, R. Holman, G. Kaplanek, J. Martin, V. Vennin, <em>Minimal decoherence from inflation</em>, JCAP 07 (2023) 022, <a href="https://arxiv.org/abs/2211.11046">arXiv:2211.11046</a>.</li>
-
-    <li>S. S. Haque et al., <em>Inflation is Not Magic</em>, <a href="https://arxiv.org/abs/2512.10126">arXiv:2512.10126</a>.</li>
-
-    <li>A. Ireland, V. Vennin, <em>When inflationary perturbations refuse to classicalise: the role of non-Gaussianity in Wigner negativity</em>, JCAP 07 (2026) 042, <a href="https://arxiv.org/abs/2601.22219">arXiv:2601.22219</a>.</li>
-
-    <li>C. Anastopoulos, B.-L. Hu, <em>Comment on "A Spin Entanglement Witness for Quantum Gravity" and on "Gravitationally Induced Entanglement between Two Massive Particles is Sufficient Evidence of Quantum Effects in Gravity"</em>, <a href="https://arxiv.org/abs/1804.11315">arXiv:1804.11315</a>.</li>
-
-    <li>L.-Q. Chen, F. Giacomini, <em>Quantum effects in gravity beyond the Newton potential from a delocalised quantum source</em>, Phys. Rev. X 15, 031063 (2025), <a href="https://arxiv.org/abs/2402.10288">arXiv:2402.10288</a>.</li>
-
-    <li>S. Aziz, R. Howl, <em>Classical theories of gravity produce entanglement</em>, Nature 646, 813 (2025).</li>
-  </ul>
-
-</article>
-
-<br>
-
-
-
-<!-- Magnetogenesis Project -->
-<article id="magnetogenesis">
-
-  <h3 style="color: #1757ad;">Magnetic fields from ultralight dark matter</h3>
-
-  <p style="color: #666; font-size: 14px; margin-top: -5px;">
-    <strong>Undergraduate Research</strong> · Supervised by Prof. Koushik Dutta (IISER Kolkata) · [August 2025 - July 2026]
-  </p>
-
-  <p>This was my undergraduate research project at IISER Kolkata, supervised by Prof. Koushik Dutta. It concerned the origin of cosmic magnetic fields, and in particular whether an oscillating ultralight dark matter field can generate them after recombination.</p>
-
-  <!-- Add one or two sentences here on what you personally did (derivations you reproduced, numerical work, notes you wrote, results). -->
-
-  <h4>The problem</h4>
-
-  <p>Blazar observations point to a lower bound of roughly 10<sup>−17</sup> G on intergalactic magnetic fields on scales of about 0.1 Mpc and above, inferred from the absence of expected GeV–TeV cascade emission. CMB observations give an upper bound of roughly 10<sup>−9</sup> G. The origin of such fields is unknown. Inflationary and phase-transition mechanisms both struggle to deliver a large enough coherence length.</p>
-
-  <h4>The mechanism</h4>
-
-  <p>Brandenberger, Fröhlich and Jiao propose that dark matter is an axion-like field ϕ coupled to photons through ϕ F F̃. Once the Hubble rate falls below the field's mass, ϕ oscillates. This makes one circular polarization of the gauge field tachyonically unstable during part of each period, so the resonance produces a helical magnetic field with a spectrum peaked near k<sub>c</sub> ≃ g m ϕ<sub>0</sub> a. The mechanism operates after recombination, when Thomson scattering no longer screens the photon. The resulting field at 1 Mpc is of order 10<sup>−15</sup> G, with a steep dependence on the coupling and on a backreaction parameter F, the fraction of the dark matter energy that can drain into photons before the resonance shuts off. The original paper leaves F as a free parameter.</p>
-
-  <p>Follow-up papers extend the idea to a scalar (dilaton-like) coupling, which gives no helicity but a time-varying fine-structure constant, to a second narrow-resonance channel with a first backreaction estimate, to seeding supermassive black holes, and to a non-Abelian dark matter condensate acting through an indirect cascade.</p>
-
-  <h4>The obstruction</h4>
-
-  <p>Sharma, Majumdar and Sachdeva point out that recombination is never complete. A residual free-electron fraction of about 10<sup>−4</sup> gives the post-recombination universe a conductivity σ that exceeds the Hubble rate by roughly 26 orders of magnitude. The gauge-field equation is then heavily overdamped, and the growth rate is suppressed by a factor of order H/σ instead of growing exponentially. A growth rate above the Hubble rate would require a coupling several orders of magnitude above what observations allow. They confirm this numerically with the Pencil Code. Two proposed ways around it are to move the resonance to a dark photon and transfer the field by kinetic mixing (Alexander et al.), and to produce the field earlier, during radiation domination, using a delayed oscillation (Gerlach, Schmitt and Schwaller).</p>
-
-  <h4>Directions I find interesting</h4>
-
-  <ul>
-    <li>Repeating the conductivity analysis for the channels it has not yet been applied to: the scalar/dilaton coupling, the narrow-band resonance, and the non-Abelian cascade.</li>
-
-    <li>Following the ionization fraction through recombination, to see whether a brief window exists where σ/H is low enough for efficient resonance, instead of using the frozen-out relic value.</li>
-
-    <li>Forecasting CMB Faraday rotation from post-recombination fields for instruments such as LiteBIRD and CMB-S4.</li>
-
-    <li>Treating dark matter density fluctuations as noise on the driving term, which should enlarge the Floquet exponent and may soften the conductivity bound.</li>
-  </ul>
-
-  <h4>Reading list</h4>
-
-  <ul class="refs">
-    <li>R. Brandenberger, J. Fröhlich, H. Jiao, <em>Cosmological Magnetic Fields from Ultralight Dark Matter</em>, Phys. Rev. Lett. 136, 031001 (2026), <a href="https://arxiv.org/abs/2502.19310">arXiv:2502.19310</a>.</li>
-
-    <li>V. Kamali, R. Brandenberger, <em>Late Time Magnetogenesis from Ultralight Scalar Dark Matter</em>, <a href="https://arxiv.org/abs/2601.00443">arXiv:2601.00443</a>.</li>
-
-    <li>S. Brahma, R. Brandenberger, <em>Parametric Resonance and Backreaction Effects in Magnetogenesis from Ultralight Dark Matter</em>, <a href="https://arxiv.org/abs/2602.04285">arXiv:2602.04285</a>.</li>
-
-    <li>Kushwaha, Brandenberger, <em>ALP Dark Matter, Cosmological Magnetic Fields and the Direct Collapse Black Hole Formation Scenario</em>, <a href="https://arxiv.org/abs/2602.22170">arXiv:2602.22170</a>.</li>
-
-    <li>Daniel, Kamali, Brandenberger, <em>Indirect Parametric Resonance of the Electromagnetic Field Driven by an Oscillating SU(2) Dark Matter Condensate</em>, <a href="https://arxiv.org/abs/2605.20333">arXiv:2605.20333</a>.</li>
-
-    <li>Sharma, Majumdar, Sachdeva, <em>Suppressed Magnetogenesis from Ultralight Dark Matter due to Finite Conductivity</em>, <a href="https://arxiv.org/abs/2604.17230">arXiv:2604.17230</a>.</li>
-
-    <li>Alexander, Baksh, Edmond, Sun, <em>Symbiotic Magnetogenesis during Radiation Domination</em>, <a href="https://arxiv.org/abs/2606.25171">arXiv:2606.25171</a>.</li>
-
-    <li>Gerlach, Schmitt, Schwaller, <em>Audible Axion Magnetogenesis: Linking Intergalactic Magnetic Fields and Gravitational Waves</em>, <a href="https://arxiv.org/abs/2605.21092">arXiv:2605.21092</a>.</li>
-  </ul>
-
-</article>
-
-<br>
-
-
-          
-
-        </section>
-        
-
-<hr>
-
-<section>
-  <h2>Collaborations</h2>
-  <p>
-    I am always open to discussions regarding theoretical physics,
-    quantum foundations, or cosmology. Feel free to reach out to me
-    directly at <a href="mailto:rajgauravmirp@gmail.com">rajgauravmirp@gmail.com</a>.
-  </p>
-</section>
-        
-      </div>
     </main>
-    
-    <!-- Footer section -->
+
     <footer class="site-footer">
       © 2026 Raj Gaurav Tripathi · Built with plain HTML for GitHub Pages
     </footer>
-    
   </div>
 </body>
 </html>
