@@ -75,7 +75,7 @@
     <main class="page-content" id="content">
 
       <h1 class="panel-title">Research</h1>
-      <p class="rp-lede">I came to quantum foundations from cosmology and large-scale structure. My MS thesis asks which features of quantum theory are genuinely nonclassical; a side project asks whether a trace of quantum gravity could be witnessed in the CMB; my earlier project, in cosmology, studied the origin of cosmic magnetic fields.</p>
+      <p class="rp-lede">My research is in quantum foundations. I began in theoretical cosmology, working for a year on the origin of cosmic magnetic fields, and moved to foundations for my MS thesis, which asks which features of quantum theory are genuinely nonclassical. The two interests meet in a side project on whether entanglement through gravity could be witnessed in the CMB.</p>
       <p class="rp-updated">Last updated <time datetime="2026-10">October 2026</time>.</p>
 
       <div class="rp-bar">
@@ -98,27 +98,44 @@
         </header>
         <div class="rp-body">
           <p>Which features of quantum theory are genuinely nonclassical? Interference, no-cloning, teleportation, remote steering and even entanglement all have explicit classical models, such as Spekkens' toy theory. Generalized noncontextuality (Spekkens, 2005) is a notion of nonclassicality that is rigorously defined, testable on a single system, and tied to practical advantages.</p>
-          <p>My current focus is typicality: how often randomly chosen states and measurements produce nonclassical statistics.</p>
+          <p>An ontological model is noncontextual if operationally equivalent procedures are represented identically in the model, a version of Leibniz's principle of the identity of indiscernibles. For a prepare-and-measure scenario this is equivalent to simplex-embeddability of the associated generalized probabilistic theory (GPT) fragment, so a linear program can decide it. The program's output, the <em>robustness of contextuality</em> <em>r</em>, is zero exactly when a classical explanation exists.</p>
+
+          <h3>Focus: how typical is contextuality?</h3>
+          <p>Contextual experiments exist, but are they special? I study typicality: how often randomly chosen states and measurements produce nonclassical statistics. My starting point is <a href="https://arxiv.org/abs/2510.20722"><em>Typicality of Contextuality</em></a> (Rossi, Zjawin, Baldijão, Schmid, Selby, Sainz). It finds a sharp threshold below which contextuality is impossible, fast growth above it that noise slows but does not remove, and a clear gap between being contextual and giving a quantum advantage.</p>
           <!-- TODO: add 1-2 sentences on what you personally did, then uncomment:
           <p><strong>What I did.</strong> Your contribution here.</p>
           -->
 
           <h3>Questions I plan to work on</h3>
           <ul>
-            <li>Typicality of nonclassicality for individual components (states, channels, sets of states) rather than whole experiments, following Zhang, Schmid, Yīng and Spekkens.</li>
-            <li>How the results change in higher dimensions, and whether restricting an experiment to a subspace (for example a qubit inside a qutrit) systematically raises the odds of contextuality.</li>
-            <li>Whether the robustness <em>r</em> predicts task advantage beyond parity-oblivious multiplexing.</li>
+            <li><strong>Individual components.</strong> Typicality of nonclassicality for single states, channels or sets of states rather than whole experiments, following <a href="https://arxiv.org/abs/2503.05884">Zhang, Schmid, Yīng and Spekkens</a>, who apply generalized noncontextuality to individual processes. Their follow-up gives semidefinite-programming certificates, which should make sampling-based studies feasible.</li>
+            <li><strong>Dimension and subspaces.</strong> How the results change in higher dimensions, and whether restricting an experiment to a subspace (for example a qubit inside a qutrit) systematically raises the odds of contextuality.</li>
+            <li><strong>From contextuality to advantage.</strong> Whether the robustness <em>r</em> predicts task advantage beyond parity-oblivious multiplexing, where typical contextuality gives only a modest advantage.</li>
           </ul>
 
           <details>
-            <summary>Framework and typicality results</summary>
-            <p>An ontological model is noncontextual if operationally equivalent procedures are represented identically in the model, a version of Leibniz's principle of the identity of indiscernibles. This is equivalent to simplex-embeddability of the associated generalized probabilistic theory (GPT) fragment, so for a prepare-and-measure scenario the question reduces to a linear program. Its output, the <em>robustness of contextuality</em> <em>r</em>, is zero exactly when a classical explanation exists.</p>
-            <p>I am studying <a href="https://arxiv.org/abs/2510.20722"><em>Typicality of Contextuality</em></a> (Rossi, Zjawin, Baldijão, Schmid, Selby, Sainz). Its main findings, as I understand them:</p>
+            <summary>Formal framework and typicality results</summary>
+            <p><strong>Framework.</strong> A prepare-and-measure experiment gives probabilities p(e|s) for states s and effects e. Operational equivalences, such as two preparations that no measurement can tell apart, appear as linear relations among the states and among the effects. The experiment is noncontextual exactly when linear maps exist that embed the states into a probability simplex and the effects into its dual while reproducing every p(e|s) (Schmid et al., 2021). This is simplex-embeddability, which the linear program of Selby et al. tests.</p>
+            <p><strong>Results</strong> of Rossi et al., as I understand them (the authors also provide an open-source toolbox):</p>
             <ul>
               <li><strong>A sharp threshold.</strong> With n ≤ d² random states (four for a qubit) the scenario is noncontextual with probability one, since linearly independent states cannot witness contextuality. Above this, typicality rises quickly.</li>
               <li><strong>Pure states and projective measurements.</strong> Typicality exceeds 99% at around n = 7 states and m = 8 measurements. It tends to 1 as either grows, but stays below 1 for any finite scenario.</li>
               <li><strong>Noise.</strong> Mixedness slows the rise without removing it: with 20 projective measurements, n = 9 states suffice at purity ≥ 0.7 and n = 7 at purity ≥ 0.9. With unsharp measurements the requirement can reach n = 25.</li>
               <li><strong>Typical contextuality is not typical advantage.</strong> In 3-to-1 parity-oblivious multiplexing, random projective measurements are contextual 98.6% of the time but give about an 8% advantage over the best noncontextual strategy, against 18.3% for the optimal one. Random POVMs are contextual 15.2% of the time, for a 0.3% advantage.</li>
+            </ul>
+          </details>
+
+          <details>
+            <summary>Key references</summary>
+            <ul class="refs">
+              <li>R. W. Spekkens, <em>Contextuality for preparations, transformations, and unsharp measurements</em>, Phys. Rev. A 71, 052108 (2005), <a href="https://arxiv.org/abs/quant-ph/0406166">arXiv:quant-ph/0406166</a>.</li>
+              <li>R. W. Spekkens, <em>Evidence for the epistemic view of quantum states: a toy theory</em>, Phys. Rev. A 75, 032110 (2007), <a href="https://arxiv.org/abs/quant-ph/0401052">arXiv:quant-ph/0401052</a>.</li>
+              <li>R. W. Spekkens, <em>The ontological identity of empirical indiscernibles: Leibniz's methodological principle and its significance in the work of Einstein</em>, <a href="https://arxiv.org/abs/1909.04628">arXiv:1909.04628</a>.</li>
+              <li>D. Schmid, J. H. Selby, E. Wolfe, R. Kunjwal, R. W. Spekkens, <em>Characterization of noncontextuality in the framework of generalized probabilistic theories</em>, PRX Quantum 2, 010331 (2021).</li>
+              <li>J. H. Selby, E. Wolfe, D. Schmid, A. B. Sainz, V. P. Rossi, <em>A linear program for testing nonclassicality and an open-source implementation</em>, <a href="https://arxiv.org/abs/2204.11905">arXiv:2204.11905</a>.</li>
+              <li>V. P. Rossi, B. Zjawin, R. D. Baldijão, D. Schmid, J. H. Selby, A. B. Sainz, <em>Typicality of Contextuality</em>, <a href="https://arxiv.org/abs/2510.20722">arXiv:2510.20722</a>.</li>
+              <li>Y. Zhang, D. Schmid, Y. Yīng, R. W. Spekkens, <em>Reassessing the boundary between classical and nonclassical for individual quantum processes</em>, Phys. Rev. X 16, 021050 (2026), <a href="https://arxiv.org/abs/2503.05884">arXiv:2503.05884</a>.</li>
+              <li>Y. Zhang, Y. Yīng, D. Schmid, <em>Quantifiers and witnesses for the nonclassicality of measurements and of states</em>, <a href="https://arxiv.org/abs/2504.02944">arXiv:2504.02944</a>.</li>
             </ul>
           </details>
         </div>
@@ -153,8 +170,7 @@
           <details>
             <summary>Reading notes and references</summary>
             <ul>
-              <li><strong>Decoherence.</strong> The Polarski–Starobinsky picture of squeezing-induced classicality; Hsiang and Hu's argument that squeezing alone cannot produce true decoherence in a closed system; and open-system calculations of decoherence from short-wavelength modes (e.g. Burgess et al., 2023).</li>
-              <li><strong>Non-Gaussianity.</strong> Gaussian squeezed states have non-negative Wigner functions, so any genuine nonclassicality must come from non-Gaussian structure. I am reading <em>Inflation is Not Magic</em> (Haque et al.) and Ireland and Vennin's work on negativity beyond slow roll.</li>
+              <li><strong>Decoherence and non-Gaussianity.</strong> Squeezing alone does not decohere a closed system (Hsiang and Hu), and Gaussian squeezed states have non-negative Wigner functions, so genuine nonclassicality must come from non-Gaussian structure (Ireland and Vennin) or from environmental effects (Burgess et al.).</li>
               <li><strong>Framing.</strong> The (<b>k</b>, <b>−k</b>) split is not a privileged bipartition: a rotation to standing-wave modes makes the same state a product state. The squeezing is driven by a classical background, as in parametric down-conversion with a classical pump. Real-space entanglement is generic to any quantum field, and equal-time statistics of ζ alone always have a classical stand-in, because the observables commute.</li>
               <li><strong>The inference to gravity.</strong> Anastopoulos and Hu argue that in the weak-field regime such experiments probe only gravity's constraint sector, in analogy with the Coulomb term in QED. Whether entanglement implies a quantum mediator is also under debate following Aziz and Howl (Nature, 2025).</li>
             </ul>
@@ -162,10 +178,8 @@
             <ul class="refs">
               <li>J. Maldacena, <em>A model with cosmological Bell inequalities</em>, Fortsch. Phys. 64, 10 (2016), <a href="https://arxiv.org/abs/1508.01082">arXiv:1508.01082</a>.</li>
               <li>J. Martin, V. Vennin, <em>Obstructions to Bell CMB Experiments</em>, Phys. Rev. D 96, 063501 (2017), <a href="https://arxiv.org/abs/1706.05001">arXiv:1706.05001</a>.</li>
-              <li>D. Polarski, A. A. Starobinsky, <em>Semiclassicality and decoherence of cosmological perturbations</em>, Class. Quantum Grav. 13, 377 (1996), <a href="https://arxiv.org/abs/gr-qc/9504030">arXiv:gr-qc/9504030</a>.</li>
               <li>J.-T. Hsiang, B.-L. Hu, <em>No Intrinsic Decoherence of Inflationary Cosmological Perturbations</em>, Universe 8, 27 (2022), <a href="https://arxiv.org/abs/2112.04092">arXiv:2112.04092</a>.</li>
               <li>C. P. Burgess, R. Holman, G. Kaplanek, J. Martin, V. Vennin, <em>Minimal decoherence from inflation</em>, JCAP 07 (2023) 022, <a href="https://arxiv.org/abs/2211.11046">arXiv:2211.11046</a>.</li>
-              <li>S. S. Haque et al., <em>Inflation is Not Magic</em>, <a href="https://arxiv.org/abs/2512.10126">arXiv:2512.10126</a>.</li>
               <li>A. Ireland, V. Vennin, <em>When inflationary perturbations refuse to classicalise: the role of non-Gaussianity in Wigner negativity</em>, JCAP 07 (2026) 042, <a href="https://arxiv.org/abs/2601.22219">arXiv:2601.22219</a>.</li>
               <li>C. Anastopoulos, B.-L. Hu, <em>Comment on "A Spin Entanglement Witness for Quantum Gravity" and on "Gravitationally Induced Entanglement between Two Massive Particles is Sufficient Evidence of Quantum Effects in Gravity"</em>, <a href="https://arxiv.org/abs/1804.11315">arXiv:1804.11315</a>.</li>
               <li>L.-Q. Chen, F. Giacomini, <em>Quantum effects in gravity beyond the Newton potential from a delocalised quantum source</em>, Phys. Rev. X 15, 031063 (2025), <a href="https://arxiv.org/abs/2402.10288">arXiv:2402.10288</a>.</li>
@@ -187,29 +201,25 @@
         <div class="rp-body">
           <p>The origin of cosmic magnetic fields is unknown. This project asked whether an oscillating ultralight dark matter field can generate them after recombination. Brandenberger, Fröhlich and Jiao find of order 10<sup>−15</sup> G at 1 Mpc; Sharma, Majumdar and Sachdeva then showed that the residual ionization left after recombination makes the gauge field heavily overdamped and suppresses the resonance. Two workarounds have since been proposed.</p>
           <p class="rp-links">My derivation notes: <a href="https://github.com/raj-gaurav-tripathi/cosmological-magnetogenesis/blob/main/Magnetogenisis_UL-Scalar%20DM.pdf">UL-Scalar DM (PDF)</a> and <a href="https://github.com/raj-gaurav-tripathi/cosmological-magnetogenesis/blob/main/Magnetogenisis_form_ALP-DM.pdf">ALP-DM (PDF)</a>, also listed on the <a href="notes.html#cosmology">Notes</a> page.</p>
-          <!-- TODO: add 1-2 sentences on what you personally did, then uncomment:
-          <p><strong>What I did.</strong> Your contribution here.</p>
-          -->
+          <p><strong>What I did.</strong> I worked through this literature line by line and wrote step-by-step derivation notes for both the scalar and the ALP couplings (linked above). I also studied the finite-conductivity critique closely and drafted proposals for follow-up directions, some of which are listed below.</p>
 
           <h3>Directions I would pursue next</h3>
           <ul>
             <li>Repeating the conductivity analysis for the channels it has not yet been applied to: the scalar/dilaton coupling, the narrow-band resonance, and the non-Abelian cascade.</li>
             <li>Following the ionization fraction through recombination, to see whether a brief window exists where σ/H is low enough for efficient resonance, instead of using the frozen-out relic value.</li>
-            <li>Forecasting CMB Faraday rotation from post-recombination fields for instruments such as LiteBIRD and CMB-S4.</li>
             <li>Treating dark matter density fluctuations as noise on the driving term, which should enlarge the Floquet exponent and may soften the conductivity bound.</li>
           </ul>
 
           <details>
             <summary>Mechanism, obstruction and references</summary>
             <p><strong>Observational bounds.</strong> Blazar observations point to a lower bound of roughly 10<sup>−17</sup> G on scales of about 0.1 Mpc and above, inferred from the absence of expected GeV–TeV cascade emission; CMB observations give an upper bound of roughly 10<sup>−9</sup> G. Inflationary and phase-transition mechanisms both struggle to deliver a large enough coherence length.</p>
-            <p><strong>Mechanism.</strong> Dark matter is an axion-like field ϕ coupled to photons through ϕ F F̃. Once the Hubble rate falls below the field's mass, ϕ oscillates, making one circular polarization of the gauge field tachyonically unstable during part of each period. The resonance produces a helical magnetic field peaked near k<sub>c</sub> ≃ g m ϕ<sub>0</sub> a, after recombination, when Thomson scattering no longer screens the photon. The field at 1 Mpc depends steeply on the coupling and on a backreaction parameter F, the fraction of the dark matter energy that can drain into photons before the resonance shuts off; the original paper leaves F free. Follow-up papers extend the idea to a scalar (dilaton-like) coupling, which gives no helicity but a time-varying fine-structure constant, to a second narrow-resonance channel, to seeding supermassive black holes, and to a non-Abelian dark matter condensate acting through an indirect cascade.</p>
+            <p><strong>Mechanism.</strong> Dark matter is an axion-like field ϕ coupled to photons through ϕ F F̃. Once the Hubble rate falls below the field's mass, ϕ oscillates, making one circular polarization of the gauge field tachyonically unstable during part of each period. The resonance produces a helical magnetic field peaked near k<sub>c</sub> ≃ g m ϕ<sub>0</sub> a, after recombination, when Thomson scattering no longer screens the photon. The field at 1 Mpc depends steeply on the coupling and on a backreaction parameter F, the fraction of the dark matter energy that can drain into photons before the resonance shuts off; the original paper leaves F free. Follow-up papers extend the idea to scalar (dilaton-like) and narrow-resonance channels and to a non-Abelian dark matter condensate.</p>
             <p><strong>Obstruction.</strong> Recombination is never complete. A residual free-electron fraction of about 10<sup>−4</sup> gives the post-recombination universe a conductivity σ that exceeds the Hubble rate by roughly 26 orders of magnitude. The gauge-field equation is then heavily overdamped, and the growth rate is suppressed by a factor of order H/σ instead of growing exponentially; a growth rate above the Hubble rate would require a coupling several orders of magnitude above what observations allow. Sharma et al. confirm this numerically with the Pencil Code. Two proposed ways around it are to move the resonance to a dark photon and transfer the field by kinetic mixing (Alexander et al.), and to produce the field earlier, during radiation domination, using a delayed oscillation (Gerlach, Schmitt and Schwaller).</p>
             <h3>References</h3>
             <ul class="refs">
               <li>R. Brandenberger, J. Fröhlich, H. Jiao, <em>Cosmological Magnetic Fields from Ultralight Dark Matter</em>, Phys. Rev. Lett. 136, 031001 (2026), <a href="https://arxiv.org/abs/2502.19310">arXiv:2502.19310</a>.</li>
               <li>V. Kamali, R. Brandenberger, <em>Late Time Magnetogenesis from Ultralight Scalar Dark Matter</em>, <a href="https://arxiv.org/abs/2601.00443">arXiv:2601.00443</a>.</li>
               <li>S. Brahma, R. Brandenberger, <em>Parametric Resonance and Backreaction Effects in Magnetogenesis from Ultralight Dark Matter</em>, <a href="https://arxiv.org/abs/2602.04285">arXiv:2602.04285</a>.</li>
-              <li>Kushwaha, Brandenberger, <em>ALP Dark Matter, Cosmological Magnetic Fields and the Direct Collapse Black Hole Formation Scenario</em>, <a href="https://arxiv.org/abs/2602.22170">arXiv:2602.22170</a>.</li>
               <li>Daniel, Kamali, Brandenberger, <em>Indirect Parametric Resonance of the Electromagnetic Field Driven by an Oscillating SU(2) Dark Matter Condensate</em>, <a href="https://arxiv.org/abs/2605.20333">arXiv:2605.20333</a>.</li>
               <li>Sharma, Majumdar, Sachdeva, <em>Suppressed Magnetogenesis from Ultralight Dark Matter due to Finite Conductivity</em>, <a href="https://arxiv.org/abs/2604.17230">arXiv:2604.17230</a>.</li>
               <li>Alexander, Baksh, Edmond, Sun, <em>Symbiotic Magnetogenesis during Radiation Domination</em>, <a href="https://arxiv.org/abs/2606.25171">arXiv:2606.25171</a>.</li>
