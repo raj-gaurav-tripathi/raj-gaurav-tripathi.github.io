@@ -107,6 +107,123 @@
           <p><strong>December 2025.</strong> Concluded my research project on inflationary cosmology under Prof. Koushik Dutta: scalar-field-driven models, slow-roll dynamics, and the large-scale homogeneity of the CMB. <a href="notes.html#cosmology">Notes</a></p>
         </article>
 
+
+
+
+
+<!-- Animation -->
+        <!-- Double-slit animation.
+     Paste inside <aside class="news-column">, right after the last </article>. -->
+<style>
+  .slit-fig{margin:1.1rem 0 0}
+  .slit-fig canvas{display:block;box-sizing:border-box;width:100%;height:auto;aspect-ratio:7/2;border:1px solid #d9dde3;border-radius:6px;background:#f4f7fb}
+  .slit-fig figcaption{display:flex;align-items:center;justify-content:space-between;gap:.75rem;margin-top:.5rem;font-size:.85rem;line-height:1.35;color:#5b6470}
+  .slit-fig button{flex:none;font:inherit;font-size:.8rem;padding:.3rem .7rem;border:1px solid #1757ad;border-radius:999px;background:#fff;color:#1757ad;cursor:pointer}
+  .slit-fig button[aria-pressed="true"]{background:#1757ad;color:#fff}
+  .slit-fig button:focus-visible{outline:2px solid #1757ad;outline-offset:2px}
+</style>
+
+<figure class="slit-fig">
+  <canvas id="slit" width="1400" height="400" role="img"
+          aria-label="Animation of the double-slit experiment: single electrons, detected one at a time, build up an interference pattern on a screen."></canvas>
+  <figcaption>
+    <span id="slit-cap" aria-live="polite">Electrons arrive one at a time, yet fringes build up.</span>
+    <button type="button" id="slit-btn" aria-pressed="false">Detect which slit</button>
+  </figcaption>
+</figure>
+
+<script>
+(() => {
+  const cv = document.getElementById('slit'), ctx = cv.getContext('2d');
+  const btn = document.getElementById('slit-btn'), cap = document.getElementById('slit-cap');
+
+  // Geometry in logical px (the canvas bitmap is 2x for sharpness)
+  const W = 700, H = 200, Y0 = H / 2;
+  const SRC = 28, BAR = 210, SCR = 640, SW = 36;  // x of source, barrier, screen strip (and strip width)
+  const D = 36, A = 8;                             // slit separation, slit width
+  const K = Math.PI / 22;                          // fringe spacing: 22 px
+  const M = Math.PI / 80;                          // single-slit envelope: first zero at ±80 px
+  const WL = 9, TAU = 2 * Math.PI;                 // drawn wavelength (schematic, not to scale)
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const hits = document.createElement('canvas');   // detections accumulate here
+  hits.width = W * 2; hits.height = H * 2;
+  const hx = hits.getContext('2d');
+  hx.scale(2, 2); ctx.scale(2, 2);
+  hx.fillStyle = 'rgba(217,72,15,.85)';
+
+  let observe = false, n = 0, acc = 0, hold = 0, last = 0;
+
+  // Born rule: P(u) ∝ cos²(K u) · sinc²(M u). A which-path detector removes the cos² term.
+  const sinc2 = x => x ? (Math.sin(x) / x) ** 2 : 1;
+  const P = u => (observe ? 1 : Math.cos(K * u) ** 2) * sinc2(M * u);
+
+  function addHit() {                              // rejection-sample one detection event
+    let u;
+    do { u = (Math.random() - 0.5) * 180; } while (Math.random() > P(u));
+    hx.fillRect(SCR + Math.random() * (SW - 2), Y0 + u, 2, 2);
+    n++;
+  }
+  function reset() { hx.clearRect(0, 0, W, H); n = acc = hold = 0; }
+
+  function rings(x, y, x0, x1, ph) {               // circular wavefronts clipped to x0..x1
+    ctx.save(); ctx.beginPath(); ctx.rect(x0, 0, x1 - x0, H); ctx.clip();
+    ctx.beginPath();
+    for (let r = ph; r < 460; r += WL) { ctx.moveTo(x + r, y); ctx.arc(x, y, r, 0, TAU); }
+    ctx.stroke(); ctx.restore();
+  }
+
+  function draw(t) {
+    ctx.clearRect(0, 0, W, H);
+    const ph = (t * 0.025) % WL;
+    ctx.strokeStyle = 'rgba(23,87,173,.25)'; ctx.lineWidth = 1.2;
+    rings(SRC, Y0, SRC, BAR, ph);
+    rings(BAR, Y0 - D / 2, BAR, SCR, ph);
+    rings(BAR, Y0 + D / 2, BAR, SCR, ph);
+
+    ctx.fillStyle = '#1b3148';                     // barrier with two slits, and the source
+    [[0, Y0 - D / 2 - A / 2], [Y0 - D / 2 + A / 2, Y0 + D / 2 - A / 2], [Y0 + D / 2 + A / 2, H]]
+      .forEach(([a, b]) => ctx.fillRect(BAR - 2.5, a, 5, b - a));
+    ctx.beginPath(); ctx.arc(SRC, Y0, 5, 0, TAU); ctx.fill();
+
+    ctx.fillStyle = '#e6ecf5'; ctx.fillRect(SCR, 8, SW, H - 16);   // detection screen
+    ctx.drawImage(hits, 0, 0, W, H);
+    ctx.strokeStyle = '#9aa7b8'; ctx.lineWidth = 1; ctx.strokeRect(SCR, 8, SW, H - 16);
+
+    if (observe) {                                 // which-path detectors at the slits
+      ctx.strokeStyle = '#d9480f'; ctx.lineWidth = 2;
+      [-1, 1].forEach(s => { ctx.beginPath(); ctx.arc(BAR, Y0 + s * D / 2, 8, 0, TAU); ctx.stroke(); });
+    }
+  }
+
+  function frame(t) {
+    const dt = Math.min(t - last, 50); last = t;
+    if (n < 1800) {
+      acc += dt / 1000 * Math.min(80, 8 + n * 0.25);   // slow at first, then faster
+      for (; acc >= 1; acc--) addHit();
+    } else if (!hold) hold = t;
+    else if (t - hold > 4000) reset();                 // let the finished pattern sit, then restart
+    draw(t);
+    requestAnimationFrame(frame);
+  }
+
+  const still = () => { reset(); while (n < 1500) addHit(); draw(0); };  // reduced-motion version
+
+  btn.addEventListener('click', () => {
+    observe = !observe;
+    btn.setAttribute('aria-pressed', observe);
+    cap.textContent = observe ? 'With which-path detection, the fringes disappear.'
+                              : 'Electrons arrive one at a time, yet fringes build up.';
+    reduce ? still() : reset();
+  });
+
+  reduce ? still() : requestAnimationFrame(frame);
+})();
+</script>
+
+        
+
+        
       </aside>
     </main>
 
