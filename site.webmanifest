@@ -1,8 +1,10 @@
 {
-  "name": "Dr. Alex Morgan — Academic site",
-  "short_name": "Alex Morgan",
-  "start_url": ".",
-  "display": "standalone",
-  "background_color": "#f7f5ef",
-  "theme_color": "#101923"
+  "name": "Raj Gaurav Tripathi",
+  "short_name": "Raj Gaurav",
+  "description": "Academic homepage: quantum foundations, IISER Kolkata.",
+  "start_url": "./",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#102d43",
+  "icons": [{"src": "favicon.svg", "sizes": "any", "type": "image/svg+xml"}]
 }

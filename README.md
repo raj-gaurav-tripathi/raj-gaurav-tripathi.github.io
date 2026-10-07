@@ -1,28 +1,19 @@
-# Academic-style GitHub Pages website
+# raj-gaurav-tripathi.github.io
 
-This is a responsive, no-build academic-style personal website. Its visual format follows the reference you shared: a compact gray header, centered panoramic banner, overlapping dark-blue navigation, and dense white content panels. It uses original HTML, CSS, dummy content, and the one original image generated for this project.
+Plain HTML and CSS, no build step. Push to `main` and GitHub Pages serves the repository root.
 
-## Make it yours
+## Pages
+`index.html` (home), `research.html`, `notes.html`, `cv.html`, `blog.html` (draft). Shared styles live in `styles.css`; each page also has a small inline `<style>` block for its own components.
 
-Before publishing, update these placeholders in `index.html`:
+## Adding things
+- **Research project:** copy one `<article class="rp-proj">` block in `research.html`, change its `id`, and add a jump link in `.rp-jump`. Two blocks still have a commented-out "What I did" paragraph to fill in.
+- **Home "Recent" item:** copy one `<article class="news-item">` in `index.html`.
+- **Images:** put them in `assets/` with lowercase-hyphen names (no spaces or commas). Export as WebP, about 1600 px wide, quality around 80, to keep pages fast.
+- **Banners:** each page sets its banner on its `<div class="hero">`; the home page banner is set in `styles.css`.
+- Update the "Last updated" lines on Research and CV when you change them.
 
-1. **Name and role:** replace every instance of `Dr. Alex Morgan`.
-2. **Homepage biography and contact details:** edit `index.html`.
-3. **Pages:** edit `research.html`, `group.html`, `publications.html`, `cv.html`, and `modern-quantum-theory.html`.
-4. **Links and email:** replace all `#` links and `alex.morgan@example.edu`.
-5. **Image:** `assets/hero-overlook.png` is intentionally used on every page and in all placeholder image areas. Replace it when you have your own image.
+## Before the Blog goes public
+`blog.html` still has sample posts, and its video points to `assets/sample-video.mp4`, which does not exist. Replace them, then add the page to `sitemap.xml`.
 
-The original hero image is included locally at `assets/hero-overlook.png`, so the site has no image-hosting dependency.
-
-## Publish with GitHub Pages
-
-1. Create a new GitHub repository. For a personal site at `https://YOUR-USERNAME.github.io`, name it exactly `YOUR-USERNAME.github.io`. Any other repository will publish at `https://YOUR-USERNAME.github.io/REPOSITORY-NAME/`.
-2. Upload every item in this folder to the repository’s top level: all six `.html` pages, `styles.css`, `favicon.svg`, `site.webmanifest`, `.nojekyll`, and the `assets` folder.
-3. On GitHub, open **Settings → Pages**. Under **Build and deployment**, choose **Deploy from a branch**, then select `main` and `/ (root)`.
-4. Save. GitHub will provide the public site URL shortly afterwards.
-
-Because this is plain HTML and CSS, it works directly on GitHub Pages—there is nothing to install or build.
-
-## Local preview
-
-Open `index.html` in a web browser. It is designed to work as a standalone static site.
+## Link previews
+`assets/og-card.jpg` (1200x630) is the card shown when the site is shared on LinkedIn, WhatsApp and similar.
