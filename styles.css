@@ -1,4 +1,4 @@
-:root { --header: #575c5f; --nav: #102d43; --nav-active: #1d425d; --page: #fff; --outer: #d1d1d1; --ink: #000; --heading: #656565; --link: #1757ad; --line: #dbdbdb;  --max-width: 100%; }
+:root { --header: #575c5f; --nav: #102d43; --nav-active: #1d425d; --page: #fff; --outer: #d1d1d1; --ink: #000; --heading: #000; --link: #1757ad; --line: #dbdbdb;  --max-width: 100%; }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--outer); color: var(--ink); font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 1.48; }
