@@ -184,7 +184,7 @@
 
   function draw(t) {
     ctx.clearRect(0, 0, W, H);
-    const ph = (t * 0.025) % WL;
+    const ph = (t * 0.015) % WL;
     ctx.strokeStyle = 'rgba(23,87,173,.25)'; ctx.lineWidth = 1.2;
     rings(SRC, Y0, SRC, BAR, ph);
     rings(BAR, Y0 - D / 2, BAR, SCR, ph);
