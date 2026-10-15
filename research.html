@@ -20,6 +20,17 @@
   <title>Research — Raj Gaurav Tripathi</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <style>
     @view-transition{navigation:auto}
     .page-content{--ac:#1757ad;--ln:#d9dde3;--mut:#5b6470;--wash:#f4f7fb}
@@ -48,6 +59,12 @@
     .rp-body p,.rp-body li{text-wrap:pretty}
     .rp-body li{margin:.35em 0}
     .rp-links{font-size:.95em}
+    .rp-technical{margin:1.6em 0 1.2em;padding-top:.1em}
+    .rp-technical h3{margin-top:1.25em}
+    .rp-technical .rp-math{max-width:100%;overflow-x:auto;overflow-y:hidden;margin:.8em 0;padding:.2em 0;text-align:center}
+    .rp-technical .rp-math mjx-container[display="true"]{margin:.35em 0!important}
+    .rp-technical .rp-note{padding:.7em .9em;background:var(--wash);border-left:3px solid var(--ac);margin:1em 0}
+    .rp-technical .rp-small{font-size:.94em;color:var(--mut)}
     .rp-body details{margin:1.4em 0 0;padding:.1em 0 .1em 1em;border-left:3px solid var(--ln)}
     .rp-body details[open]{border-left-color:var(--ac)}
     .rp-body summary{cursor:pointer;font-weight:600;color:var(--ac)}
@@ -83,12 +100,13 @@
     <main class="page-content" id="content">
 
       <h1 class="panel-title">Research</h1>
-      <p class="rp-lede">My current MS thesis investigates generalized quantum contextuality through the COPE/ENMF framework: how the structure of observed probabilities constrains classical explanations of quantum statistics. I am first building the mathematical foundation through explicit examples and rank-separation methods. Potential next directions include connecting rank-based quantities to established measures of contextuality or studying typicality using ENMF methods. I also work on a literature-stage side project on entanglement and the cosmic microwave background, alongside earlier research on cosmological magnetogenesis.</p>
+      <p class="rp-lede">Quantum contextuality asks when observed quantum statistics resist a classical explanation that respects the equivalences between indistinguishable experiments. My MS thesis studies a matrix-based approach to this question, using probability matrices, nonnegative factorization and rank-separation methods. I am currently building and testing the framework on explicit examples; possible later directions include quantitative contextuality and typicality. My other work concerns entanglement in the cosmic microwave background and earlier research on cosmological magnetogenesis.</p>
       <p class="rp-updated">Last updated <time datetime="2026-10">October 2026</time>.</p>
 
       <div class="rp-bar">
         <nav class="rp-jump" aria-label="Projects on this page">
           <a href="#contextuality">Quantum contextuality (MS thesis)</a>
+          <a href="#technical-framework">Technical framework</a>
           <a href="#cmb">Entanglement in the CMB</a>
           <a href="#magnetogenesis">Magnetic fields</a>
         </nav>
@@ -101,46 +119,120 @@
           <h2>Generalized quantum contextuality</h2>
           <p class="rp-meta">
             <span>MS thesis, supervised by Dr. Beata Zjawin (ICTQT, University of Gdańsk)</span>
-            <span>Aug 2026 – present<em class="rp-tag is-active">In progress</em></span>
+            <span>Aug 2026 – present <em class="rp-tag is-active">In progress</em></span>
           </p>
         </header>
-        <div class="rp-body"><div class="rp-main">
-          <p>Generalized noncontextuality asks whether observed quantum statistics can be explained by an underlying model in which operationally equivalent procedures are represented identically. In a prepare-and-measure experiment, the observed probabilities can be collected into a matrix—the matrix of conditional outcome probabilities of events (COPE). The structure of this matrix makes operational equivalences and constraints on classical explanations accessible through linear algebra.</p>
+        <div class="rp-body">
+          <div class="rp-main">
+            <h3>What is contextuality?</h3>
+            <p>Quantum contextuality is a way of asking whether the probabilities predicted by quantum theory can be explained by a classical model of an underlying physical reality. The key idea is <em>operational equivalence</em>: two experimental procedures are operationally equivalent when no allowed experiment can distinguish them statistically. Generalized noncontextuality requires such procedures to receive the same representation in the underlying model. Contextuality is present when the observed statistics cannot be reproduced by any model satisfying all these requirements.</p>
 
-          <p>My thesis focuses on a recent framework connecting noncontextual ontological models to <em>equirank nonnegative matrix factorizations</em> (ENMFs) of the COPE matrix. In such a factorization, one nonnegative factor represents measurement-response profiles and the other represents preparation distributions over hypothetical underlying states. Rank-separation methods can then provide a route to proving contextuality: if no factorization satisfies the required equal-rank conditions, a noncontextual model cannot exist within the framework's assumptions.</p>
+            <p>This is not simply a claim that quantum outcomes are random: classical probabilistic models can also be random. The issue is whether one consistent model can explain all the statistics while respecting the equivalences between procedures. The generalized framework applies this principle to preparations, measurement events and transformations, extending beyond the traditional focus on sharp measurements.</p>
 
-          <h3>Current work: building and testing the framework</h3>
-          <p>I am working through the linear-algebraic framework and its complexity and rank-separation results, starting with small, explicit prepare-and-measure scenarios. The immediate goals are to construct COPE matrices, calculate ordinary and nonnegative ranks, understand ENMF and equirank nonnegative rank (ENNR), and reproduce examples in which an equirank factorization exists or rank separation rules one out. I also plan to compare these conclusions with linear-programming tests on the same small scenarios and work through a classical toy model.</p>
-          <p class="rp-links">Core reading: Shahandeh, Yianni and Doosti, <a href="https://arxiv.org/abs/2512.10000"><em>A Unified Linear Algebraic Framework for Physical Models and Generalized Contextuality</em></a>; Yianni and Shahandeh, <a href="https://arxiv.org/abs/2506.09133"><em>Complexity of Contextuality</em></a>; Doosti, Yianni and Shahandeh, <a href="https://arxiv.org/abs/2406.19382"><em>Contextuality of All Optimal Quantum Cloning</em></a>.</p>
+            <p><strong>A simple quantum example.</strong> A qubit can be prepared by mixing the states \(|+\rangle\) and \(|-\rangle\) with equal probability, or by mixing \(|0\rangle\) and \(|1\rangle\) equally. These are different laboratory procedures, but both prepare the maximally mixed state:</p>
+            <div class="rp-math" role="math" aria-label="The two equal mixtures of orthogonal qubit states both equal the maximally mixed state">
+              \[\frac12 |+\rangle\langle+|+\frac12|-\rangle\langle-|=\frac{I}{2}=\frac12|0\rangle\langle0|+\frac12|1\rangle\langle1|.\]
+            </div>
+            <p>Consequently, every quantum measurement gives the same outcome probabilities for both preparations. Preparation noncontextuality requires their underlying probability distributions over ontic states to be identical as well.</p>
 
-          <h3>Potential research directions</h3>
-          <p>The second-semester research question is still to be selected in discussion with my supervisor. Two directions I am considering are:</p>
-          <ul>
-            <li><strong>Quantitative contextuality.</strong> Investigate whether nonnegative rank, ENNR or rank-separation properties yield new bounds or relations for established quantitative approaches, such as noise robustness or classical excess. A rank-based measure would be pursued only if its interpretation and mathematical properties can be justified.</li>
-            <li><strong>Typicality through ENMF.</strong> Study how often ENMF-based tests identify contextuality in a carefully specified ensemble of quantum preparations and measurements. An initial step would be to compare ENMF conclusions with existing linear-programming tests on the same small scenarios, then ask whether rank structure reveals something beyond existing typicality results.</li>
-          </ul>
-          <p>These are prospective directions, not results or a settled thesis outcome. The aim is to identify a precise, feasible question after reproducing the existing framework and reviewing established contextuality measures.</p>
+            <p>My MS thesis studies a recent linear-algebraic approach to this question. Instead of treating all the probabilities separately, the approach collects them into a matrix and asks whether its structure permits a noncontextual explanation. This leads to the COPE matrix, nonnegative matrix factorization and rank-separation methods.</p>
 
-          </div><div class="rp-side"><details>
-            <summary>Technical framework: COPE, ENMF and rank separation</summary>
-            <p><strong>COPE matrix.</strong> Each column corresponds to a preparation and each row to a measurement event; the entry is the probability of that event for that preparation. Operationally equivalent preparations give identical columns, equivalent measurement events give identical rows, and equivalences involving mixtures impose linear relations.</p>
-            <p><strong>Nonnegative factorization.</strong> An ontological model gives a factorization <code>C = RE</code>, where \(R\) contains measurement-response probabilities and \(E\) contains preparation distributions over ontic states. Both factors are nonnegative and must satisfy the relevant normalizations.</p>
-            <p><strong>ENMF and contextuality.</strong> An equirank nonnegative matrix factorization additionally satisfies <code>rank(C) = rank(R) = rank(E)</code>. In the framework under study, the existence of a noncontextual model is equivalent to the existence of an ENMF, under the stated assumptions. Rank separation seeks to show that every nonnegative factorization has a rank mismatch, which rules out an ENMF.</p>
-            <p><strong>Why compare with other tests?</strong> Existing linear-programming methods and resource-theoretic quantifiers offer benchmarks. The aim is to determine what the COPE/ENMF structure adds, rather than assume that rank separation already defines a useful graded measure.</p>
-          </details>
-          <details>
-            <summary>Key references</summary>
-            <ul class="refs">
-              <li>R. W. Spekkens, <em>Contextuality for preparations, transformations, and unsharp measurements</em>, Phys. Rev. A 71, 052108 (2005), <a href="https://arxiv.org/abs/quant-ph/0406166">arXiv:quant-ph/0406166</a>.</li>
-              <li>D. Schmid et al., <em>Characterization of noncontextuality in the framework of generalized probabilistic theories</em>, PRX Quantum 2, 010331 (2021).</li>
-              <li>J. H. Selby et al., <em>A linear program for testing nonclassicality and an open-source implementation</em>, <a href="https://arxiv.org/abs/2204.11905">arXiv:2204.11905</a>.</li>
-              <li>F. Shahandeh, T. Yianni and M. Doosti, <em>A Unified Linear Algebraic Framework for Physical Models and Generalized Contextuality</em>, <a href="https://arxiv.org/abs/2512.10000">arXiv:2512.10000</a>.</li>
-              <li>T. Yianni and F. Shahandeh, <em>Complexity of Contextuality</em>, <a href="https://arxiv.org/abs/2506.09133">arXiv:2506.09133</a>.</li>
-              <li>M. Doosti, T. Yianni and F. Shahandeh, <em>Contextuality of All Optimal Quantum Cloning</em>, <a href="https://arxiv.org/abs/2406.19382">arXiv:2406.19382</a>.</li>
-              <li>V. P. Rossi, B. Zjawin, R. D. Baldijão, D. Schmid, J. H. Selby and A. B. Sainz, <em>Typicality of Contextuality</em>, <a href="https://arxiv.org/abs/2510.20722">arXiv:2510.20722</a>.</li>
-              <li>N. Gillis, <em>Nonnegative Matrix Factorization</em>, SIAM (2020), for background on nonnegative matrix factorizations.</li>
+            <section class="rp-technical" id="technical-framework" aria-labelledby="technical-framework-heading">
+              <h3 id="technical-framework-heading">Technical framework: COPE, ENMF and rank separation</h3>
+              <h4>1. From an experiment to the COPE matrix</h4>
+              <p>Consider a prepare-and-measure experiment with preparations \(P_i\), \(i=1,\ldots,I\), and measurements \(M_j\), \(j=1,\ldots,J\). Measurement \(M_j\) has outcomes \(k=1,\ldots,n_j\), with probabilities \(p(k\mid P_i,M_j)\) satisfying \(\sum_{k=1}^{n_j}p(k\mid P_i,M_j)=1\).</p>
+              <p>The <em>matrix of conditional outcome probabilities of events</em> (COPE) collects these statistics into a single matrix \(C\). Each column corresponds to a preparation; each row corresponds to a measurement event. Writing \(m=\sum_{j=1}^{J}n_j\),</p>
+              <div class="rp-math" role="math" aria-label="COPE matrix entry and dimensions">
+                \[C_{(j,k),i}=p(k\mid P_i,M_j),\qquad C\in\mathbb{R}_{\geq0}^{m\times I},\qquad m=\sum_{j=1}^{J}n_j.\]
+              </div>
+              <p>Here the pair \((j,k)\) is combined into a single row index. Schematically,</p>
+              <div class="rp-math" role="math" aria-label="Schematic COPE matrix with one column for each preparation and one row for each measurement event">
+                \[C=\begin{pmatrix}
+                p(1\mid P_1,M_1)&\cdots&p(1\mid P_I,M_1)\\
+                \vdots&\ddots&\vdots\\
+                p(n_1\mid P_1,M_1)&\cdots&p(n_1\mid P_I,M_1)\\
+                \vdots&\ddots&\vdots\\
+                p(n_J\mid P_1,M_J)&\cdots&p(n_J\mid P_I,M_J)
+                \end{pmatrix}.\]
+              </div>
+
+              <h4>2. Operational equivalences become matrix constraints</h4>
+              <p>These equivalences are visible directly in \(C\): equivalent preparations produce identical columns, while equivalent measurement events produce identical rows. For example,</p>
+              <div class="rp-math" role="math" aria-label="Operationally equivalent preparations correspond to identical COPE columns">
+                \[P_i\simeq P_{i'}\ \Longrightarrow\ C_{:,i}=C_{:,i'}.\]
+              </div>
+              <p>If \(O_k^j\) denotes outcome \(k\) of measurement \(M_j\), equivalent events satisfy</p>
+              <div class="rp-math" role="math" aria-label="Operationally equivalent measurement events correspond to identical COPE rows">
+                \[O_k^j\simeq O_{k'}^{j'}\ \Longrightarrow\ C_{(j,k),:}=C_{(j',k'),:}.\]
+              </div>
+              <p>Equivalences between mixtures impose linear relations rather than necessarily making individual columns equal. For instance,</p>
+              <div class="rp-math" role="math" aria-label="Example of a mixture equivalence as a linear relation between COPE columns">
+                \[\tfrac12P_1+\tfrac12P_2\simeq\tfrac12P_3+\tfrac12P_4\ \Longrightarrow\ \tfrac12(C_{:,1}+C_{:,2})=\tfrac12(C_{:,3}+C_{:,4}).\]
+              </div>
+
+              <h4>3. Ontological models as nonnegative factorizations</h4>
+              <p>An ontological model supposes that a preparation \(P_i\) produces an underlying state \(\lambda\in\Lambda\) with probability \(\mu(\lambda\mid P_i)\). Given that state, the probability of outcome \(k\) for measurement \(M_j\) is the response function \(\xi(k\mid\lambda,M_j)\). The predicted statistics obey the law of total probability:</p>
+              <div class="rp-math" role="math" aria-label="Ontological model equation">
+                \[p(k\mid P_i,M_j)=\sum_{\lambda\in\Lambda}\xi(k\mid\lambda,M_j)\,\mu(\lambda\mid P_i).\]
+              </div>
+              <p>Let \(K=|\Lambda|\) be the number of ontic states, and define the response and preparation matrices by</p>
+              <div class="rp-math" role="math" aria-label="Definitions of the response matrix R and epistemic matrix E">
+                \[R_{(j,k),\lambda}:=\xi(k\mid\lambda,M_j),\qquad E_{\lambda i}:=\mu(\lambda\mid P_i).\]
+              </div>
+              <p>The ontological-model equation is then the matrix factorization</p>
+              <div class="rp-math" role="math" aria-label="Nonnegative factorization of the COPE matrix">
+                \[\boxed{C=RE},\qquad R\in\mathbb{R}_{\geq0}^{m\times K},\quad E\in\mathbb{R}_{\geq0}^{K\times I}.\]
+              </div>
+              <p>The columns of \(R\) are measurement-response profiles; the columns of \(E\) are probability distributions over ontic states for each preparation. A valid model also satisfies the probability normalizations \(\sum_{\lambda}E_{\lambda i}=1\) and \(\sum_{k=1}^{n_j}R_{(j,k),\lambda}=1\) for each preparation \(i\), measurement \(j\) and ontic state \(\lambda\).</p>
+
+              <h4>4. Ordinary rank, nonnegative rank and ENMF</h4>
+              <p>The ordinary matrix rank \(r=\operatorname{rank}(C)\) counts independent real-valued patterns in the observed probability profiles. It allows arbitrary real coefficients, including negative ones. The <em>nonnegative rank</em> imposes the extra requirement that both factors be nonnegative:</p>
+              <div class="rp-math" role="math" aria-label="Definition of nonnegative rank">
+                \[\operatorname{rank}_{+}(C):=\min\{K:C=RE,\ R\geq0,\ E\geq0\}.\]
+              </div>
+              <p>It is the smallest number of nonnegative rank-one terms needed to construct \(C\), and corresponds to the minimum number of ontic states in a finite ontological representation, with the relevant probability normalizations. The inner dimension \(K\) must not be confused with the ordinary ranks of the factors: for every factorization \(C=RE\),</p>
+              <div class="rp-math" role="math" aria-label="Rank relation for a factorization of the COPE matrix">
+                \[\operatorname{rank}(C)\leq\min\{\operatorname{rank}(R),\operatorname{rank}(E)\}\leq K.\]
+              </div>
+              <p>An <em>equirank nonnegative matrix factorization</em> (ENMF) is a nonnegative factorization that also satisfies</p>
+              <div class="rp-math" role="math" aria-label="Equirank nonnegative matrix factorization condition">
+                \[\operatorname{rank}(C)=\operatorname{rank}(R)=\operatorname{rank}(E).\]
+              </div>
+              <p>The common rank can be smaller than \(K\): the number of ontic labels need not equal the number of independent linear patterns. The <em>equirank nonnegative rank</em> (ENNR), \(\operatorname{ENNR}(C)\), is the minimum inner dimension \(K\) among ENMFs.</p>
+
+              <h4>5. Rank separation as a route to contextuality</h4>
+              <p>In the COPE/ENMF framework, the existence of a noncontextual ontological model is equivalent to the existence of an ENMF, subject to the framework's assumptions and probability constraints. Therefore, if one can prove that <em>every</em> nonnegative factorization of \(C\) has \(\operatorname{rank}(R)>\operatorname{rank}(C)\) or \(\operatorname{rank}(E)>\operatorname{rank}(C)\), no ENMF can exist. This rules out a noncontextual model within that framework and establishes contextuality. A rank mismatch in just one chosen factorization is not enough; the argument must rule out all admissible factorizations.</p>
+
+              <div class="rp-note"><strong>What this means for my thesis.</strong> I am first reproducing the framework on small, explicit examples: constructing COPE matrices, computing ranks, investigating ENMFs, and comparing conclusions with linear-programming tests. The research question for the next stage will be chosen after this foundation is established.</div>
+            </section>
+
+            <h3>Current work: building and testing the framework</h3>
+            <p>The immediate assignment is to work through the linear-algebraic framework, its complexity results and rank-separation applications. I am constructing small prepare-and-measure examples, working through a classical toy model, and distinguishing the number of ontic states from the ordinary ranks of the factor matrices. I also plan to compare ENMF conclusions with linear-programming tests on the same scenarios.</p>
+            <p class="rp-links">Core reading: Shahandeh, Yianni and Doosti, <a href="https://arxiv.org/abs/2512.10000"><em>A Unified Linear Algebraic Framework for Physical Models and Generalized Contextuality</em></a>; Yianni and Shahandeh, <a href="https://arxiv.org/abs/2506.09133"><em>Complexity of Contextuality</em></a>; Doosti, Yianni and Shahandeh, <a href="https://arxiv.org/abs/2406.19382"><em>Contextuality of All Optimal Quantum Cloning</em></a>.</p>
+
+            <h3>Potential research directions</h3>
+            <p>The second-semester question remains to be selected in discussion with my supervisor. Two possible directions are:</p>
+            <ul>
+              <li><strong>Quantitative contextuality.</strong> Investigate whether nonnegative rank, ENNR or rank-separation properties yield new bounds or relations for existing measures, such as noise robustness or classical excess. Any proposed rank-based measure would need a clear interpretation and justified mathematical properties.</li>
+              <li><strong>Typicality through ENMF.</strong> Study how ENMF-based criteria behave for carefully specified ensembles of quantum preparations and measurements. An initial step would be to compare ENMF and linear-programming verdicts on the same examples, then ask whether rank structure reveals anything beyond existing typicality results.</li>
             </ul>
-          </details></div>
+            <p class="rp-small">These are prospective directions, not established results or a final commitment. The aim is to identify a precise, feasible question after reproducing the existing framework and reviewing relevant quantitative approaches.</p>
+          </div>
+          <div class="rp-side">
+            <details>
+              <summary>Key references</summary>
+              <ul class="refs">
+                <li>R. W. Spekkens, <em>Contextuality for preparations, transformations, and unsharp measurements</em>, Phys. Rev. A 71, 052108 (2005), <a href="https://arxiv.org/abs/quant-ph/0406166">arXiv:quant-ph/0406166</a>.</li>
+                <li>F. Shahandeh, T. Yianni and M. Doosti, <em>A Unified Linear Algebraic Framework for Physical Models and Generalized Contextuality</em>, <a href="https://arxiv.org/abs/2512.10000">arXiv:2512.10000</a>.</li>
+                <li>T. Yianni and F. Shahandeh, <em>Complexity of Contextuality</em>, <a href="https://arxiv.org/abs/2506.09133">arXiv:2506.09133</a>.</li>
+                <li>M. Doosti, T. Yianni and F. Shahandeh, <em>Contextuality of All Optimal Quantum Cloning</em>, <a href="https://arxiv.org/abs/2406.19382">arXiv:2406.19382</a>.</li>
+                <li>D. Schmid et al., <em>Characterization of noncontextuality in the framework of generalized probabilistic theories</em>, PRX Quantum 2, 010331 (2021).</li>
+                <li>J. H. Selby et al., <em>A linear program for testing nonclassicality and an open-source implementation</em>, <a href="https://arxiv.org/abs/2204.11905">arXiv:2204.11905</a>.</li>
+                <li>V. P. Rossi et al., <em>Typicality of Contextuality</em>, <a href="https://arxiv.org/abs/2510.20722">arXiv:2510.20722</a>.</li>
+                <li>N. Gillis, <em>Nonnegative Matrix Factorization</em>, SIAM (2020), for background on nonnegative matrix factorizations.</li>
+              </ul>
+            </details>
+          </div>
         </div>
       </article>
 
