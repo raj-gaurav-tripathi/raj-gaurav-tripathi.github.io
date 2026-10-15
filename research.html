@@ -83,12 +83,12 @@
     <main class="page-content" id="content">
 
       <h1 class="panel-title">Research</h1>
-      <p class="rp-lede">My research is in quantum foundations. I began in theoretical cosmology, working for a year on the origin of cosmic magnetic fields, and moved to foundations for my MS thesis, which asks which features of quantum theory are genuinely nonclassical. The two interests meet in a side project on whether entanglement through gravity could be witnessed in the CMB.</p>
+      <p class="rp-lede">My current MS thesis investigates generalized quantum contextuality through the COPE/ENMF framework: how the structure of observed probabilities constrains classical explanations of quantum statistics. I am first building the mathematical foundation through explicit examples and rank-separation methods. Potential next directions include connecting rank-based quantities to established measures of contextuality or studying typicality using ENMF methods. I also work on a literature-stage side project on entanglement and the cosmic microwave background, alongside earlier research on cosmological magnetogenesis.</p>
       <p class="rp-updated">Last updated <time datetime="2026-10">October 2026</time>.</p>
 
       <div class="rp-bar">
         <nav class="rp-jump" aria-label="Projects on this page">
-          <a href="#contextuality">Quantum contextuality</a>
+          <a href="#contextuality">Quantum contextuality (MS thesis)</a>
           <a href="#cmb">Entanglement in the CMB</a>
           <a href="#magnetogenesis">Magnetic fields</a>
         </nav>
@@ -98,52 +98,47 @@
       <!-- ============ 1. CONTEXTUALITY ============ -->
       <article class="rp-proj" id="contextuality">
         <header class="rp-head">
-          <h2>Quantum contextuality</h2>
+          <h2>Generalized quantum contextuality</h2>
           <p class="rp-meta">
             <span>MS thesis, supervised by Dr. Beata Zjawin (ICTQT, University of Gdańsk)</span>
             <span>Aug 2026 – present<em class="rp-tag is-active">In progress</em></span>
           </p>
         </header>
         <div class="rp-body"><div class="rp-main">
-          <p>Which features of quantum theory are genuinely nonclassical? Interference, no-cloning, teleportation, remote steering and even entanglement all have explicit classical models, such as Spekkens' toy theory. Generalized noncontextuality (Spekkens, 2005) is a notion of nonclassicality that is rigorously defined, testable on a single system, and tied to practical advantages.</p>
-          <p>An ontological model is noncontextual if operationally equivalent procedures are represented identically in the model, a version of Leibniz's principle of the identity of indiscernibles. For a prepare-and-measure scenario this is equivalent to simplex-embeddability of the associated generalized probabilistic theory (GPT) fragment, so a linear program can decide it. The program's output, the <em>robustness of contextuality</em> <em>r</em>, is zero exactly when a classical explanation exists.</p>
+          <p>Generalized noncontextuality asks whether observed quantum statistics can be explained by an underlying model in which operationally equivalent procedures are represented identically. In a prepare-and-measure experiment, the observed probabilities can be collected into a matrix—the matrix of conditional outcome probabilities of events (COPE). The structure of this matrix makes operational equivalences and constraints on classical explanations accessible through linear algebra.</p>
 
-          <h3>Focus: how typical is contextuality?</h3>
-          <p>Contextual experiments exist, but are they special? I study typicality: how often randomly chosen states and measurements produce nonclassical statistics. My starting point is <a href="https://arxiv.org/abs/2510.20722"><em>Typicality of Contextuality</em></a> (Rossi, Zjawin, Baldijão, Schmid, Selby, Sainz). It finds a sharp threshold below which contextuality is impossible, fast growth above it that noise slows but does not remove, and a clear gap between being contextual and giving a quantum advantage.</p>
-          <!-- TODO: add 1-2 sentences on what you personally did, then uncomment:
-          <p><strong>What I did.</strong> Your contribution here.</p>
-          -->
+          <p>My thesis focuses on a recent framework connecting noncontextual ontological models to <em>equirank nonnegative matrix factorizations</em> (ENMFs) of the COPE matrix. In such a factorization, one nonnegative factor represents measurement-response profiles and the other represents preparation distributions over hypothetical underlying states. Rank-separation methods can then provide a route to proving contextuality: if no factorization satisfies the required equal-rank conditions, a noncontextual model cannot exist within the framework's assumptions.</p>
 
-          <h3>Questions I plan to work on</h3>
+          <h3>Current work: building and testing the framework</h3>
+          <p>I am working through the linear-algebraic framework and its complexity and rank-separation results, starting with small, explicit prepare-and-measure scenarios. The immediate goals are to construct COPE matrices, calculate ordinary and nonnegative ranks, understand ENMF and equirank nonnegative rank (ENNR), and reproduce examples in which an equirank factorization exists or rank separation rules one out. I also plan to compare these conclusions with linear-programming tests on the same small scenarios and work through a classical toy model.</p>
+          <p class="rp-links">Core reading: Shahandeh, Yianni and Doosti, <a href="https://arxiv.org/abs/2512.10000"><em>A Unified Linear Algebraic Framework for Physical Models and Generalized Contextuality</em></a>; Yianni and Shahandeh, <a href="https://arxiv.org/abs/2506.09133"><em>Complexity of Contextuality</em></a>; Doosti, Yianni and Shahandeh, <a href="https://arxiv.org/abs/2406.19382"><em>Contextuality of All Optimal Quantum Cloning</em></a>.</p>
+
+          <h3>Potential research directions</h3>
+          <p>The second-semester research question is still to be selected in discussion with my supervisor. Two directions I am considering are:</p>
           <ul>
-            <li><strong>Individual components.</strong> Typicality of nonclassicality for single states, channels or sets of states rather than whole experiments, following <a href="https://arxiv.org/abs/2503.05884">Zhang, Schmid, Yīng and Spekkens</a>, who apply generalized noncontextuality to individual processes. Their follow-up gives semidefinite-programming certificates, which should make sampling-based studies feasible.</li>
-            <li><strong>Dimension and subspaces.</strong> How the results change in higher dimensions, and whether restricting an experiment to a subspace (for example a qubit inside a qutrit) systematically raises the odds of contextuality.</li>
-            <li><strong>From contextuality to advantage.</strong> Whether the robustness <em>r</em> predicts task advantage beyond parity-oblivious multiplexing, where typical contextuality gives only a modest advantage.</li>
+            <li><strong>Quantitative contextuality.</strong> Investigate whether nonnegative rank, ENNR or rank-separation properties yield new bounds or relations for established quantitative approaches, such as noise robustness or classical excess. A rank-based measure would be pursued only if its interpretation and mathematical properties can be justified.</li>
+            <li><strong>Typicality through ENMF.</strong> Study how often ENMF-based tests identify contextuality in a carefully specified ensemble of quantum preparations and measurements. An initial step would be to compare ENMF conclusions with existing linear-programming tests on the same small scenarios, then ask whether rank structure reveals something beyond existing typicality results.</li>
           </ul>
+          <p>These are prospective directions, not results or a settled thesis outcome. The aim is to identify a precise, feasible question after reproducing the existing framework and reviewing established contextuality measures.</p>
 
           </div><div class="rp-side"><details>
-            <summary>Formal framework and typicality results</summary>
-            <p><strong>Framework.</strong> A prepare-and-measure experiment gives probabilities p(e|s) for states s and effects e. Operational equivalences, such as two preparations that no measurement can tell apart, appear as linear relations among the states and among the effects. The experiment is noncontextual exactly when linear maps exist that embed the states into a probability simplex and the effects into its dual while reproducing every p(e|s) (Schmid et al., 2021). This is simplex-embeddability, which the linear program of Selby et al. tests.</p>
-            <p><strong>Results</strong> of Rossi et al., as I understand them (the authors also provide an open-source toolbox):</p>
-            <ul>
-              <li><strong>A sharp threshold.</strong> With n ≤ d² random states (four for a qubit) the scenario is noncontextual with probability one, since linearly independent states cannot witness contextuality. Above this, typicality rises quickly.</li>
-              <li><strong>Pure states and projective measurements.</strong> Typicality exceeds 99% at around n = 7 states and m = 8 measurements. It tends to 1 as either grows, but stays below 1 for any finite scenario.</li>
-              <li><strong>Noise.</strong> Mixedness slows the rise without removing it: with 20 projective measurements, n = 9 states suffice at purity ≥ 0.7 and n = 7 at purity ≥ 0.9. With unsharp measurements the requirement can reach n = 25.</li>
-              <li><strong>Typical contextuality is not typical advantage.</strong> In 3-to-1 parity-oblivious multiplexing, random projective measurements are contextual 98.6% of the time but give about an 8% advantage over the best noncontextual strategy, against 18.3% for the optimal one. Random POVMs are contextual 15.2% of the time, for a 0.3% advantage.</li>
-            </ul>
+            <summary>Technical framework: COPE, ENMF and rank separation</summary>
+            <p><strong>COPE matrix.</strong> Each column corresponds to a preparation and each row to a measurement event; the entry is the probability of that event for that preparation. Operationally equivalent preparations give identical columns, equivalent measurement events give identical rows, and equivalences involving mixtures impose linear relations.</p>
+            <p><strong>Nonnegative factorization.</strong> An ontological model gives a factorization <code>C = RE</code>, where \(R\) contains measurement-response probabilities and \(E\) contains preparation distributions over ontic states. Both factors are nonnegative and must satisfy the relevant normalizations.</p>
+            <p><strong>ENMF and contextuality.</strong> An equirank nonnegative matrix factorization additionally satisfies <code>rank(C) = rank(R) = rank(E)</code>. In the framework under study, the existence of a noncontextual model is equivalent to the existence of an ENMF, under the stated assumptions. Rank separation seeks to show that every nonnegative factorization has a rank mismatch, which rules out an ENMF.</p>
+            <p><strong>Why compare with other tests?</strong> Existing linear-programming methods and resource-theoretic quantifiers offer benchmarks. The aim is to determine what the COPE/ENMF structure adds, rather than assume that rank separation already defines a useful graded measure.</p>
           </details>
-
           <details>
             <summary>Key references</summary>
             <ul class="refs">
               <li>R. W. Spekkens, <em>Contextuality for preparations, transformations, and unsharp measurements</em>, Phys. Rev. A 71, 052108 (2005), <a href="https://arxiv.org/abs/quant-ph/0406166">arXiv:quant-ph/0406166</a>.</li>
-              <li>R. W. Spekkens, <em>Evidence for the epistemic view of quantum states: a toy theory</em>, Phys. Rev. A 75, 032110 (2007), <a href="https://arxiv.org/abs/quant-ph/0401052">arXiv:quant-ph/0401052</a>.</li>
-              <li>R. W. Spekkens, <em>The ontological identity of empirical indiscernibles: Leibniz's methodological principle and its significance in the work of Einstein</em>, <a href="https://arxiv.org/abs/1909.04628">arXiv:1909.04628</a>.</li>
-              <li>D. Schmid, J. H. Selby, E. Wolfe, R. Kunjwal, R. W. Spekkens, <em>Characterization of noncontextuality in the framework of generalized probabilistic theories</em>, PRX Quantum 2, 010331 (2021).</li>
-              <li>J. H. Selby, E. Wolfe, D. Schmid, A. B. Sainz, V. P. Rossi, <em>A linear program for testing nonclassicality and an open-source implementation</em>, <a href="https://arxiv.org/abs/2204.11905">arXiv:2204.11905</a>.</li>
-              <li>V. P. Rossi, B. Zjawin, R. D. Baldijão, D. Schmid, J. H. Selby, A. B. Sainz, <em>Typicality of Contextuality</em>, <a href="https://arxiv.org/abs/2510.20722">arXiv:2510.20722</a>.</li>
-              <li>Y. Zhang, D. Schmid, Y. Yīng, R. W. Spekkens, <em>Reassessing the boundary between classical and nonclassical for individual quantum processes</em>, Phys. Rev. X 16, 021050 (2026), <a href="https://arxiv.org/abs/2503.05884">arXiv:2503.05884</a>.</li>
-              <li>Y. Zhang, Y. Yīng, D. Schmid, <em>Quantifiers and witnesses for the nonclassicality of measurements and of states</em>, <a href="https://arxiv.org/abs/2504.02944">arXiv:2504.02944</a>.</li>
+              <li>D. Schmid et al., <em>Characterization of noncontextuality in the framework of generalized probabilistic theories</em>, PRX Quantum 2, 010331 (2021).</li>
+              <li>J. H. Selby et al., <em>A linear program for testing nonclassicality and an open-source implementation</em>, <a href="https://arxiv.org/abs/2204.11905">arXiv:2204.11905</a>.</li>
+              <li>F. Shahandeh, T. Yianni and M. Doosti, <em>A Unified Linear Algebraic Framework for Physical Models and Generalized Contextuality</em>, <a href="https://arxiv.org/abs/2512.10000">arXiv:2512.10000</a>.</li>
+              <li>T. Yianni and F. Shahandeh, <em>Complexity of Contextuality</em>, <a href="https://arxiv.org/abs/2506.09133">arXiv:2506.09133</a>.</li>
+              <li>M. Doosti, T. Yianni and F. Shahandeh, <em>Contextuality of All Optimal Quantum Cloning</em>, <a href="https://arxiv.org/abs/2406.19382">arXiv:2406.19382</a>.</li>
+              <li>V. P. Rossi, B. Zjawin, R. D. Baldijão, D. Schmid, J. H. Selby and A. B. Sainz, <em>Typicality of Contextuality</em>, <a href="https://arxiv.org/abs/2510.20722">arXiv:2510.20722</a>.</li>
+              <li>N. Gillis, <em>Nonnegative Matrix Factorization</em>, SIAM (2020), for background on nonnegative matrix factorizations.</li>
             </ul>
           </details></div>
         </div>
@@ -239,7 +234,7 @@
 
       <section class="rp-contact">
         <h2>Collaborations</h2>
-        <p>I am preparing PhD applications in quantum foundations, and I am always open to discussions about physics, or philosophy. My <a href="cv.html">CV</a> has the full record. You can reach me at <a href="mailto:rajgauravmirp@gmail.com">rajgauravmirp@gmail.com</a>.</p>
+        <p>I welcome discussions about physics and philosophy. My <a href="cv.html">CV</a> has the full record. You can reach me at <a href="mailto:rajgauravmirp@gmail.com">rajgauravmirp@gmail.com</a>.</p>
       </section>
 
     </main>
