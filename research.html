@@ -59,10 +59,11 @@
     .rp-body p,.rp-body li{text-wrap:pretty}
     .rp-body li{margin:.35em 0}
     .rp-links{font-size:.95em}
-    .rp-technical{margin:1.6em 0 1.2em;padding-top:.1em}
-    .rp-technical h3{margin-top:1.25em}
-    .rp-technical .rp-math{max-width:100%;overflow-x:auto;overflow-y:hidden;margin:.8em 0;padding:.2em 0;text-align:center}
-    .rp-technical .rp-math mjx-container[display="true"]{margin:.35em 0!important}
+    .rp-side .rp-technical{margin-top:1.4em}
+    .rp-technical .rp-technical-content{font-size:.96em}
+    .rp-technical h4{margin:1.2em 0 .35em;font-size:1em;font-weight:650;color:inherit}
+    .rp-technical .rp-math{max-width:100%;overflow-x:auto;overflow-y:hidden;margin:.65em 0;padding:.2em 0;text-align:center}
+    .rp-technical .rp-math mjx-container[display="true"]{margin:.3em 0!important}
     .rp-technical .rp-note{padding:.7em .9em;background:var(--wash);border-left:3px solid var(--ac);margin:1em 0}
     .rp-technical .rp-small{font-size:.94em;color:var(--mut)}
     .rp-body details{margin:1.4em 0 0;padding:.1em 0 .1em 1em;border-left:3px solid var(--ln)}
@@ -137,74 +138,7 @@
 
             <p>My MS thesis studies a recent linear-algebraic approach to this question. Instead of treating all the probabilities separately, the approach collects them into a matrix and asks whether its structure permits a noncontextual explanation. This leads to the COPE matrix, nonnegative matrix factorization and rank-separation methods.</p>
 
-            <section class="rp-technical" id="technical-framework" aria-labelledby="technical-framework-heading">
-              <h3 id="technical-framework-heading">Technical framework: COPE, ENMF and rank separation</h3>
-              <h4>1. From an experiment to the COPE matrix</h4>
-              <p>Consider a prepare-and-measure experiment with preparations \(P_i\), \(i=1,\ldots,I\), and measurements \(M_j\), \(j=1,\ldots,J\). Measurement \(M_j\) has outcomes \(k=1,\ldots,n_j\), with probabilities \(p(k\mid P_i,M_j)\) satisfying \(\sum_{k=1}^{n_j}p(k\mid P_i,M_j)=1\).</p>
-              <p>The <em>matrix of conditional outcome probabilities of events</em> (COPE) collects these statistics into a single matrix \(C\). Each column corresponds to a preparation; each row corresponds to a measurement event. Writing \(m=\sum_{j=1}^{J}n_j\),</p>
-              <div class="rp-math" role="math" aria-label="COPE matrix entry and dimensions">
-                \[C_{(j,k),i}=p(k\mid P_i,M_j),\qquad C\in\mathbb{R}_{\geq0}^{m\times I},\qquad m=\sum_{j=1}^{J}n_j.\]
-              </div>
-              <p>Here the pair \((j,k)\) is combined into a single row index. Schematically,</p>
-              <div class="rp-math" role="math" aria-label="Schematic COPE matrix with one column for each preparation and one row for each measurement event">
-                \[C=\begin{pmatrix}
-                p(1\mid P_1,M_1)&\cdots&p(1\mid P_I,M_1)\\
-                \vdots&\ddots&\vdots\\
-                p(n_1\mid P_1,M_1)&\cdots&p(n_1\mid P_I,M_1)\\
-                \vdots&\ddots&\vdots\\
-                p(n_J\mid P_1,M_J)&\cdots&p(n_J\mid P_I,M_J)
-                \end{pmatrix}.\]
-              </div>
-
-              <h4>2. Operational equivalences become matrix constraints</h4>
-              <p>These equivalences are visible directly in \(C\): equivalent preparations produce identical columns, while equivalent measurement events produce identical rows. For example,</p>
-              <div class="rp-math" role="math" aria-label="Operationally equivalent preparations correspond to identical COPE columns">
-                \[P_i\simeq P_{i'}\ \Longrightarrow\ C_{:,i}=C_{:,i'}.\]
-              </div>
-              <p>If \(O_k^j\) denotes outcome \(k\) of measurement \(M_j\), equivalent events satisfy</p>
-              <div class="rp-math" role="math" aria-label="Operationally equivalent measurement events correspond to identical COPE rows">
-                \[O_k^j\simeq O_{k'}^{j'}\ \Longrightarrow\ C_{(j,k),:}=C_{(j',k'),:}.\]
-              </div>
-              <p>Equivalences between mixtures impose linear relations rather than necessarily making individual columns equal. For instance,</p>
-              <div class="rp-math" role="math" aria-label="Example of a mixture equivalence as a linear relation between COPE columns">
-                \[\tfrac12P_1+\tfrac12P_2\simeq\tfrac12P_3+\tfrac12P_4\ \Longrightarrow\ \tfrac12(C_{:,1}+C_{:,2})=\tfrac12(C_{:,3}+C_{:,4}).\]
-              </div>
-
-              <h4>3. Ontological models as nonnegative factorizations</h4>
-              <p>An ontological model supposes that a preparation \(P_i\) produces an underlying state \(\lambda\in\Lambda\) with probability \(\mu(\lambda\mid P_i)\). Given that state, the probability of outcome \(k\) for measurement \(M_j\) is the response function \(\xi(k\mid\lambda,M_j)\). The predicted statistics obey the law of total probability:</p>
-              <div class="rp-math" role="math" aria-label="Ontological model equation">
-                \[p(k\mid P_i,M_j)=\sum_{\lambda\in\Lambda}\xi(k\mid\lambda,M_j)\,\mu(\lambda\mid P_i).\]
-              </div>
-              <p>Let \(K=|\Lambda|\) be the number of ontic states, and define the response and preparation matrices by</p>
-              <div class="rp-math" role="math" aria-label="Definitions of the response matrix R and epistemic matrix E">
-                \[R_{(j,k),\lambda}:=\xi(k\mid\lambda,M_j),\qquad E_{\lambda i}:=\mu(\lambda\mid P_i).\]
-              </div>
-              <p>The ontological-model equation is then the matrix factorization</p>
-              <div class="rp-math" role="math" aria-label="Nonnegative factorization of the COPE matrix">
-                \[\boxed{C=RE},\qquad R\in\mathbb{R}_{\geq0}^{m\times K},\quad E\in\mathbb{R}_{\geq0}^{K\times I}.\]
-              </div>
-              <p>The columns of \(R\) are measurement-response profiles; the columns of \(E\) are probability distributions over ontic states for each preparation. A valid model also satisfies the probability normalizations \(\sum_{\lambda}E_{\lambda i}=1\) and \(\sum_{k=1}^{n_j}R_{(j,k),\lambda}=1\) for each preparation \(i\), measurement \(j\) and ontic state \(\lambda\).</p>
-
-              <h4>4. Ordinary rank, nonnegative rank and ENMF</h4>
-              <p>The ordinary matrix rank \(r=\operatorname{rank}(C)\) counts independent real-valued patterns in the observed probability profiles. It allows arbitrary real coefficients, including negative ones. The <em>nonnegative rank</em> imposes the extra requirement that both factors be nonnegative:</p>
-              <div class="rp-math" role="math" aria-label="Definition of nonnegative rank">
-                \[\operatorname{rank}_{+}(C):=\min\{K:C=RE,\ R\geq0,\ E\geq0\}.\]
-              </div>
-              <p>It is the smallest number of nonnegative rank-one terms needed to construct \(C\), and corresponds to the minimum number of ontic states in a finite ontological representation, with the relevant probability normalizations. The inner dimension \(K\) must not be confused with the ordinary ranks of the factors: for every factorization \(C=RE\),</p>
-              <div class="rp-math" role="math" aria-label="Rank relation for a factorization of the COPE matrix">
-                \[\operatorname{rank}(C)\leq\min\{\operatorname{rank}(R),\operatorname{rank}(E)\}\leq K.\]
-              </div>
-              <p>An <em>equirank nonnegative matrix factorization</em> (ENMF) is a nonnegative factorization that also satisfies</p>
-              <div class="rp-math" role="math" aria-label="Equirank nonnegative matrix factorization condition">
-                \[\operatorname{rank}(C)=\operatorname{rank}(R)=\operatorname{rank}(E).\]
-              </div>
-              <p>The common rank can be smaller than \(K\): the number of ontic labels need not equal the number of independent linear patterns. The <em>equirank nonnegative rank</em> (ENNR), \(\operatorname{ENNR}(C)\), is the minimum inner dimension \(K\) among ENMFs.</p>
-
-              <h4>5. Rank separation as a route to contextuality</h4>
-              <p>In the COPE/ENMF framework, the existence of a noncontextual ontological model is equivalent to the existence of an ENMF, subject to the framework's assumptions and probability constraints. Therefore, if one can prove that <em>every</em> nonnegative factorization of \(C\) has \(\operatorname{rank}(R)>\operatorname{rank}(C)\) or \(\operatorname{rank}(E)>\operatorname{rank}(C)\), no ENMF can exist. This rules out a noncontextual model within that framework and establishes contextuality. A rank mismatch in just one chosen factorization is not enough; the argument must rule out all admissible factorizations.</p>
-
-              <div class="rp-note"><strong>What this means for my thesis.</strong> I am first reproducing the framework on small, explicit examples: constructing COPE matrices, computing ranks, investigating ENMFs, and comparing conclusions with linear-programming tests. The research question for the next stage will be chosen after this foundation is established.</div>
-            </section>
+            <p class="rp-links">For the mathematical details, expand <a href="#technical-framework">Technical framework: COPE, ENMF and rank separation</a> in the side panel.</p>
 
             <h3>Current work: building and testing the framework</h3>
             <p>The immediate assignment is to work through the linear-algebraic framework, its complexity results and rank-separation applications. I am constructing small prepare-and-measure examples, working through a classical toy model, and distinguishing the number of ontic states from the ordinary ranks of the factor matrices. I also plan to compare ENMF conclusions with linear-programming tests on the same scenarios.</p>
@@ -219,6 +153,76 @@
             <p class="rp-small">These are prospective directions, not established results or a final commitment. The aim is to identify a precise, feasible question after reproducing the existing framework and reviewing relevant quantitative approaches.</p>
           </div>
           <div class="rp-side">
+            <details class="rp-technical" id="technical-framework">
+              <summary>Technical framework: COPE, ENMF and rank separation</summary>
+              <div class="rp-technical-content">
+            <h4>1. From an experiment to the COPE matrix</h4>
+            <p>Consider a prepare-and-measure experiment with preparations \(P_i\), \(i=1,\ldots,I\), and measurements \(M_j\), \(j=1,\ldots,J\). Measurement \(M_j\) has outcomes \(k=1,\ldots,n_j\), with probabilities \(p(k\mid P_i,M_j)\) satisfying \(\sum_{k=1}^{n_j}p(k\mid P_i,M_j)=1\).</p>
+            <p>The <em>matrix of conditional outcome probabilities of events</em> (COPE) collects these statistics into a single matrix \(C\). Each column corresponds to a preparation; each row corresponds to a measurement event. Writing \(m=\sum_{j=1}^{J}n_j\),</p>
+            <div class="rp-math" role="math" aria-label="COPE matrix entry and dimensions">
+              \[C_{(j,k),i}=p(k\mid P_i,M_j),\qquad C\in\mathbb{R}_{\geq0}^{m\times I},\qquad m=\sum_{j=1}^{J}n_j.\]
+            </div>
+            <p>Here the pair \((j,k)\) is combined into a single row index. Schematically,</p>
+            <div class="rp-math" role="math" aria-label="Schematic COPE matrix with one column for each preparation and one row for each measurement event">
+              \[C=\begin{pmatrix}
+              p(1\mid P_1,M_1)&\cdots&p(1\mid P_I,M_1)\\
+              \vdots&\ddots&\vdots\\
+              p(n_1\mid P_1,M_1)&\cdots&p(n_1\mid P_I,M_1)\\
+              \vdots&\ddots&\vdots\\
+              p(n_J\mid P_1,M_J)&\cdots&p(n_J\mid P_I,M_J)
+              \end{pmatrix}.\]
+            </div>
+
+            <h4>2. Operational equivalences become matrix constraints</h4>
+            <p>These equivalences are visible directly in \(C\): equivalent preparations produce identical columns, while equivalent measurement events produce identical rows. For example,</p>
+            <div class="rp-math" role="math" aria-label="Operationally equivalent preparations correspond to identical COPE columns">
+              \[P_i\simeq P_{i'}\ \Longrightarrow\ C_{:,i}=C_{:,i'}.\]
+            </div>
+            <p>If \(O_k^j\) denotes outcome \(k\) of measurement \(M_j\), equivalent events satisfy</p>
+            <div class="rp-math" role="math" aria-label="Operationally equivalent measurement events correspond to identical COPE rows">
+              \[O_k^j\simeq O_{k'}^{j'}\ \Longrightarrow\ C_{(j,k),:}=C_{(j',k'),:}.\]
+            </div>
+            <p>Equivalences between mixtures impose linear relations rather than necessarily making individual columns equal. For instance,</p>
+            <div class="rp-math" role="math" aria-label="Example of a mixture equivalence as a linear relation between COPE columns">
+              \[\tfrac12P_1+\tfrac12P_2\simeq\tfrac12P_3+\tfrac12P_4\ \Longrightarrow\ \tfrac12(C_{:,1}+C_{:,2})=\tfrac12(C_{:,3}+C_{:,4}).\]
+            </div>
+
+            <h4>3. Ontological models as nonnegative factorizations</h4>
+            <p>An ontological model supposes that a preparation \(P_i\) produces an underlying state \(\lambda\in\Lambda\) with probability \(\mu(\lambda\mid P_i)\). Given that state, the probability of outcome \(k\) for measurement \(M_j\) is the response function \(\xi(k\mid\lambda,M_j)\). The predicted statistics obey the law of total probability:</p>
+            <div class="rp-math" role="math" aria-label="Ontological model equation">
+              \[p(k\mid P_i,M_j)=\sum_{\lambda\in\Lambda}\xi(k\mid\lambda,M_j)\,\mu(\lambda\mid P_i).\]
+            </div>
+            <p>Let \(K=|\Lambda|\) be the number of ontic states, and define the response and preparation matrices by</p>
+            <div class="rp-math" role="math" aria-label="Definitions of the response matrix R and epistemic matrix E">
+              \[R_{(j,k),\lambda}:=\xi(k\mid\lambda,M_j),\qquad E_{\lambda i}:=\mu(\lambda\mid P_i).\]
+            </div>
+            <p>The ontological-model equation is then the matrix factorization</p>
+            <div class="rp-math" role="math" aria-label="Nonnegative factorization of the COPE matrix">
+              \[\boxed{C=RE},\qquad R\in\mathbb{R}_{\geq0}^{m\times K},\quad E\in\mathbb{R}_{\geq0}^{K\times I}.\]
+            </div>
+            <p>The columns of \(R\) are measurement-response profiles; the columns of \(E\) are probability distributions over ontic states for each preparation. A valid model also satisfies the probability normalizations \(\sum_{\lambda}E_{\lambda i}=1\) and \(\sum_{k=1}^{n_j}R_{(j,k),\lambda}=1\) for each preparation \(i\), measurement \(j\) and ontic state \(\lambda\).</p>
+
+            <h4>4. Ordinary rank, nonnegative rank and ENMF</h4>
+            <p>The ordinary matrix rank \(r=\operatorname{rank}(C)\) counts independent real-valued patterns in the observed probability profiles. It allows arbitrary real coefficients, including negative ones. The <em>nonnegative rank</em> imposes the extra requirement that both factors be nonnegative:</p>
+            <div class="rp-math" role="math" aria-label="Definition of nonnegative rank">
+              \[\operatorname{rank}_{+}(C):=\min\{K:C=RE,\ R\geq0,\ E\geq0\}.\]
+            </div>
+            <p>It is the smallest number of nonnegative rank-one terms needed to construct \(C\), and corresponds to the minimum number of ontic states in a finite ontological representation, with the relevant probability normalizations. The inner dimension \(K\) must not be confused with the ordinary ranks of the factors: for every factorization \(C=RE\),</p>
+            <div class="rp-math" role="math" aria-label="Rank relation for a factorization of the COPE matrix">
+              \[\operatorname{rank}(C)\leq\min\{\operatorname{rank}(R),\operatorname{rank}(E)\}\leq K.\]
+            </div>
+            <p>An <em>equirank nonnegative matrix factorization</em> (ENMF) is a nonnegative factorization that also satisfies</p>
+            <div class="rp-math" role="math" aria-label="Equirank nonnegative matrix factorization condition">
+              \[\operatorname{rank}(C)=\operatorname{rank}(R)=\operatorname{rank}(E).\]
+            </div>
+            <p>The common rank can be smaller than \(K\): the number of ontic labels need not equal the number of independent linear patterns. The <em>equirank nonnegative rank</em> (ENNR), \(\operatorname{ENNR}(C)\), is the minimum inner dimension \(K\) among ENMFs.</p>
+
+            <h4>5. Rank separation as a route to contextuality</h4>
+            <p>In the COPE/ENMF framework, the existence of a noncontextual ontological model is equivalent to the existence of an ENMF, subject to the framework's assumptions and probability constraints. Therefore, if one can prove that <em>every</em> nonnegative factorization of \(C\) has \(\operatorname{rank}(R)>\operatorname{rank}(C)\) or \(\operatorname{rank}(E)>\operatorname{rank}(C)\), no ENMF can exist. This rules out a noncontextual model within that framework and establishes contextuality. A rank mismatch in just one chosen factorization is not enough; the argument must rule out all admissible factorizations.</p>
+
+            <div class="rp-note"><strong>What this means for my thesis.</strong> I am first reproducing the framework on small, explicit examples: constructing COPE matrices, computing ranks, investigating ENMFs, and comparing conclusions with linear-programming tests. The research question for the next stage will be chosen after this foundation is established.</div>
+              </div>
+            </details>
             <details>
               <summary>Key references</summary>
               <ul class="refs">
